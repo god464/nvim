@@ -99,11 +99,7 @@ require("lazy").setup({
 		event = "VeryLazy",
 	},
 })
-require("plugins.ui")
-require("plugins.motion")
-require("plugins.utils")
-require("plugins.ts")
-require("plugins.lsp")
-require("plugins.format")
-require("plugins.lint")
-require("plugins.cmp")
+local sub = { "ui", "motion", "utils", "ts", "lsp", "format", "lint" }
+for _, v in ipairs(sub) do
+	require("plugins." .. v)
+end
