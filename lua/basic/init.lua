@@ -1,2 +1,2 @@
 require("basic.general")
-require("basic.keymap")
+-- require("basic.keymap")

@@ -17,6 +17,7 @@ require("lazy").setup({
 	{
 		"altermo/ultimate-autopair.nvim",
 		event = { "InsertEnter", "CmdlineEnter", "VeryLazy" },
+		opts = {},
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -100,6 +101,8 @@ require("lazy").setup({
 		"folke/flash.nvim",
 		event = "VeryLazy",
 	},
+	{ "folke/neodev.nvim", opts = {} },
+	{ "folke/neoconf.nvim", opts = {} },
 })
 local sub = { "ui", "motion", "utils", "ts", "lsp", "format", "lint", "cmp" }
 for _, v in ipairs(sub) do
