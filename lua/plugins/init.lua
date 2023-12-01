@@ -20,7 +20,7 @@ require("lazy").setup({
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
-		event = { "VeryLazy" },
+		event = "VeryLazy",
 		build = ":TSUpdate",
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-context",
@@ -71,6 +71,7 @@ require("lazy").setup({
 			"hrsh7th/cmp-nvim-lua",
 			"ray-x/cmp-treesitter",
 			"hrsh7th/cmp-cmdline",
+			"saadparwaiz1/cmp_luasnip",
 			--"Exafunction/codeium.nvim",
 		},
 	},
@@ -99,7 +100,7 @@ require("lazy").setup({
 		event = "VeryLazy",
 	},
 })
-local sub = { "ui", "motion", "utils", "ts", "lsp", "format", "lint" }
+local sub = { "ui", "motion", "utils", "ts", "lsp", "format", "lint", "cmp" }
 for _, v in ipairs(sub) do
 	require("plugins." .. v)
 end

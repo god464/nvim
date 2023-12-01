@@ -17,4 +17,5 @@ vim.opt.spell = true
 vim.opt.spelllang = { "en_us" }
 vim.opt.autowrite = true
 vim.opt.completeopt = "menu,menuone,noselect"
+vim.opt.cursorline = true
 vim.loader.enable()
