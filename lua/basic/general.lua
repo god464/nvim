@@ -1,0 +1,20 @@
+vim.opt.encoding = "utf-8"
+vim.opt.fileencodings = "utf-8 GBK"
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.shiftround = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+vim.opt.mouse = "a"
+vim.opt.relativenumber = true
+vim.opt.number = true
+vim.o.background = "dark"
+vim.opt.clipboard = "unnamedplus"
+vim.opt.spell = true
+vim.opt.spelllang = { "en_us" }
+vim.opt.autowrite = true
+vim.opt.completeopt = "menu,menuone,noselect"
+vim.loader.enable()
