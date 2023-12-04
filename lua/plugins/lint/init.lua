@@ -6,6 +6,7 @@ lint.linters_by_ft = {
 		cpp = { "cpplint" },
 		js = { "standardjs" },
 		css = { "stylecss" },
+		tex = { "vale" },
 	},
 }
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {

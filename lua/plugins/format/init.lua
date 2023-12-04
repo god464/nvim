@@ -10,8 +10,10 @@ format.setup({
 		c = { "clang_format" },
 		cpp = { "clang_format" },
 		js = { "standardjs" },
-		html = { "prettier" },
-		css = { "prettier" },
+		html = { "prettier", "prettierd" },
+		css = { "prettier", "prettierd" },
+		rust = { "rustfmt" },
+		tex = { "latexindent" },
 	},
 	format_on_save = {
 		lsp_fallback = true,
