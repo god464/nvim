@@ -61,14 +61,14 @@ require("lazy").setup({
 	{
 		"L3MON4D3/LuaSnip",
 		build = "make install_jsregexp",
-		event = "VeryLazy",
+		event = { "InsertEnter", "CmdlineEnter", "VeryLazy" },
 		dependencies = {
 			"rafamadriz/friendly-snippets",
 		},
 	},
 	{
 		"hrsh7th/nvim-cmp",
-		event = { "InsertEnter", "VeryLazy" },
+		event = { "InsertEnter", "CmdlineEnter", "VeryLazy" },
 		dependencies = {
 			"hrsh7th/cmp-buffer",
 			"L3MON4D3/LuaSnip",
@@ -96,7 +96,7 @@ require("lazy").setup({
 	},
 	{
 		"kylechui/nvim-surround",
-		event = "VeryLazy",
+		event = { "InsertEnter", "VeryLazy" },
 	},
 	{
 		"nvim-tree/nvim-web-devicons",
