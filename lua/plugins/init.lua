@@ -11,6 +11,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
+	defaults = {
+		lazy = true,
+	},
+	checker = {
+		enabled = true,
+	},
 	{
 		"folke/tokyonight.nvim",
 	},
@@ -31,6 +37,7 @@ require("lazy").setup({
 	},
 	{
 		"neovim/nvim-lspconfig",
+		event = "VeryLazy",
 		dependencies = {
 			"williamboman/mason-lspconfig.nvim",
 			"williamboman/mason.nvim",
@@ -38,8 +45,8 @@ require("lazy").setup({
 	},
 	{
 		"stevearc/conform.nvim",
-		lazy = true,
 		cmd = "ConformInfo",
+		event = "VeryLazy",
 		dependencies = {
 			"williamboman/mason.nvim",
 		},
@@ -54,12 +61,14 @@ require("lazy").setup({
 	{
 		"L3MON4D3/LuaSnip",
 		build = "make install_jsregexp",
+		event = "VeryLazy",
 		dependencies = {
 			"rafamadriz/friendly-snippets",
 		},
 	},
 	{
 		"hrsh7th/nvim-cmp",
+		event = { "InsertEnter", "VeryLazy" },
 		dependencies = {
 			"hrsh7th/cmp-buffer",
 			"L3MON4D3/LuaSnip",
@@ -79,16 +88,19 @@ require("lazy").setup({
 	},
 	{
 		"nvim-lua/plenary.nvim",
-		lazy = true,
+		event = "VeryLazy",
 	},
 	{
 		"numToStr/Comment.nvim",
+		event = "VeryLazy",
 	},
 	{
 		"kylechui/nvim-surround",
+		event = "VeryLazy",
 	},
 	{
 		"nvim-tree/nvim-web-devicons",
+		event = "VeryLazy",
 	},
 	{
 		"dstein64/vim-startuptime",

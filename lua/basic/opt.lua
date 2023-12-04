@@ -1,4 +1,3 @@
-vim.loader.enable()
 local opt = {
 	encoding = "utf-8",
 	fileencodings = "utf-8 GBK",
