@@ -14,6 +14,7 @@ format.setup({
 		css = { "prettier", "prettierd" },
 		rust = { "rustfmt" },
 		tex = { "latexindent" },
+		cmake = { "cmake_format" },
 	},
 	format_on_save = {
 		lsp_fallback = true,
