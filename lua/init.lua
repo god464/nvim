@@ -15,3 +15,4 @@ defaults={
 	lazy=true,
 },
 })
+            vim.cmd([[colorscheme tokyonight]])
