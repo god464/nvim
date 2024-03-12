@@ -10,9 +10,9 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 vim.opt.rtp:prepend(lazypath)
-require("lazy").setup("plugins",{
-defaults={
-	lazy=true,
-},
+require("lazy").setup("plugins", {
+	defaults = {
+		lazy = true,
+	},
 })
-            vim.cmd([[colorscheme tokyonight]])
+vim.cmd([[colorscheme tokyonight]])
