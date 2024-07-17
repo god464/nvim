@@ -36,6 +36,6 @@ return {
                 },
             },
         },
-        config = function(_, opts) require("ibl").setup() end,
+        config = function() require("ibl").setup() end,
     },
 }
