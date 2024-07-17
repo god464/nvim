@@ -1,4 +1,4 @@
-local opt=vim.opt
+local opt = vim.opt
 opt.autowrite = true
 opt.backup = false
 opt.clipboard = "unnamedplus"
