@@ -10,14 +10,11 @@ local highlight = {
 return {
     {
         "folke/tokyonight.nvim",
+        lazy = false,
         opts = {
             style = "storm",
         },
-    },
-    {
-        "ellisonleao/gruvbox.nvim",
-        lazy = false,
-        config = function() vim.cmd([[colorscheme gruvbox]]) end,
+        config = function() vim.cmd([[colorscheme tokyonight-storm]]) end,
     },
     {
         "lukas-reineke/indent-blankline.nvim",
