@@ -1,5 +1,4 @@
 collapse_simple_statement = "Always"
-column_width = 80
 indent_type = "Spaces"
 line_endings = "Unix"
 

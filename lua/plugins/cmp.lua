@@ -9,11 +9,7 @@ return {
             "saadparwaiz1/cmp_luasnip",
         },
         opts = function()
-            vim.api.nvim_set_hl(
-                0,
-                "CmpGhostText",
-                { link = "Comment", default = true }
-            )
+            vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
             local cmp = require("cmp")
             local luasnip = require("luasnip")
             return {
@@ -36,12 +32,7 @@ return {
                             cmp.select_next_item()
                         elseif require("luasnip").expand_or_jumpable() then
                             vim.fn.feedkeys(
-                                vim.api.nvim_replace_termcodes(
-                                    "<Plug>luasnip-expand-or-jump",
-                                    true,
-                                    true,
-                                    true
-                                ),
+                                vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true),
                                 ""
                             )
                         else
@@ -53,12 +44,7 @@ return {
                             cmp.select_prev_item()
                         elseif require("luasnip").jumpable(-1) then
                             vim.fn.feedkeys(
-                                vim.api.nvim_replace_termcodes(
-                                    "<Plug>luasnip-jump-prev",
-                                    true,
-                                    true,
-                                    true
-                                ),
+                                vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true),
                                 ""
                             )
                         else
