@@ -1,17 +1,33 @@
 return {
     {
         "hrsh7th/nvim-cmp",
-        event = "InsertEnter",
+        event = { "InsertEnter", "CmdlineEnter" },
         dependencies = {
-            "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-path",
+            "hrsh7th/cmp-cmdline",
             "saadparwaiz1/cmp_luasnip",
         },
         opts = function()
             vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
             local cmp = require("cmp")
             local luasnip = require("luasnip")
+            cmp.setup.cmdline(":", {
+                mapping = cmp.mapping.preset.cmdline(),
+                sources = cmp.config.sources({
+                    { name = "path" },
+                }, {
+                    { name = "cmdline" },
+                }),
+                matching = { disallow_symbol_nonprefix_matching = false },
+            })
+            cmp.setup.cmdline({ "/", "?" }, {
+                mapping = cmp.mapping.preset.cmdline(),
+                sources = {
+                    { name = "buffer" },
+                },
+            })
             return {
                 snippets = {
                     expand = function(args) luasnip.lsp_expand(args.body) end,
