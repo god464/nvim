@@ -44,16 +44,16 @@ require("lazy").setup({
         rtp = {
             reset = false,
             disabled_plugins = {
+                "editorconfig",
                 "gzip",
                 "matchit",
                 "matchparen",
                 "netrwPlugin",
+                "osc52",
                 "tarPlugin",
                 "tohtml",
                 "tutor",
                 "zipPlugin",
-                "editorconfig",
-                "osc52",
             },
         },
     },
