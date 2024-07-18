@@ -1,4 +1,7 @@
+local g = vim.g
 local opt = vim.opt
+g.mapleader = " "
+g.maplocalleader = "\\"
 opt.autowrite = true
 opt.backup = false
 opt.clipboard = "unnamedplus"
@@ -24,5 +27,6 @@ opt.splitkeep = "screen"
 opt.splitright = true
 opt.swapfile = false
 opt.tabstop = 4
+opt.termguicolors = true
 opt.undofile = true
 opt.virtualedit = "block"

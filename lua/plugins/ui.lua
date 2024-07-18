@@ -1,12 +1,3 @@
-local highlight = {
-    "RainbowDelimiterRed",
-    "RainbowDelimiterYellow",
-    "RainbowDelimiterBlue",
-    "RainbowDelimiterOrange",
-    "RainbowDelimiterGreen",
-    "RainbowDelimiterViolet",
-    "RainbowDelimiterCyan",
-}
 return {
     {
         "folke/tokyonight.nvim",
@@ -27,7 +18,6 @@ return {
             scope = {
                 show_start = false,
                 show_end = false,
-                highlight = highlight,
             },
             exclude = {
                 filetypes = {
