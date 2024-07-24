@@ -13,7 +13,7 @@ return {
             },
             treesitter = {
                 highlight = {
-                    backdrop = erue,
+                    backdrop = true,
                 },
             },
         },
@@ -43,10 +43,11 @@ return {
             { "gc", mode = { "n", "v" }, desc = "Comment toggle linewise" },
             { "gb", mode = { "n", "v" }, desc = "Comment toggle blockwise" },
         },
+        opts = {},
     },
     {
         "kylechui/nvim-surround",
-        event="VeryLazy",
-        opts={};
+        event = "VeryLazy",
+        opts = {},
     },
 }
