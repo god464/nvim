@@ -55,7 +55,8 @@ return {
     },
     {
         "willothy/wezterm.nvim",
-        cond = vim.env.TERM == "wezterm",
+        cond = vim.env.TERM == "xterm-256color",
+        event = "CmdlineEnter",
         cmds = {
             "WeztermSpawn",
         },

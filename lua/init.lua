@@ -49,7 +49,6 @@ require("lazy").setup({
                 "matchit",
                 "matchparen",
                 "netrwPlugin",
-                "osc52",
                 "tarPlugin",
                 "tohtml",
                 "tutor",

@@ -2,10 +2,31 @@ return {
     {
         "neovim/nvim-lspconfig",
         event = "FileType",
-        config = function()
+        opts = function()
+            return {
+                servers = {
+                    lua_ls = {
+                        settings = {
+                            Lua = {
+                                hint = { enable = true, paramType = true, setType = true },
+                                completion = { callSnippet = "Both", keywordSnippet = "Both" },
+                            },
+                        },
+                    },
+                    clangd = {},
+                },
+            }
+        end,
+        config = function(_, opts)
             local lspconfig = require("lspconfig")
-            lspconfig.lua_ls.setup({})
-            lspconfig.clangd.setup({})
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
+            vim.lsp.inlay_hint.enable(true)
+            for server, config in pairs(opts.servers) do
+                lspconfig[server].setup(vim.tbl_extend("force", {
+                    capabilities = capabilities,
+                    config = config,
+                }, config))
+            end
         end,
     },
     {
