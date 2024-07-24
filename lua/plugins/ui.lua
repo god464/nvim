@@ -5,6 +5,11 @@ return {
         priority = 1000,
         opts = {
             style = "storm",
+            transparent = true,
+            styles = {
+                sidebars = "transparent",
+                floats = "transparent",
+            },
         },
         config = function() vim.cmd([[colorscheme tokyonight-storm]]) end,
     },
@@ -28,5 +33,9 @@ return {
             },
         },
         config = function() require("ibl").setup() end,
+    },
+    {
+        "HiPhish/rainbow-delimiters.nvim",
+        event = "VeryLazy",
     },
 }
