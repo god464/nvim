@@ -49,11 +49,16 @@ return {
   },
   {
     "p00f/clangd_extensions.nvim",
-    ft = "c",
+    ft = { "c", "cpp" },
     opts = {
       inlay_hints = {
         inline = true,
       },
     },
+  },
+  {
+    "Civitasv/cmake-tools.nvim",
+    ft = { "c", "cpp", "cmake" },
+    opts = {},
   },
 }
