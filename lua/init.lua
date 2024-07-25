@@ -53,6 +53,8 @@ require("lazy").setup({
         "tohtml",
         "tutor",
         "zipPlugin",
+        "fzf",
+        "rplugin",
       },
     },
   },
