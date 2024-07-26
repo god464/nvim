@@ -44,6 +44,7 @@ require("lazy").setup({
     rtp = {
       reset = true,
       disabled_plugins = {
+        "osc52",
         "gzip",
         "matchit",
         "matchparen",
@@ -56,4 +57,4 @@ require("lazy").setup({
     },
   },
 })
-vim.keymap.set("n", "<leader>p", "<Cmd>Lazy<CR>", { desc = "Lazy" })
+vim.keymap.set("n", "<leader>L", "<Cmd>Lazy<CR>", { desc = "Lazy" })

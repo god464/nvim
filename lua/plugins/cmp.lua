@@ -8,11 +8,13 @@ return {
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
       "saadparwaiz1/cmp_luasnip",
+      "onsails/lspkind.nvim",
     },
     opts = function()
       vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
       local cmp = require("cmp")
       local luasnip = require("luasnip")
+      local lspkind = require("lspkind")
       cmp.setup.cmdline(":", {
         mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources({ name = "path" }, {
@@ -59,6 +61,16 @@ return {
       end
       return {
         snippets = { expand = expand_snippet },
+        window = {
+          completion = {
+            winblend = 0,
+            border = "rounded",
+            col_offset = -3,
+          },
+          documentation = {
+            border = "rounded",
+          },
+        },
         mapping = key_mappings(),
         sources = cmp.config.sources({
           { name = "lazydev", group_index = 0 },
@@ -67,6 +79,12 @@ return {
           { name = "path" },
           { name = "buffer" },
         }),
+        formatting = {
+          format = lspkind.cmp_format({
+            mode = "symbol",
+            show_labelDetails = true,
+          }),
+        },
       }
     end,
   },
