@@ -42,9 +42,8 @@ require("lazy").setup({
   checker = { enabled = true },
   performance = {
     rtp = {
-      reset = false,
+      reset = true,
       disabled_plugins = {
-        "editorconfig",
         "gzip",
         "matchit",
         "matchparen",
@@ -53,9 +52,8 @@ require("lazy").setup({
         "tohtml",
         "tutor",
         "zipPlugin",
-        "fzf",
-        "rplugin",
       },
     },
   },
 })
+vim.keymap.set("n", "<leader>p", "<Cmd>Lazy<CR>", { desc = "Lazy" })

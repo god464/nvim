@@ -15,24 +15,18 @@ return {
       local luasnip = require("luasnip")
       cmp.setup.cmdline(":", {
         mapping = cmp.mapping.preset.cmdline(),
-        sources = cmp.config.sources({
-          { name = "path" },
-        }, {
+        sources = cmp.config.sources({ name = "path" }, {
           { name = "cmdline" },
         }),
         matching = { disallow_symbol_nonprefix_matching = false },
       })
       cmp.setup.cmdline({ "/", "?" }, {
         mapping = cmp.mapping.preset.cmdline(),
-        sources = {
-          { name = "buffer" },
-        },
+        sources = { { name = "buffer" } },
       })
-      return {
-        snippets = {
-          expand = function(args) luasnip.lsp_expand(args.body) end,
-        },
-        mapping = {
+      local function expand_snippet(args) luasnip.lsp_expand(args.body) end
+      local function key_mappings()
+        return {
           ["<C-p>"] = cmp.mapping.select_prev_item(),
           ["<C-n>"] = cmp.mapping.select_next_item(),
           ["<C-d>"] = cmp.mapping.scroll_docs(-4),
@@ -46,7 +40,7 @@ return {
           ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
-            elseif require("luasnip").expand_or_jumpable() then
+            elseif luasnip.expand_or_jumpable() then
               vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
             else
               fallback()
@@ -55,18 +49,22 @@ return {
           ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_prev_item()
-            elseif require("luasnip").jumpable(-1) then
+            elseif luasnip.jumpable(-1) then
               vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
             else
               fallback()
             end
           end, { "i", "s" }),
-        },
+        }
+      end
+      return {
+        snippets = { expand = expand_snippet },
+        mapping = key_mappings(),
         sources = cmp.config.sources({
+          { name = "lazydev", group_index = 0 },
           { name = "nvim_lsp" },
           { name = "luasnip" },
           { name = "path" },
-        }, {
           { name = "buffer" },
         }),
       }

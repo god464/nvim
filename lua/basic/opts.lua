@@ -30,3 +30,5 @@ opt.tabstop = 4
 opt.termguicolors = true
 opt.undofile = true
 opt.virtualedit = "block"
+opt.spell = true
+opt.spelllang = "en_us"
