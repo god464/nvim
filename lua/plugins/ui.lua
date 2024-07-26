@@ -19,13 +19,46 @@ return {
       "HiPhish/rainbow-delimiters.nvim",
     },
     main = "ibl",
-    opts = {},
+    opts = {
+      exclude = {
+        filetypes = {
+          "help",
+          "alpha",
+          "dashboard",
+          "neo-tree",
+          "Trouble",
+          "trouble",
+          "lazy",
+          "mason",
+          "notify",
+          "toggleterm",
+          "lazyterm",
+        },
+      },
+    },
   },
-
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     event = "VeryLazy",
+    opts = {},
+  },
+  {
+    "folke/trouble.nvim",
+    cmd = "Trouble",
+    event = "VeryLazy",
+    keys = {
+      {
+        "<leader>q",
+        function() require("trouble").toggle("quickfix") end,
+        desc = "Quickfix",
+      },
+      {
+        "<leader>p",
+        "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+        desc = "Buffer Diagnostics (Trouble)",
+      },
+    },
     opts = {},
   },
 }

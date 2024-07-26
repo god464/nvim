@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    event = "FileType",
+    event = "VeryLazy",
     opts = {
       default_format_opts = {
         timeout_ms = 3000,
@@ -21,7 +21,7 @@ return {
   },
   {
     "mfussenegger/nvim-lint",
-    event = "FileType",
+    event = "VeryLazy",
     config = function()
       local lint = require("lint")
       lint.linters_by_ft = {
