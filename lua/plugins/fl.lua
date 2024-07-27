@@ -1,12 +1,10 @@
 return {
   {
     "stevearc/conform.nvim",
-    event = "VeryLazy",
+    event = "LspAttach",
     opts = {
       default_format_opts = {
         timeout_ms = 3000,
-        async = false,
-        quiet = false,
         lsp_format = "fallback",
       },
       formatters_by_ft = {
@@ -21,7 +19,7 @@ return {
   },
   {
     "mfussenegger/nvim-lint",
-    event = "VeryLazy",
+    event = "LspAttach",
     config = function()
       local lint = require("lint")
       lint.linters_by_ft = {

@@ -1,7 +1,7 @@
 return {
   {
     "folke/tokyonight.nvim",
-    event = "VeryLazy",
+    event = "UIEnter",
     opts = {
       style = "storm",
       transparent = true,
@@ -39,7 +39,7 @@ return {
   },
   {
     "folke/todo-comments.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = { "nvim-lua/plenary.nvim", "folke/trouble.nvim" },
     event = "VeryLazy",
     opts = {},
   },
@@ -59,6 +59,9 @@ return {
         desc = "Buffer Diagnostics (Trouble)",
       },
     },
-    opts = {},
+    opts = {
+      auto_close = true,
+      auto_jump = true,
+    },
   },
 }

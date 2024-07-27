@@ -64,4 +64,8 @@ return {
     ft = { "c", "cpp", "cmake" },
     opts = {},
   },
+  {
+    "mrcjkb/rustaceanvim",
+    ft = "rs",
+  },
 }
