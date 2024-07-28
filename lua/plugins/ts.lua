@@ -21,6 +21,16 @@ return {
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
     },
+    event = "VeryLazy",
+    opts = {
+      select = {
+        lookahead = true,
+        include_surrounding_whitespace = true,
+      },
+      move = {
+        set_jumps = true,
+      },
+    },
     -- TODO Adding more options
   },
   {
