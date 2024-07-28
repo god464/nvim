@@ -25,6 +25,9 @@ return {
   },
   {
     "JoosepAlviste/nvim-ts-context-commentstring",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
     event = "VeryLazy",
     opts = {},
   },
@@ -49,5 +52,11 @@ return {
     opts = {
       use_default_keymaps = false,
     },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    event = "VeryLazy",
+    opts = { mode = "topline" },
+    keys = { { "<leader>tc", "<Cmd>TSContextToggle<CR>", desc = "Treesitter Context" } },
   },
 }

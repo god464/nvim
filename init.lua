@@ -1,3 +1,3 @@
-vim.loader.enable()
 require("basic")
+vim.loader.enable()
 require("init")
