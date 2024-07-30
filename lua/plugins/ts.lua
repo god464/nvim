@@ -2,8 +2,8 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     branch = "main",
-    build = ":TSUpdate",
     event = "VeryLazy",
+    build = ":TSUpdate",
     cmd = { "TSUpdateSync", "TSUpdate", "TSInstallFromGrammar" },
     opts = {
       hightlight = {
