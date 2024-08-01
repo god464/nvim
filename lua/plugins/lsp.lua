@@ -8,8 +8,15 @@ return {
           lua_ls = {
             settings = {
               Lua = {
-                hint = { enable = true, paramType = true, setType = true },
-                completion = { callSnippet = "Both", keywordSnippet = "Both" },
+                hint = {
+                  enable = true,
+                  paramType = true,
+                  setType = true,
+                },
+                completion = {
+                  callSnippet = "Both",
+                  keywordSnippet = "Both",
+                },
                 codeLens = { enable = true },
               },
             },
@@ -75,7 +82,7 @@ return {
   },
   {
     "mrcjkb/rustaceanvim",
-    ft = "rs",
-    opts = {},
+    dependencies = { "nvim/nvim-lspconfig" },
+    ft = "rust",
   },
 }

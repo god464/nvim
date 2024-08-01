@@ -1,11 +1,15 @@
 return {
   {
-    "gbprod/nord.nvim",
+    "folke/tokyonight.nvim",
     event = "UIEnter",
     opts = {
       transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
     },
-    config = function() vim.cmd([[colorscheme nord]]) end,
+    config = function() vim.cmd([[colorscheme tokyonight]]) end,
   },
   {
     "lukas-reineke/indent-blankline.nvim",

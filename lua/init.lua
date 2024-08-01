@@ -33,7 +33,7 @@ require("lazy").setup({
   },
   install = {
     missing = true,
-    colorscheme = { "nord" },
+    colorscheme = { "tokyonight-storm" },
   },
   rocks = {
     root = vim.fn.stdpath("data") .. "/lazy-rocks",

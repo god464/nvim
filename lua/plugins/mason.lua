@@ -1,8 +1,6 @@
 return {
   {
     "williamboman/mason.nvim",
-    event = "VeryLazy",
-    opts = {},
     keys = {
       { "<leader>M", "<Cmd>Mason<CR>", desc = "Exec Mason" },
     },
@@ -13,6 +11,7 @@ return {
       "neovim/nvim-lspconfig",
       "williamboman/mason.nvim",
     },
+    event = "LspAttach",
     opts = {
       automatic_installation = true,
     },
