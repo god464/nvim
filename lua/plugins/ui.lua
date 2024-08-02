@@ -3,13 +3,14 @@ return {
     "folke/tokyonight.nvim",
     event = "UIEnter",
     opts = {
+      style = "storm",
       transparent = true,
       styles = {
         sidebars = "transparent",
         floats = "transparent",
       },
     },
-    config = function() vim.cmd([[colorscheme tokyonight]]) end,
+    config = function() vim.cmd([[colorscheme tokyonight-storm]]) end,
   },
   {
     "lukas-reineke/indent-blankline.nvim",
