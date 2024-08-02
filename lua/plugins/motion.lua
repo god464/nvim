@@ -48,7 +48,6 @@ return {
   {
     "numToStr/Comment.nvim",
     event = "VeryLazy",
-    init = function() vim.keymap.del("n", "gcc") end,
     keys = {
       { "gc", mode = { "n", "v" }, desc = "Comment toggle linewise" },
       { "gb", mode = { "n", "v" }, desc = "Comment toggle blockwise" },

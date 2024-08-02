@@ -11,6 +11,7 @@ return {
         lua = { "stylua" },
         c = { "clang-format" },
         cpp = { "clang-format" },
+        rust = { "rustfmt", lsp_format = "fallback" },
       },
       format_on_save = {
         timeout_ms = 100,
