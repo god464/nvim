@@ -22,6 +22,7 @@ return {
             },
           },
           clangd = {},
+          cmake = {},
         },
       }
     end,
