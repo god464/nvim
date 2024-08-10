@@ -27,6 +27,7 @@ return {
         lua = { "selene" },
         c = { "clangtidy" },
         cpp = { "clangtidy" },
+        rust = { "clippy" },
       }
     end,
   },

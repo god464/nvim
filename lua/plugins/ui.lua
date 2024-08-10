@@ -63,5 +63,23 @@ return {
       auto_close = true,
       auto_jump = true,
     },
+    {
+      "stevearc/oil.nvim",
+      dependencies = {
+        "nvim-tree/nvim-web-devicons",
+        "echasnovski/mini.icons",
+      },
+      event = "VeryLazy",
+      keys = {
+        {
+          "<Leader>o",
+          function() require("oil").open() end,
+          desc = "Open parent directory",
+        },
+      },
+      opts = {
+        skip_confirm_for_simple_edits = true,
+      },
+    },
   },
 }
