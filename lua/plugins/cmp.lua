@@ -62,14 +62,8 @@ return {
       return {
         snippets = { expand = expand_snippet },
         window = {
-          completion = {
-            winblend = 0,
-            border = "rounded",
-            col_offset = -3,
-          },
-          documentation = {
-            border = "rounded",
-          },
+          completion = { winblend = 0, border = "rounded", col_offset = -3 },
+          documentation = { border = "rounded" },
         },
         mapping = key_mappings(),
         sources = cmp.config.sources({
@@ -79,12 +73,7 @@ return {
           { name = "path" },
           { name = "buffer" },
         }),
-        formatting = {
-          format = lspkind.cmp_format({
-            mode = "symbol",
-            show_labelDetails = true,
-          }),
-        },
+        formatting = { format = lspkind.cmp_format({ mode = "symbol", show_labelDetails = true }) },
       }
     end,
   },
@@ -93,10 +82,6 @@ return {
     event = "InsertEnter",
     dependencies = { "rafamadriz/friendly-snippets" },
     build = "make install_jsregexp",
-    opts = function()
-      return {
-        require("luasnip.loaders.from_vscode").lazy_load(),
-      }
-    end,
+    opts = function() return { require("luasnip.loaders.from_vscode").lazy_load() } end,
   },
 }

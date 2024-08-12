@@ -2,22 +2,13 @@ return {
   {
     "folke/tokyonight.nvim",
     event = "UIEnter",
-    opts = {
-      style = "storm",
-      transparent = true,
-      styles = {
-        sidebars = "transparent",
-        floats = "transparent",
-      },
-    },
+    opts = { style = "storm", transparent = true, styles = { sidebars = "transparent", floats = "transparent" } },
     config = function() vim.cmd([[colorscheme tokyonight-storm]]) end,
   },
   {
     "lukas-reineke/indent-blankline.nvim",
     event = "VeryLazy",
-    dependencies = {
-      "HiPhish/rainbow-delimiters.nvim",
-    },
+    dependencies = { "HiPhish/rainbow-delimiters.nvim" },
     main = "ibl",
     opts = {
       exclude = {
@@ -48,38 +39,16 @@ return {
     cmd = "Trouble",
     event = "VeryLazy",
     keys = {
-      {
-        "<leader>q",
-        function() require("trouble").toggle("quickfix") end,
-        desc = "Quickfix",
-      },
-      {
-        "<leader>p",
-        "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-        desc = "Buffer Diagnostics (Trouble)",
-      },
+      { "<leader>q", function() require("trouble").toggle("quickfix") end, desc = "Quickfix" },
+      { "<leader>p", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics (Trouble)" },
     },
-    opts = {
-      auto_close = true,
-      auto_jump = true,
-    },
-    {
-      "stevearc/oil.nvim",
-      dependencies = {
-        "nvim-tree/nvim-web-devicons",
-        "echasnovski/mini.icons",
-      },
-      event = "VeryLazy",
-      keys = {
-        {
-          "<Leader>o",
-          function() require("oil").open() end,
-          desc = "Open parent directory",
-        },
-      },
-      opts = {
-        skip_confirm_for_simple_edits = true,
-      },
-    },
+    opts = { auto_close = true, auto_jump = true },
+  },
+  {
+    "nvim-tree/nvim-tree.lua",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    event = "UIEnter",
+    opts = { view = { float = { open_win_config = { border = "rounded" } } } },
+    keys = { { "<Leader>op", "<cmd>NvimTreeToggle<CR>", desc = "File Explorer" } },
   },
 }

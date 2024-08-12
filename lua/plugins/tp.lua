@@ -13,17 +13,7 @@ return {
     cmd = "Telescope",
     event = "VeryLazy",
     opts = {
-      pickers = {
-        find_files = {
-          theme = "ivy",
-        },
-        oldfiles = {
-          theme = "ivy",
-        },
-        jumplist = {
-          theme = "dropdown",
-        },
-      },
+      pickers = { find_files = { theme = "ivy" }, oldfiles = { theme = "ivy" }, jumplist = { theme = "dropdown" } },
     },
   },
 }

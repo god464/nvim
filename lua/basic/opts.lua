@@ -1,7 +1,10 @@
 local g = vim.g
 local opt = vim.opt
+
 g.mapleader = " "
 g.maplocalleader = "\\"
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
 opt.autowrite = true
 opt.backup = false
 opt.clipboard = "unnamedplus"
@@ -32,3 +35,4 @@ opt.undofile = true
 opt.virtualedit = "block"
 opt.spell = true
 opt.spelllang = "en_us"
+opt.termguicolors = true
