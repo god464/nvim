@@ -10,9 +10,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
     branch = "main",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-    },
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
     event = "VeryLazy",
     opts = { select = { lookahead = true, include_surrounding_whitespace = true }, move = { set_jumps = true } },
     -- TODO Adding more options

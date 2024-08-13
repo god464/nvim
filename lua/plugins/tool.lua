@@ -3,7 +3,7 @@ return {
     "stevearc/conform.nvim",
     event = "LspAttach",
     opts = {
-      default_format_opts = { timeout_ms = 3000, lsp_format = "fallback" },
+      default_format_opts = { timeout_ms = 3000 },
       formatters_by_ft = {
         lua = { "stylua" },
         c = { "clang-format" },
