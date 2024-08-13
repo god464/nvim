@@ -2,7 +2,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     branch = "main",
-    event = "VeryLazy",
+    event = "UIEnter",
     build = ":TSUpdate",
     cmd = { "TSUpdateSync", "TSUpdate", "TSInstallFromGrammar" },
     opts = { hightlight = { enable = true }, indent = { enable = true }, auto_install = true },

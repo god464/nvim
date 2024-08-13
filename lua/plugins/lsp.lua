@@ -22,7 +22,6 @@ return {
     config = function(_, opts)
       local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      require("lspconfig.ui.windows").default_options.border = "rounded"
       vim.lsp.inlay_hint.enable(true)
       for server, config in pairs(opts.servers) do
         lspconfig[server].setup(vim.tbl_extend("force", { capabilities = capabilities }, config))
@@ -44,11 +43,7 @@ return {
   {
     "p00f/clangd_extensions.nvim",
     ft = { "c", "cpp" },
-    opts = {
-      inlay_hints = { inline = true },
-      memory_usage = { border = "rounded" },
-      symbol_info = { border = "rounded" },
-    },
+    opts = { inlay_hints = { inline = true } },
   },
   {
     "Civitasv/cmake-tools.nvim",

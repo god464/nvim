@@ -48,7 +48,12 @@ return {
     "nvim-tree/nvim-tree.lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     event = "UIEnter",
-    opts = { view = { float = { open_win_config = { border = "rounded" } } } },
+    opts = {},
     keys = { { "<Leader>op", "<cmd>NvimTreeToggle<CR>", desc = "File Explorer" } },
+  },
+  {
+    "stevearc/dressing.nvim",
+    opts = {},
+    event = "UIEnter",
   },
 }

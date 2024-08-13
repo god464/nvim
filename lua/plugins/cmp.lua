@@ -53,10 +53,6 @@ return {
       end
       return {
         snippets = { expand = expand_snippet },
-        window = {
-          completion = { winblend = 0, border = "rounded", col_offset = -3 },
-          documentation = { border = "rounded" },
-        },
         mapping = key_mappings(),
         sources = cmp.config.sources({
           { name = "luasnip" },
