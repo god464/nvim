@@ -1,33 +1,30 @@
 return {
   {
-    "folke/tokyonight.nvim",
+    "catppuccin/nvim",
     event = "UIEnter",
-    opts = { style = "storm", transparent = true, styles = { sidebars = "transparent", floats = "transparent" } },
-    config = function() vim.cmd([[colorscheme tokyonight-storm]]) end,
-  },
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    event = "VeryLazy",
-    dependencies = { "HiPhish/rainbow-delimiters.nvim" },
-    main = "ibl",
+    name = "catppuccin",
     opts = {
-      exclude = {
-        filetypes = {
-          "help",
-          "alpha",
-          "dashboard",
-          "neo-tree",
-          "Trouble",
-          "trouble",
-          "lazy",
-          "mason",
-          "notify",
-          "toggleterm",
-          "lazyterm",
-        },
+      term_colors = true,
+      integrations = {
+        mini = { indentscope_color = "lavender" },
+        mason = true,
+        noice = true,
+        nvim_surround = true,
+        lsp_trouble = true,
+        which_key = true,
       },
     },
+    config = function(_, opts)
+      require("catppuccin").setup(opts)
+      vim.cmd.colorscheme("catppuccin")
+    end,
   },
+  {
+    "echasnovski/mini.indentscope",
+    event = "VeryLazy",
+    opts = {},
+  },
+
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "folke/trouble.nvim" },

@@ -53,8 +53,8 @@ return {
   },
   {
     "mrcjkb/rustaceanvim",
-    lazy = false,
     dependencies = { "nvim/nvim-lspconfig" },
+    lazy = false,
     ft = "rust",
   },
 }

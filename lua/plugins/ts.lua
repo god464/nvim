@@ -5,7 +5,11 @@ return {
     event = "UIEnter",
     build = ":TSUpdate",
     cmd = { "TSUpdateSync", "TSUpdate", "TSInstallFromGrammar" },
-    opts = { hightlight = { enable = true }, indent = { enable = true }, auto_install = true },
+    opts = {
+      hightlight = { enable = true, additional_vim_regex_highlighting = false },
+      indent = { enable = true },
+      auto_install = true,
+    },
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
