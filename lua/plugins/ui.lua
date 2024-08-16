@@ -22,7 +22,15 @@ return {
   {
     "echasnovski/mini.indentscope",
     event = "VeryLazy",
-    opts = {},
+    opts = {
+      options = { try_as_border = true },
+    },
+    init = function()
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = { "lazy", "trouble", "notify", "NvimTree", "mason", "help" },
+        callback = function() vim.b.miniindentscope_disable = true end,
+      })
+    end,
   },
 
   {
