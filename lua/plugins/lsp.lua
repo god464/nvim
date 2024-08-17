@@ -24,7 +24,7 @@ return {
     end,
     config = function(_, opts)
       local lspconfig = require("lspconfig")
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      local capabilities = require("perset.capabilities")
       vim.lsp.inlay_hint.enable(true)
       for server, config in pairs(opts.servers) do
         lspconfig[server].setup(vim.tbl_extend("force", { capabilities = capabilities }, config))
