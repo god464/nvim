@@ -4,11 +4,13 @@ return {
     event = { "InsertEnter", "CmdlineEnter" },
     dependencies = {
       "hrsh7th/cmp-buffer",
-      { "hrsh7th/cmp-nvim-lsp", dependencies = { "nvim/nvim-lspconfig" } },
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-nvim-lsp-signature-help",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
       "saadparwaiz1/cmp_luasnip",
       "onsails/lspkind.nvim",
+      "lukas-reineke/cmp-under-comparator",
     },
     opts = function()
       vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
@@ -17,8 +19,7 @@ return {
       local lspkind = require("lspkind")
       cmp.setup.cmdline(":", {
         mapping = cmp.mapping.preset.cmdline(),
-        sources = cmp.config.sources({ name = "path" }, { { name = "cmdline" } }),
-        matching = { disallow_symbol_nonprefix_matching = false },
+        sources = cmp.config.sources({ name = "lazydev" }, { name = "path" }, { { name = "cmdline" } }),
       })
       cmp.setup.cmdline({ "/", "?" }, { mapping = cmp.mapping.preset.cmdline(), sources = { { name = "buffer" } } })
       local function expand_snippet(args) luasnip.lsp_expand(args.body) end
@@ -56,12 +57,25 @@ return {
         mapping = key_mappings(),
         sources = cmp.config.sources({
           { name = "luasnip" },
+          { name = "nvim_lsp_signature_help" },
           { name = "nvim_lsp" },
           { name = "lazydev", group_index = 0 },
           { name = "path" },
           { name = "buffer" },
         }),
         formatting = { format = lspkind.cmp_format({ mode = "symbol", show_labelDetails = true }) },
+        sorting = {
+          comparators = {
+            cmp.config.compare.offset,
+            cmp.config.compare.exact,
+            cmp.config.compare.score,
+            require("cmp-under-comparator").under,
+            cmp.config.compare.kind,
+            cmp.config.compare.sort_text,
+            cmp.config.compare.length,
+            cmp.config.compare.order,
+          },
+        },
       }
     end,
   },

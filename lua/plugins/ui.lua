@@ -44,8 +44,8 @@ return {
     cmd = "Trouble",
     event = "VeryLazy",
     keys = {
-      { "<leader>q", function() require("trouble").toggle("quickfix") end, desc = "Quickfix" },
-      { "<leader>p", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics (Trouble)" },
+      { "<leader>Q", function() require("trouble").toggle("quickfix") end, desc = "Quickfix" },
+      { "<leader>P", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics (Trouble)" },
     },
     opts = { auto_close = true, auto_jump = true },
   },

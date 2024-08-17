@@ -8,7 +8,7 @@ return {
         lua = { "stylua" },
         c = { "clang-format" },
         cpp = { "clang-format" },
-        rust = { "rustfmt", lsp_format = "fallback" },
+        rust = { "rustfmt" },
       },
       format_on_save = { timeout_ms = 100 },
     },
@@ -18,7 +18,7 @@ return {
     event = "LspAttach",
     config = function()
       local lint = require("lint")
-      lint.linters_by_ft = { lua = { "selene" }, c = { "clangtidy" }, cpp = { "clangtidy" }, rust = { "clippy" } }
+      lint.linters_by_ft = { c = { "clangtidy" }, cpp = { "clangtidy" }, rust = { "clippy" } }
     end,
   },
   {

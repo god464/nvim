@@ -16,6 +16,9 @@ return {
           },
           clangd = {},
           cmake = {},
+          jsonls = {
+            settings = { json = { schemas = require("schemastore").json.schemas(), validate = { enable = true } } },
+          },
         },
       }
     end,
@@ -57,4 +60,5 @@ return {
     lazy = false,
     ft = "rust",
   },
+  { "b0o/SchemaStore.nvim", ft = { "json", "yaml" } },
 }
