@@ -1,6 +1,5 @@
 local g = vim.g
 local opt = vim.opt
-
 g.mapleader = " "
 g.maplocalleader = "\\"
 g.loaded_netrw = 1
@@ -17,6 +16,7 @@ opt.ignorecase = true
 opt.incsearch = true
 opt.list = true
 opt.mouse = "a"
+opt.mousemoveevent = true
 opt.number = true
 opt.relativenumber = true
 opt.shiftround = true
@@ -36,3 +36,6 @@ opt.virtualedit = "block"
 opt.spell = true
 opt.spelllang = "en_us"
 opt.termguicolors = true
+opt.title = true
+opt.linebreak = true
+opt.breakindent = true
