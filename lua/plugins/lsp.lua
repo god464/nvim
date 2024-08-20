@@ -1,6 +1,7 @@
 return {
   {
     "neovim/nvim-lspconfig",
+    dependencies = { "stevearc/dressing.nvim" },
     event = "FileType",
     opts = function()
       return {
@@ -15,7 +16,7 @@ return {
             },
           },
           clangd = {},
-          cmake = {},
+          neocmake = {},
           jsonls = {
             settings = { json = { schemas = require("schemastore").json.schemas(), validate = { enable = true } } },
           },
@@ -55,8 +56,8 @@ return {
   {
     "mrcjkb/rustaceanvim",
     dependencies = { "nvim/nvim-lspconfig" },
-    lazy = false,
     ft = "rust",
+    opts = {},
   },
   { "b0o/SchemaStore.nvim", ft = { "json", "yaml" } },
 }

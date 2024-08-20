@@ -1,7 +1,6 @@
 return {
   {
     "folke/flash.nvim",
-    event = "VeryLazy",
     opt = {
       modes = { search = { enabled = true, highlight = { backdrop = true } } },
       treesitter = { highlight = { backdrop = true } },
@@ -32,7 +31,6 @@ return {
   },
   {
     "kylechui/nvim-surround",
-    event = "VeryLazy",
     opts = {},
   },
 }

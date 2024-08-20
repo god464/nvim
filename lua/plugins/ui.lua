@@ -1,17 +1,30 @@
 return {
   {
     "catppuccin/nvim",
-    event = "UIEnter",
+    dependencies = {
+      "lukas-reineke/indent-blankline.nvim",
+      "williamboman/mason.nvim",
+      "folke/which-key.nvim",
+      "folke/trouble.nvim",
+      "nvim-telescope/telescope.nvim",
+      "nvim-treesitter/nvim-treesitter-textobjects",
+      "nvim-tree/nvim-tree.lua",
+      "kylechui/nvim-surround",
+      "neovim/nvim-lspconfig",
+      "hrsh7th/nvim-cmp",
+      "folke/flash.nvim",
+    },
     name = "catppuccin",
     opts = {
       term_colors = true,
       integrations = {
-        mini = { indentscope_color = "lavender" },
         mason = true,
         noice = true,
+        notify = true,
         nvim_surround = true,
         lsp_trouble = true,
         which_key = true,
+        indent_blankline = { colored_indent_levels = true },
       },
     },
     config = function(_, opts)
@@ -20,16 +33,50 @@ return {
     end,
   },
   {
-    "echasnovski/mini.indentscope",
-    event = "VeryLazy",
-    opts = {
-      options = { try_as_border = true },
-    },
-    init = function()
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = { "lazy", "trouble", "notify", "NvimTree", "mason", "help" },
-        callback = function() vim.b.miniindentscope_disable = true end,
-      })
+    "lukas-reineke/indent-blankline.nvim",
+    dependencies = { "HiPhish/rainbow-delimiters.nvim" },
+    opts = function()
+      local highlight = {
+        "RainbowDelimiterRed",
+        "RainbowDelimiterYellow",
+        "RainbowDelimiterBlue",
+        "RainbowDelimiterOrange",
+        "RainbowDelimiterGreen",
+        "RainbowDelimiterViolet",
+        "RainbowDelimiterCyan",
+      }
+      return {
+        scope = { show_exact_scope = true, highlight = highlight },
+        whitespace = { highlight = highlight },
+        exclude = { filetypes = { "help", "NvimTree", "trouble", "Trouble", "lazy", "mason", "notify" } },
+      }
+    end,
+    config = function(_, opts)
+      local rainbow_delimiters = require("rainbow-delimiters")
+      local ibl = require("ibl")
+      local hooks = require("ibl.hooks")
+      if vim.fn.expand("%:p") ~= "" then vim.cmd.edit({ bang = true }) end
+      ibl.setup(opts)
+      vim.g.rainbow_delimiters = {
+        strategy = {
+          [""] = rainbow_delimiters.strategy["global"],
+          vim = rainbow_delimiters.strategy["local"],
+        },
+        query = {
+          [""] = "rainbow-delimiters",
+          lua = "rainbow-blocks",
+        },
+        highlight = {
+          "RainbowDelimiterRed",
+          "RainbowDelimiterYellow",
+          "RainbowDelimiterBlue",
+          "RainbowDelimiterOrange",
+          "RainbowDelimiterGreen",
+          "RainbowDelimiterViolet",
+          "RainbowDelimiterCyan",
+        },
+      }
+      hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
     end,
   },
   {
@@ -51,42 +98,44 @@ return {
   {
     "nvim-tree/nvim-tree.lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    event = "VeryLazy",
+    cmd = "NvimTreeToggle",
     opts = {},
     keys = { { "<Leader>op", "<cmd>NvimTreeToggle<CR>", desc = "File Explorer" } },
   },
   {
     "stevearc/dressing.nvim",
-    lazy = false,
     opts = {},
   },
   {
     "nvim-lualine/lualine.nvim",
     event = "UIEnter",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = { extensions = { "lazy", "nvim-tree", "trouble", "mason", "quickfix" } },
+    dependencies = { "nvim-tree/nvim-web-devicons", "catppuccin/nvim" },
+    opts = { options = { theme = "catppuccin" }, extensions = { "lazy", "nvim-tree", "trouble", "mason", "quickfix" } },
   },
   {
     "akinsho/bufferline.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    dependencies = { "nvim-tree/nvim-web-devicons", "catppuccin/nvim" },
     event = "UIEnter",
-    opts = {
-      options = {
-        mode = "tabs",
-        hover = {
-          enabled = true,
-          delay = 0,
-          reveal = { "close" },
+    opts = function()
+      return {
+        options = {
+          hightlights = require("catppuccin.groups.integrations.bufferline").get(),
+          mode = "tabs",
+          hover = {
+            enabled = true,
+            delay = 0,
+            reveal = { "close" },
+          },
+          show_close_icon = true,
+          buffer_close_icon = "",
+          sort_by = "tabs",
+          diagnostics = "nvim_lsp",
+          diagnostics_indicator = function(count) return "(" .. count .. ")" end,
+          show_duplicate_prefix = false,
+          always_show_bufferline = false,
         },
-        show_close_icon = false,
-        buffer_close_icon = "",
-        sort_by = "tabs",
-        diagnostics = "nvim_lsp",
-        diagnostics_indicator = function(count) return "(" .. count .. ")" end,
-        show_duplicate_prefix = false,
-        always_show_bufferline = false,
-      },
-    },
+      }
+    end,
     keys = {
       { "<M-1>", "<Cmd>BufferLineGoToBuffer 1<CR>", desc = "Go to tab 1" },
       { "<M-2>", "<Cmd>BufferLineGoToBuffer 2<CR>", desc = "Go to tab 2" },
