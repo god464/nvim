@@ -20,6 +20,9 @@ return {
           jsonls = {
             settings = { json = { schemas = require("schemastore").json.schemas(), validate = { enable = true } } },
           },
+          yamlls = {
+            settings = { yaml = { schemas = require("schemastore").yaml.schemas(), validate = { enable = true } } },
+          },
         },
       }
     end,
