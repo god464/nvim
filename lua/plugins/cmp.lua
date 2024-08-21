@@ -20,7 +20,11 @@ return {
         mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources({ name = "lazydev" }, { name = "path" }, { { name = "cmdline" } }),
       })
-      cmp.setup.cmdline({ "/", "?" }, { mapping = cmp.mapping.preset.cmdline(), sources = { { name = "buffer" } } })
+      cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
+        sources = {
+          { name = "dap" },
+        },
+      })
       local function expand_snippet(args) luasnip.lsp_expand(args.body) end
       local function key_mappings()
         return {
