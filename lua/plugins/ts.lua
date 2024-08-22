@@ -1,7 +1,6 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    branch = "main",
     build = ":TSUpdate",
     cmd = { "TSUpdateSync", "TSUpdate", "TSInstallFromGrammar" },
     opts = {
@@ -12,7 +11,6 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
-    branch = "main",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     event = "VeryLazy",
     opts = { select = { lookahead = true, include_surrounding_whitespace = true }, move = { set_jumps = true } },
