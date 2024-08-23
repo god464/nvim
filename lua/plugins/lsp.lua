@@ -16,7 +16,6 @@ return {
             },
           },
           clangd = {},
-          neocmake = {},
           jsonls = {
             settings = { json = { schemas = require("schemastore").json.schemas(), validate = { enable = true } } },
           },
@@ -63,4 +62,9 @@ return {
     opts = {},
   },
   { "b0o/SchemaStore.nvim", ft = { "json", "yaml" } },
+  {
+    "saecki/crates.nvim",
+    event = { "BufRead Cargo.toml" },
+    opts = {},
+  },
 }

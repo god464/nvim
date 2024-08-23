@@ -12,6 +12,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
+    main = "nvim-treesitter.configs",
     event = "VeryLazy",
     opts = { select = { lookahead = true, include_surrounding_whitespace = true }, move = { set_jumps = true } },
   },
