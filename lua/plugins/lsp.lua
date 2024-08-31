@@ -2,7 +2,6 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = { "stevearc/dressing.nvim" },
-    event = "FileType",
     opts = function()
       return {
         servers = {
@@ -27,7 +26,7 @@ return {
     end,
     config = function(_, opts)
       local lspconfig = require("lspconfig")
-      local capabilities = require("perset.capabilities")
+      local capabilities = require("preset.capabilities")
       for server, config in pairs(opts.servers) do
         lspconfig[server].setup(vim.tbl_extend("force", { capabilities = capabilities }, config))
       end

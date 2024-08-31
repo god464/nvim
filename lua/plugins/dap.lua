@@ -2,7 +2,6 @@ return {
   {
     "mfussenegger/nvim-dap",
     dependencies = {
-      "jay-babu/mason-nvim-dap.nvim",
       "LiadOz/nvim-dap-repl-highlights",
       "theHamsta/nvim-dap-virtual-text",
       "rcarriga/nvim-dap-ui",
@@ -47,7 +46,7 @@ return {
       dap.configurations.cpp = {
         {
           name = "Launch",
-          type = "gdb",
+          type = "lldb",
           request = "launch",
           program = function() return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file") end,
           cwd = "${workspaceFolder}",
@@ -55,7 +54,7 @@ return {
         },
         {
           name = "Select and attach to process",
-          type = "gdb",
+          type = "lldb",
           request = "attach",
           program = function() return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file") end,
           pid = function()
@@ -66,7 +65,7 @@ return {
         },
         {
           name = "Attach to gdbserver :1234",
-          type = "gdb",
+          type = "lldb",
           request = "attach",
           target = "localhost:1234",
           program = function() return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file") end,

@@ -20,14 +20,10 @@ return {
         mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources({ name = "lazydev" }, { name = "path" }, { { name = "cmdline" } }),
       })
-      cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
-        sources = {
-          { name = "dap" },
-        },
-      })
-      local function expand_snippet(args) luasnip.lsp_expand(args.body) end
-      local function key_mappings()
-        return {
+      cmp.setup.cmdline({ "/" }, { mapping = cmp.mapping.preset.cmdline(), sources = { { name = "buffer" } } })
+      return {
+        snippets = { expand = function(args) luasnip.lsp_expand(args.body) end },
+        mapping = {
           ["<C-p>"] = cmp.mapping.select_prev_item(),
           ["<C-n>"] = cmp.mapping.select_next_item(),
           ["<C-d>"] = cmp.mapping.scroll_docs(-4),
@@ -53,16 +49,12 @@ return {
               fallback()
             end
           end, { "i", "s" }),
-        }
-      end
-      return {
-        snippets = { expand = expand_snippet },
-        mapping = key_mappings(),
+        },
         sources = cmp.config.sources({
+          { name = "lazydev", group_index = 0 },
           { name = "luasnip" },
           { name = "nvim_lsp_signature_help" },
           { name = "nvim_lsp" },
-          { name = "lazydev", group_index = 0 },
           { name = "path" },
           { name = "buffer" },
         }),
@@ -81,6 +73,15 @@ return {
           },
         },
       }
+    end,
+    config = function(_, opts)
+      local cmp = require("cmp")
+      cmp.setup(opts)
+      vim.api.nvim_create_autocmd("BufRead", {
+        desc = "Setup cmp buffer crates source",
+        pattern = "Cargo.toml",
+        callback = function() cmp.setup.buffer({ sources = { { name = "crates" } } }) end,
+      })
     end,
   },
   {

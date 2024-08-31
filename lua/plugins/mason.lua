@@ -7,10 +7,10 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     dependencies = { "neovim/nvim-lspconfig", "williamboman/mason.nvim" },
-    event = "VeryLazy",
+    event = "FileType",
     opts = function()
       local lspconfig = require("lspconfig")
-      local capabilities = require("perset.capabilities")
+      local capabilities = require("preset.capabilities")
       return {
         automatic_installation = true,
         handlers = {
@@ -32,5 +32,10 @@ return {
         },
       }
     end,
+  },
+  {
+    "jay-babu/mason-nvim-dap.nvim",
+    dependencies = { "mfussenegger/nvim-dap", "williamboman/mason.nvim" },
+    opts = { automatic_installation = true },
   },
 }
