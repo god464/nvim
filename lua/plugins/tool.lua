@@ -10,6 +10,7 @@ return {
         cpp = { "clang-format" },
         cmake = { "cmake_format" },
         rust = { "rustfmt" },
+        nix = { "nixfmt" },
       },
       format_on_save = { timeout_ms = 100 },
     },
