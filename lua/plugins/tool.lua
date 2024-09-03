@@ -11,6 +11,8 @@ return {
         cmake = { "cmake_format" },
         rust = { "rustfmt" },
         nix = { "nixfmt" },
+        yaml = { "yamlfmt" },
+        toml = { "taplo" },
       },
       format_on_save = { timeout_ms = 100 },
     },
