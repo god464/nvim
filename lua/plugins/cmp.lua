@@ -77,6 +77,7 @@ return {
     config = function(_, opts)
       local cmp = require("cmp")
       cmp.setup(opts)
+
       vim.api.nvim_create_autocmd("BufRead", {
         desc = "Setup cmp buffer crates source",
         pattern = "Cargo.toml",

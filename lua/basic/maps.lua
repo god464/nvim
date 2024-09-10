@@ -1,5 +1,6 @@
 local map = vim.keymap.set
 local del = vim.keymap.del
+
 map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
 map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
 map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })

@@ -11,6 +11,7 @@ return {
     opts = function()
       local lspconfig = require("lspconfig")
       local capabilities = require("preset.capabilities")
+
       return {
         automatic_installation = true,
         handlers = {

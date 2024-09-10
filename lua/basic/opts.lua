@@ -1,9 +1,15 @@
+local o = vim.o
 local g = vim.g
 local opt = vim.opt
+
+o.showtabline = 2
+o.tabline = " "
+
 g.mapleader = " "
 g.maplocalleader = "\\"
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
+
 opt.autowrite = true
 opt.backup = false
 opt.clipboard = "unnamedplus"

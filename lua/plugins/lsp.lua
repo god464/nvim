@@ -23,11 +23,11 @@ return {
           },
           nixd = {
             settings = {
-              nixpkgs = { expr = { 'import (builtins.getFlake "/home/cl/flake").inputs.nixpkgs {}' } },
+              nixpkgs = { expr = 'import (builtins.getFlake "/home/cl/flake").inputs.nixpkgs {}' },
               options = {
-                nixos = { expr = { '(builtins.getFlake "/home/cl/flake").nixosConfigurations.builder.options' } },
-                flake_parts = { expr = { '(builtins.getFlake "/home/cl/flake").debug.options' } },
-                flake_parts2 = { expr = { '(builtins.getFlake "/home/cl/flake").currentSystem.options' } },
+                nixos = { expr = '(builtins.getFlake "/home/cl/flake").nixosConfigurations.builder.options' },
+                flake_parts = { expr = '(builtins.getFlake "/home/cl/flake").debug.options' },
+                flake_parts2 = { expr = '(builtins.getFlake "/home/cl/flake").currentSystem.options' },
               },
             },
           },
@@ -38,6 +38,7 @@ return {
     config = function(_, opts)
       local lspconfig = require("lspconfig")
       local capabilities = require("preset.capabilities")
+
       for server, config in pairs(opts.servers) do
         lspconfig[server].setup(vim.tbl_extend("force", { capabilities = capabilities }, config))
       end
