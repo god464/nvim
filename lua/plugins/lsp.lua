@@ -23,7 +23,7 @@ return {
           },
           nixd = {
             settings = {
-              nixpkgs = { expr = "import <nixpkgs> {}" },
+              nixpkgs = { expr = { 'import (builtins.getFlake "/home/cl/flake").inputs.nixpkgs {}' } },
               options = {
                 nixos = { expr = { '(builtins.getFlake "/home/cl/flake").nixosConfigurations.builder.options' } },
                 flake_parts = { expr = { '(builtins.getFlake "/home/cl/flake").debug.options' } },
