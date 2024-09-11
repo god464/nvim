@@ -22,14 +22,14 @@ return {
             settings = { yaml = { schemas = require("schemastore").yaml.schemas(), validate = { enable = true } } },
           },
           nixd = {
-            settings = {
+            --[[ settings = {
               nixpkgs = { expr = 'import (builtins.getFlake "/home/cl/flake").inputs.nixpkgs {}' },
               options = {
                 nixos = { expr = '(builtins.getFlake "/home/cl/flake").nixosConfigurations.builder.options' },
                 flake_parts = { expr = '(builtins.getFlake "/home/cl/flake").debug.options' },
                 flake_parts2 = { expr = '(builtins.getFlake "/home/cl/flake").currentSystem.options' },
               },
-            },
+            }, ]]
           },
           taplo = {},
         },
