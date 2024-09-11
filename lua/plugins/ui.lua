@@ -100,7 +100,6 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     cmd = "NvimTreeToggle",
     opts = {
-      sync_root_with_cwd = true,
       respect_buf_cwd = true,
       renderer = {
         highlight_git = "icon",

@@ -1,6 +1,7 @@
 return {
   {
     "williamboman/mason.nvim",
+    cmd = { "Mason" },
     keys = { { "<leader>M", "<Cmd>Mason<CR>", desc = "Exec Mason" } },
     opts = {},
   },

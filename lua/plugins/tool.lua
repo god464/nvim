@@ -63,4 +63,16 @@ return {
       presets = { bottom_search = true, command_palette = true, long_message_to_split = true },
     },
   },
+  {
+    "kevinhwang91/nvim-ufo",
+    event = "VeryLazy",
+    dependencies = "kevinhwang91/promise-async",
+    opts = { close_fold_kinds_for_ft = { default = { "imports" } } },
+  },
+  {
+    "hedyhli/outline.nvim",
+    cmd = { "Outline" },
+    keys = { { "<leader>ol", "<Cmd>Outline<CR>", desc = "Outline" } },
+    opts = { preview_window = { live = true }, symbols = { icon_source = "lspkind" } },
+  },
 }

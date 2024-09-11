@@ -4,6 +4,10 @@ local opt = vim.opt
 
 o.showtabline = 2
 o.tabline = " "
+o.foldcolumn = "1"
+o.foldlevel = 99
+o.foldlevelstart = 99
+o.foldenable = true
 
 g.mapleader = " "
 g.maplocalleader = "\\"
