@@ -8,8 +8,9 @@ return {
           lua_ls = {
             settings = {
               Lua = {
-                hint = { enable = true, paramType = true, setType = true },
-                completion = { callSnippet = "Both", keywordSnippet = "Both" },
+                diagnostics = { workspaceEvent = "OnChange" },
+                hint = { enable = true, setType = true },
+                completion = { callSnippet = "Both", keywordSnippet = "Both", displayContext = 5 },
                 codeLens = { enable = true },
               },
             },
@@ -21,16 +22,7 @@ return {
           yamlls = {
             settings = { yaml = { schemas = require("schemastore").yaml.schemas(), validate = { enable = true } } },
           },
-          nixd = {
-            --[[ settings = {
-              nixpkgs = { expr = 'import (builtins.getFlake "/home/cl/flake").inputs.nixpkgs {}' },
-              options = {
-                nixos = { expr = '(builtins.getFlake "/home/cl/flake").nixosConfigurations.builder.options' },
-                flake_parts = { expr = '(builtins.getFlake "/home/cl/flake").debug.options' },
-                flake_parts2 = { expr = '(builtins.getFlake "/home/cl/flake").currentSystem.options' },
-              },
-            }, ]]
-          },
+          nixd = {},
           taplo = {},
         },
       }
