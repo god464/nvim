@@ -5,9 +5,9 @@ return {
     cmd = "Telescope",
     opts = {},
     keys = {
-      { "<Leader>ff", "<cmd>Telescope find_files<CR>", desc = "Search File" },
-      { "<Leader>fr", "<cmd>Telescope live_grep<CR>", desc = "Grep String" },
-      { "<Leader>fg", "<cmd>Telescope git_status<CR>", desc = "Git status" },
+      { "<Leader><space>f", "<cmd>Telescope find_files<CR>", desc = "Search File" },
+      { "<Leader><space>r", "<cmd>Telescope live_grep<CR>", desc = "Grep string" },
+      { "<Leader><space>b", "<cmd>Telescope file_browser<CR>", desc = "File browser" },
     },
   },
   {
@@ -16,5 +16,10 @@ return {
     build = "make",
     event = "VeryLazy",
     config = function() require("telescope").load_extension("fzf") end,
+  },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+    event = "VeryLazy",
   },
 }

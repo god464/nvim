@@ -25,7 +25,6 @@ return {
   {
     "Wansmer/treesj",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
-    event = "VeryLazy",
     keys = {
       { "gJ", function() require("treesj").join() end, desc = "Join lines" },
       { "gS", function() require("treesj").split() end, desc = "Split lines" },
@@ -34,7 +33,6 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter-context",
-    event = "VeryLazy",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     opts = { mode = "topline" },
     keys = { { "<leader>tc", "<Cmd>TSContextToggle<CR>", desc = "Treesitter Context" } },
