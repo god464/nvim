@@ -17,18 +17,14 @@ return {
         automatic_installation = true,
         handlers = {
           function(server) lspconfig[server].setup({ capabilities = capabilities }) end,
-          neocmake = function() end,
-          pylyzer = function()
-            lspconfig.pylyzer.setup({
+          neocmake = function()
+            lspconfig.neocmake.setup({
               capabilities = capabilities,
-              settings = {
-                python = {
-                  checkOnType = true,
-                  diagnostics = true,
-                  inlayHints = true,
-                  smartCompletion = true,
-                },
-              },
+            })
+          end,
+          basedpyright = function()
+            lspconfig.basedpyright.setup({
+              capabilities = capabilities,
             })
           end,
         },

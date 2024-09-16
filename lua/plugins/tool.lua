@@ -1,9 +1,10 @@
 return {
   {
     "stevearc/conform.nvim",
-    event = "LspAttach",
+    event = { "BufWritePre" },
+    cmd = { "ConformInfo" },
     opts = {
-      default_format_opts = { timeout_ms = 3000 },
+      default_format_opts = { timeout_ms = 500, lsp_format = "fallback" },
       formatters_by_ft = {
         lua = { "stylua" },
         c = { "clang-format" },
@@ -13,6 +14,7 @@ return {
         nix = { "nixfmt" },
         yaml = { "yamlfmt" },
         toml = { "taplo" },
+        python = { "isort", "black" },
       },
       format_on_save = { timeout_ms = 100 },
     },
@@ -22,8 +24,14 @@ return {
     event = "LspAttach",
     config = function()
       local lint = require("lint")
-      lint.linters_by_ft =
-        { c = { "clangtidy" }, cpp = { "clangtidy" }, rust = { "clippy" }, lua = { "selene" }, yaml = { "yamllint" } }
+      lint.linters_by_ft = {
+        c = { "clangtidy" },
+        cpp = { "clangtidy" },
+        rust = { "clippy" },
+        lua = { "selene" },
+        yaml = { "yamllint" },
+        python = { "ruff" },
+      }
     end,
   },
   {
