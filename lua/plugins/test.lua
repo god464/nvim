@@ -7,8 +7,9 @@ return {
       "antoinemadec/FixCursorHold.nvim",
       "nvim-treesitter/nvim-treesitter",
       "alfaix/neotest-gtest",
+      "nvim-neotest/neotest-python",
     },
-    opts = function() return { adapters = { require("neotest-gtest") } } end,
+    opts = function() return { adapters = { require("neotest-gtest"), require("neotest-python") } } end,
     keys = {
       { "<leader>Tr", function() require("neotest").run.run() end, desc = "Run" },
       { "<leader>Ts", function() require("neotest").run.stop() end, desc = "Stop" },
