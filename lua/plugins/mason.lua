@@ -14,7 +14,6 @@ return {
       local capabilities = require("preset.capabilities")
 
       return {
-        automatic_installation = true,
         handlers = {
           function(server) lspconfig[server].setup({ capabilities = capabilities }) end,
           neocmake = function()
