@@ -15,6 +15,7 @@ return {
         yaml = { "yamlfmt" },
         toml = { "taplo" },
         python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
+        sh = { "shfmt" },
       },
       format_on_save = { timeout_ms = 100 },
     },
@@ -31,6 +32,7 @@ return {
         lua = { "selene" },
         yaml = { "yamllint" },
         python = { "ruff" },
+        sh = { "shellCheck" },
       }
     end,
   },

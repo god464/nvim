@@ -3,7 +3,6 @@ return {
     "catppuccin/nvim",
     dependencies = {
       "lukas-reineke/indent-blankline.nvim",
-      "williamboman/mason.nvim",
       "folke/which-key.nvim",
       "folke/trouble.nvim",
       "nvim-telescope/telescope.nvim",

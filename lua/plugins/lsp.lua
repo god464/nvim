@@ -2,6 +2,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = { "stevearc/dressing.nvim" },
+    event = "FileType",
     opts = function()
       return {
         servers = {
@@ -25,6 +26,8 @@ return {
           nixd = {},
           taplo = {},
           basedpyright = {},
+          neocmake = {},
+          bashls = {},
         },
       }
     end,
