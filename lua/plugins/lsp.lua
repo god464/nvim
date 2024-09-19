@@ -64,7 +64,7 @@ return {
   },
   {
     "mrcjkb/rustaceanvim",
-    dependencies = { "nvim/nvim-lspconfig" },
+    dependencies = { "neovim/nvim-lspconfig" },
     ft = "rust",
     opts = {},
   },

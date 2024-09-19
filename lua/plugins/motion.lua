@@ -1,6 +1,7 @@
 return {
   {
     "folke/flash.nvim",
+    event = "VeryLazy",
     opt = {
       modes = { search = { enabled = true, highlight = { backdrop = true } } },
       treesitter = { highlight = { backdrop = true } },
@@ -22,14 +23,12 @@ return {
   },
   {
     "numToStr/Comment.nvim",
-    keys = {
-      { "gc", mode = { "n", "v" }, desc = "Comment toggle linewise" },
-      { "gb", mode = { "n", "v" }, desc = "Comment toggle blockwise" },
-    },
+    event = "VeryLazy",
     opts = {},
   },
   {
     "kylechui/nvim-surround",
+    event = "VeryLazy",
     opts = {},
   },
 }

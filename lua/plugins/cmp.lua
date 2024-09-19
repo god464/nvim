@@ -11,6 +11,7 @@ return {
       "onsails/lspkind.nvim",
       "lukas-reineke/cmp-under-comparator",
     },
+    event = { "InsertEnter", "CmdlineEnter" },
     opts = function()
       vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
       local cmp = require("cmp")
