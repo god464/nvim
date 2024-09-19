@@ -12,13 +12,13 @@ return {
       },
     },
   },
-  {
+  --[[ {
     "nvim-treesitter/nvim-treesitter-textobjects",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     event = "VeryLazy",
     opts = { select = { lookahead = true, include_surrounding_whitespace = true }, move = { set_jumps = true } },
     config = function(opts) require("nvim-treesitter.configs").setup(opts) end,
-  },
+  }, ]]
   {
     "JoosepAlviste/nvim-ts-context-commentstring",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
