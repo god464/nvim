@@ -5,16 +5,19 @@ return {
     event = "UIEnter",
     cmd = { "TSUpdateSync", "TSUpdate", "TSInstallFromGrammar" },
     opts = {
-      hightlight = { enable = true },
-      indent = { enable = true },
-      auto_install = true,
+      configs = {
+        hightlight = { enable = true },
+        indent = { enable = true },
+        auto_install = true,
+      },
     },
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
-    main = "nvim-treesitter.configs",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
     event = "VeryLazy",
     opts = { select = { lookahead = true, include_surrounding_whitespace = true }, move = { set_jumps = true } },
+    config = function(opts) require("nvim-treesitter.configs").setup(opts) end,
   },
   {
     "JoosepAlviste/nvim-ts-context-commentstring",
