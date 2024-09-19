@@ -6,7 +6,7 @@ return {
       "folke/which-key.nvim",
       "folke/trouble.nvim",
       "nvim-telescope/telescope.nvim",
-      "nvim-treesitter/nvim-treesitter-textobjects",
+      "nvim-treesitter/nvim-treesitter-contest",
       "nvim-tree/nvim-tree.lua",
       "kylechui/nvim-surround",
       "neovim/nvim-lspconfig",
