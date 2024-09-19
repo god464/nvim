@@ -1,39 +1,17 @@
 return {
   {
-    "catppuccin/nvim",
-    dependencies = {
-      "lukas-reineke/indent-blankline.nvim",
-      "folke/which-key.nvim",
-      "folke/trouble.nvim",
-      "nvim-telescope/telescope.nvim",
-      "nvim-treesitter/nvim-treesitter-textobjects",
-      "nvim-tree/nvim-tree.lua",
-      "kylechui/nvim-surround",
-      "neovim/nvim-lspconfig",
-      "hrsh7th/nvim-cmp",
-      "folke/flash.nvim",
-    },
-    name = "catppuccin",
-    opts = {
-      term_colors = true,
-      integrations = {
-        mason = true,
-        noice = true,
-        notify = true,
-        nvim_surround = true,
-        lsp_trouble = true,
-        which_key = true,
-        indent_blankline = { colored_indent_levels = true },
-      },
-    },
-    config = function(_, opts)
-      require("catppuccin").setup(opts)
-      vim.cmd.colorscheme("catppuccin")
+    "folke/tokyonight.nvim",
+    event = "UIEnter",
+    opts = { style = storm },
+    config = function(opts)
+      require("tokyonight").setup(opts)
+      vim.cmd([[colorscheme tokyonight]])
     end,
   },
   {
     "lukas-reineke/indent-blankline.nvim",
     dependencies = "HiPhish/rainbow-delimiters.nvim",
+    event = "VeryLazy",
     main = "ibl",
     opts = function()
       local highlight = {
@@ -110,17 +88,16 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     event = "UIEnter",
-    dependencies = { "nvim-tree/nvim-web-devicons", "catppuccin/nvim" },
-    opts = { options = { theme = "catppuccin" }, extensions = { "lazy", "nvim-tree", "trouble", "mason", "quickfix" } },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = { extensions = { "lazy", "nvim-tree", "trouble", "mason", "quickfix" } },
   },
   {
     "akinsho/bufferline.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons", "catppuccin/nvim" },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     event = "UIEnter",
     opts = function()
       return {
         options = {
-          hightlights = require("catppuccin.groups.integrations.bufferline").get(),
           mode = "tabs",
           hover = {
             enabled = true,
