@@ -50,7 +50,7 @@
   "promise-async": { "branch": "main", "commit": "119e8961014c9bfaf1487bf3c2a393d254f337e2" },
   "quicker.nvim": { "branch": "master", "commit": "183041a46d6c908eefb1c23ea02cce9c8f41256e" },
   "rainbow-delimiters.nvim": { "branch": "master", "commit": "5f73b24aeb94f5274c218955573153c69ce4d1ee" },
-  "rustaceanvim": { "branch": "master", "commit": "9a369055aebd0411a11600f7cfd5c9b39c751eaa" },
+  "rustaceanvim": { "branch": "master", "commit": "6511cb09310972f07c859836e5051e7434a19fc7" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "3b8a1e17187cfeedb31decbd625da62398a8ff34" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "cf48d4dfce44e0b9a2e19a008d6ec6ea6f01a83b" },
   "telescope.nvim": { "branch": "master", "commit": "b5fd7f7ae0ea4537511077ed8ef4a6021cedba2f" },
