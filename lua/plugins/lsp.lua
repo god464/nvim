@@ -1,7 +1,7 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    dependencies = { "stevearc/dressing.nvim" },
+    dependencies = { "stevearc/dressing.nvim", { "b0o/SchemaStore.nvim", ft = { "json", "yaml" } } },
     event = "FileType",
     opts = function()
       return {
@@ -21,7 +21,17 @@ return {
             settings = { json = { schemas = require("schemastore").json.schemas(), validate = { enable = true } } },
           },
           yamlls = {
-            settings = { yaml = { schemas = require("schemastore").yaml.schemas(), validate = { enable = true } } },
+            settings = {
+              yaml = {
+                schemas = require("schemastore").yaml.schemas(),
+                validate = { enable = true },
+                yamlVersion = 1.2,
+                format = { enable = true },
+                hover = true,
+                completion = true,
+              },
+              redhat = { telemetry = { enabled = false } },
+            },
           },
           nixd = {},
           taplo = {},
@@ -68,7 +78,6 @@ return {
     ft = "rust",
     opts = {},
   },
-  { "b0o/SchemaStore.nvim", ft = { "json", "yaml" } },
   {
     "saecki/crates.nvim",
     event = { "BufRead Cargo.toml" },
