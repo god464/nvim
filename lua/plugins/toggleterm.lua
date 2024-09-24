@@ -27,6 +27,17 @@ return {
         mode = "n",
         desc = "Python REPL",
       },
+      {
+        "<leader>otn",
+        function()
+          if not nix then
+            nix = require("toggleterm.terminal").Terminal:new({ cmd = "nix repl", hidden = true, direction = "float" })
+          end
+          nix:toggle()
+        end,
+        mode = "n",
+        desc = "Nix REPL",
+      },
     },
   },
 }
