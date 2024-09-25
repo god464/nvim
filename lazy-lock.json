@@ -58,7 +58,7 @@
   "rustaceanvim": { "branch": "master", "commit": "dc0ab4e36f9944901ed8a59878f92c2f818799a7" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "3b8a1e17187cfeedb31decbd625da62398a8ff34" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "cf48d4dfce44e0b9a2e19a008d6ec6ea6f01a83b" },
-  "telescope.nvim": { "branch": "master", "commit": "b324469959908c1c7434eb65d80e87895e6828f7" },
+  "telescope.nvim": { "branch": "master", "commit": "21bfcc3e397961b804241cc056a4c64f214c71f7" },
   "todo-comments.nvim": { "branch": "main", "commit": "ae0a2afb47cf7395dc400e5dc4e05274bf4fb9e0" },
   "toggleterm.nvim": { "branch": "main", "commit": "137d06fb103952a0fb567882bb8527e2f92d327d" },
   "tokyonight.nvim": { "branch": "main", "commit": "817bb6ffff1b9ce72cdd45d9fcfa8c9cd1ad3839" },

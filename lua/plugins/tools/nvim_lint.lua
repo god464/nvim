@@ -12,6 +12,7 @@ return {
         yaml = { "yamllint" },
         python = { "ruff" },
         sh = { "shellCheck" },
+        nix = { "statix_check", "deadnix" },
       }
     end,
   },
