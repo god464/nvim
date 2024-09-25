@@ -50,37 +50,4 @@ return {
       end
     end,
   },
-  {
-    "folke/lazydev.nvim",
-    dependencies = { "Bilal2453/luvit-meta" },
-    ft = "lua",
-    opts = {
-      library = {
-        { path = "luvit-meta/library", words = { "vim%.uv" } },
-        { path = "lazy.nvim", words = { "LazyPluginSpec" } },
-      },
-    },
-  },
-  {
-    "p00f/clangd_extensions.nvim",
-    ft = { "c", "cpp" },
-    opts = { inlay_hints = { inline = true } },
-  },
-  {
-    "Civitasv/cmake-tools.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    ft = { "c", "cpp", "cmake" },
-    opts = {},
-  },
-  {
-    "mrcjkb/rustaceanvim",
-    dependencies = { "neovim/nvim-lspconfig" },
-    ft = "rust",
-    opts = {},
-  },
-  {
-    "saecki/crates.nvim",
-    event = { "BufRead Cargo.toml" },
-    opts = {},
-  },
 }

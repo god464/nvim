@@ -1,5 +1,4 @@
 return {
-  -- TODO
   {
     "mfussenegger/nvim-dap",
     dependencies = {
@@ -10,7 +9,7 @@ return {
     },
     config = function()
       local dap = require("dap")
-      require("dap-python").setup({})
+      require("dap-python").setup("python")
     end,
     keys = {
       { "<F5>", function() require("dap").continue() end, desc = "Debug: Continue" },

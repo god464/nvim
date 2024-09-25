@@ -10,16 +10,4 @@ return {
       { "<Leader><space>b", "<cmd>Telescope file_browser<CR>", desc = "File browser" },
     },
   },
-  {
-    "nvim-telescope/telescope-fzf-native.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim" },
-    build = "make",
-    event = "VeryLazy",
-    config = function() require("telescope").load_extension("fzf") end,
-  },
-  {
-    "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-    event = "VeryLazy",
-  },
 }
