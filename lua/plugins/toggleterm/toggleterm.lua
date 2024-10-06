@@ -11,7 +11,7 @@ return {
       end,
       autochdir = true,
       open_mapping = [[<C-\>]],
-      shell = "fish",
+      shell = vim.uv.os_uname().sysname == "Windows_NT" and "pwsh" or "fish",
       winbar = { enabled = true },
     },
     keys = {
