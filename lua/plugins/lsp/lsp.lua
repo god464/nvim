@@ -18,7 +18,9 @@ return {
           },
           clangd = {},
           jsonls = {
-            settings = { json = { schemas = require("schemastore").json.schemas(), validate = { enable = true } } },
+            settings = {
+              json = { schemas = require("schemastore").json.schemas(), validate = { enable = true } },
+            },
           },
           yamlls = {
             settings = {
@@ -35,7 +37,25 @@ return {
           },
           nixd = {},
           taplo = {},
-          basedpyright = {},
+          basedpyright = {
+            settings = {
+              basedpyright = {
+                analysis = {
+                  typeCheckingMode = "basic",
+                  autoImportCompletions = true,
+                  diagnosticSeverityOverrides = {
+                    reportUnusedImport = "information",
+                    reportUnusedFunction = "information",
+                    reportUnusedVariable = "information",
+                    reportGeneralTypeIssues = "none",
+                    reportOptionalMemberAccess = "none",
+                    reportOptionalSubscript = "none",
+                    reportPrivateImportUsage = "none",
+                  },
+                },
+              },
+            },
+          },
           neocmake = {},
           bashls = {},
         },

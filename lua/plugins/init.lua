@@ -10,4 +10,5 @@ return {
   { import = "plugins.quickfix" },
   { import = "plugins.test" },
   { import = "plugins.dap" },
+  { import = "plugins.task" },
 }

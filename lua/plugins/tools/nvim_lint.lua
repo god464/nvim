@@ -10,7 +10,7 @@ return {
         rust = { "clippy" },
         lua = { "selene" },
         yaml = { "yamllint" },
-        python = { "ruff" },
+        python = { "ruff", "mypy", "pylint" },
         sh = { "shellCheck" },
         nix = { "statix_check", "deadnix" },
       }
