@@ -1,5 +1,4 @@
 return {
-  {
     "iguanacucumber/magazine.nvim",
     dependencies = {
       "hrsh7th/cmp-buffer",
@@ -81,5 +80,4 @@ return {
         callback = function() cmp.setup.buffer({ sources = { { name = "crates" } } }) end,
       })
     end,
-  },
 }

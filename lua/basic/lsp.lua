@@ -6,6 +6,8 @@ vim.diagnostic.config({
 
 vim.lsp.inlay_hint.enable()
 
+vim.lsp.buf.signature_help()
+
 vim.api.nvim_create_autocmd("LspAttach", {
   desc = "General LSP Attach",
   callback = function(args)

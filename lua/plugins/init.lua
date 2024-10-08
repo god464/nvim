@@ -6,7 +6,7 @@ return {
   { import = "plugins.treesitter" },
   { import = "plugins.ui" },
   { import = "plugins.tools" },
-  { import = "plugins.toggleterm" },
+  { import = "plugins.term" },
   { import = "plugins.quickfix" },
   { import = "plugins.test" },
   { import = "plugins.dap" },

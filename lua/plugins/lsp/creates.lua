@@ -1,7 +1,5 @@
 return {
-  {
-    "saecki/crates.nvim",
-    event = { "BufRead Cargo.toml" },
-    opts = {},
-  },
+  "saecki/crates.nvim",
+  event = { "BufRead Cargo.toml" },
+  opts = {},
 }

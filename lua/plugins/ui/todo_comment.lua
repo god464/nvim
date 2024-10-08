@@ -1,8 +1,7 @@
 return {
-  {
-    "folke/todo-comments.nvim",
-    dependencies = { "nvim-lua/plenary.nvim", "folke/trouble.nvim" },
-    event = "VeryLazy",
-    opts = {},
-  },
+  "folke/todo-comments.nvim",
+  cmd = { "TodoTelescope" },
+  dependencies = { "nvim-lua/plenary.nvim", "folke/trouble.nvim" },
+  event = "VeryLazy",
+  opts = {},
 }
