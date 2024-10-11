@@ -13,6 +13,7 @@ return {
       adapters = {
         require("neotest-gtest")(),
         require("neotest-python")({ runner = "unittest" }),
+        require("rustaceanvim.neotest"),
       },
       consumers = { overseer = require("neotest.consumers.overseer") },
     }
