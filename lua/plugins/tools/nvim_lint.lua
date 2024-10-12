@@ -9,7 +9,7 @@ return {
     yaml = { "yamllint" },
     python = { "ruff", "mypy", "pylint" },
     sh = { "shellCheck" },
-    nix = { "statix_check", "deadnix" },
+    nix = { "statix", "deadnix" },
   },
   config = function(_, opts)
     local lint = require("lint")
