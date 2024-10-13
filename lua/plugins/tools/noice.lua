@@ -20,5 +20,12 @@ return {
       },
     },
     presets = { bottom_search = true, command_palette = true, long_message_to_split = true },
+    views = {
+      cmdline_popup = { border = { style = "rounded" } },
+      hover = {
+        border = { style = "rounded", padding = { 0, "rounded" == "none" and 2 or 0 } },
+        position = { row = "rounded" == "none" and 1 or 2 },
+      },
+    },
   },
 }

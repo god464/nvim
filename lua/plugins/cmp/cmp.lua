@@ -17,12 +17,31 @@ return {
     local luasnip = require("luasnip")
     local lspkind = require("lspkind")
     cmp.setup.cmdline(":", {
+      completion = { completeopt = "menu,menuone,noselect" },
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({ name = "lazydev" }, { name = "path" }, { { name = "cmdline" } }),
     })
-    cmp.setup.cmdline({ "/" }, { mapping = cmp.mapping.preset.cmdline(), sources = { { name = "buffer" } } })
+    cmp.setup.cmdline("/", {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = { { name = "buffer" } },
+      completion = { completeopt = "menu,menuone,noselect" },
+    })
     return {
       snippets = { expand = function(args) luasnip.lsp_expand(args.body) end },
+      preselect = cmp.PreselectMode.None,
+      confirm_opts = { behavior = cmp.ConfirmBehavior.Replace, select = false },
+      window = {
+        completion = cmp.config.window.bordered({
+          col_offset = -3,
+          winblend = 0,
+          border = "rounded",
+          winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+        }),
+        documentation = cmp.config.window.bordered({
+          border = "rounded",
+          winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+        }),
+      },
       mapping = {
         ["<C-p>"] = cmp.mapping.select_prev_item(),
         ["<C-n>"] = cmp.mapping.select_next_item(),
@@ -55,7 +74,10 @@ return {
         { name = "path" },
         { name = "buffer" },
       }),
-      formatting = { format = lspkind.cmp_format({ mode = "symbol", show_labelDetails = true }) },
+      formatting = {
+        format = lspkind.cmp_format({ mode = "symbol", show_labelDetails = true }),
+        field = { "kind", "abbr", "menu" },
+      },
       sorting = {
         comparators = {
           cmp.config.compare.offset,

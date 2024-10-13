@@ -2,8 +2,39 @@ local M = vim.lsp.protocol.make_client_capabilities()
 local cmp = require("cmp_nvim_lsp")
 
 M = cmp.default_capabilities(M)
-M.textDocument.completion.completionItem.snippetSupport = true
-M.textDocument.foldingRange = { dynamicRegistration = false, lineFoldingOnly = true }
-M = { workspace = { didChangeWatchedFiles = { dynamicRegistration = true, relative_pattern_support = true } } }
+M.textDocument = {
+  completion = {
+    completionItem = {
+      dynamicRegistration = false,
+      documentationFormat = { "markdown", "plaintext" },
+      snippetSupport = true,
+      preselectSupport = true,
+      insertReplaceSupport = true,
+      labelDetailsSupport = true,
+      deprecatedSupport = true,
+      contextSupport = true,
+      commitCharactersSupport = true,
+      insertTextModeSupport = { valueSet = { 1, 2 } },
+      tagSupport = { valueSet = { 1 } },
+      completionList = {
+        itemDefaults = { "commitCharacters", "editRange", "insertTextFormat", "insertTextMode", "data" },
+      },
+      resolveSupport = {
+        properties = {
+          "documentation",
+          "detail",
+          "additionalTextEdits",
+          "sortText",
+          "filterText",
+          "insertText",
+          "textEdit",
+          "insertTextFormat",
+          "insertTextMode",
+        },
+      },
+    },
+  },
+  foldingRange = { dynamicRegistration = false, lineFoldingOnly = true },
+}
 
 return M

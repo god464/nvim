@@ -16,9 +16,10 @@ return {
     { "<leader>ri", "<cmd>OverseerInfo<CR>", desc = "Info" },
     { "<leader>rc", "<cmd>OverseerClearCache<CR>", desc = "Clear cache" },
   },
-  config = function()
+  opts = { form = { border = "rounded" }, confirm = { border = "rounded" }, task_win = { border = "rounded" } },
+  config = function(opts)
     local overseer = require("overseer")
-    overseer.setup()
+    overseer.setup(opts)
 
     local templates = {
       {
