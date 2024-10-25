@@ -1,5 +1,5 @@
 return {
   "NMAC427/guess-indent.nvim",
-  event = "FileType",
+  event = { "InsertEnter", "InsertLeave" },
   opts = {},
 }
