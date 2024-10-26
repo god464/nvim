@@ -26,17 +26,17 @@ return {
         name = "compile single c file",
         builder = function()
           return {
-            cmd = { "gcc" },
+            cmd = { "clang" },
             args = { "-g", vim.fn.expand("%:p"), "-o", vim.fn.expand("%:p:t:r") },
           }
         end,
         condition = { filetype = { "c" } },
       },
       {
-        name = "compile single c file",
+        name = "compile single cpp file",
         builder = function()
           return {
-            cmd = { "g++" },
+            cmd = { "clang++" },
             args = { "-g", vim.fn.expand("%:p"), "-o", vim.fn.expand("%:p:t:r") },
           }
         end,
