@@ -32,7 +32,7 @@ return {
     return {
       scope = { highlight = highlight },
       whitespace = { highlight = ws_hightlight },
-      exclude = { filetypes = { "help", "NvimTree", "trouble", "Trouble", "lazy", "mason", "notify" } },
+      exclude = { filetypes = { "help", "neo-tree", "trouble", "Trouble", "lazy", "toggleterm", "notify" } },
     }
   end,
 }
