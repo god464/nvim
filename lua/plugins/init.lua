@@ -1,14 +1,19 @@
-return {
-  { import = "plugins.lsp" },
-  { import = "plugins.cmp" },
-  { import = "plugins.motion" },
-  { import = "plugins.telescope" },
-  { import = "plugins.treesitter" },
-  { import = "plugins.ui" },
-  { import = "plugins.tools" },
-  { import = "plugins.term" },
-  { import = "plugins.quickfix" },
-  { import = "plugins.test" },
-  { import = "plugins.dap" },
-  { import = "plugins.task" },
+local M = {
+  "lsp",
+  "cmp",
+  "motion",
+  "telescope",
+  "treesitter",
+  "ui",
+  "tools",
+  "term",
+  "quickfix",
+  "test",
+  "dap",
+  "task",
+  "git",
 }
+
+M = vim.tbl_map(function(name) return { import = "plugins." .. name } end, M)
+
+return M
