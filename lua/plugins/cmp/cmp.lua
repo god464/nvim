@@ -1,5 +1,6 @@
 return {
   "hrsh7th/nvim-cmp",
+  enabled = false,
   dependencies = {
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-nvim-lsp",
@@ -66,7 +67,7 @@ return {
         end, { "i", "s", "c" }),
       },
       sources = cmp.config.sources({
-        { name = "lazydev", group_index = 0 },
+        { name = "lazydev",                group_index = 0 },
         { name = "crates" },
         { name = "luasnip" },
         { name = "nvim_lsp_signature_help" },

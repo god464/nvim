@@ -60,10 +60,10 @@ return {
   end,
   config = function(_, opts)
     local lspconfig = require("lspconfig")
-    local capabilities = require("preset.capabilities")
 
     for server, config in pairs(opts.servers) do
-      lspconfig[server].setup(vim.tbl_extend("force", { capabilities = capabilities }, config))
+      config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
+      lspconfig[server].setup(config)
     end
   end,
 }
