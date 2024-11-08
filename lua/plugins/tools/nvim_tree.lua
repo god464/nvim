@@ -14,7 +14,10 @@ return {
     },
     actions = { open_file = { quit_on_open = true } },
     update_focused_file = { enable = true, update_root = true },
-    view = { float = { open_win_config = { border = "rounded" } } },
+    view = {
+      float = { open_win_config = { border = "rounded" } },
+      width = math.max(math.floor(vim.go.columns * 0.2), 30),
+    },
   },
 
   keys = { { "<Leader>op", "<cmd>NvimTreeToggle<CR>", desc = "File Explorer" } },
