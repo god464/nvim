@@ -1,7 +1,15 @@
+local function build_plugin()
+  if vim.uv.fs_stat("/etc/NIXOS") then
+    return "nix run .#build-plugin"
+  else
+    return "cargo build --release"
+  end
+end
+
 return {
   "saghen/blink.cmp",
   lazy = false,
-  build = "nix run .#build-plugin",
+  build = build_plugin(),
   dependencies = "rafamadriz/friendly-snippets",
   opts = {
     keymap = { preset = "enter" },
