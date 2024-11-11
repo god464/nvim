@@ -8,9 +8,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Run a one-line script
-        run: echo Hello, world!
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+        with:
+          fetch-depth: 1
+      - name: Setup Rust Toolchain for GitHub CI
+        uses: actions-rust-lang/setup-rust-toolchain@v1.10.1
+        with:
+          toolchain: nightly
+      - name: Setup Neovim for GitHub CI
+        uses: rhysd/action-setup-vim@v1.3.5
+        with:
+          neovim: true
+          version: nightly
+      - name: Update Lazy lock
+        run: nvim --headless -c "-lua require('lazy').update()" -c "lua vim.defer_fn(function() vim.cmd('qa') end, 'qa')"
+      
