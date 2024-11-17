@@ -12,7 +12,7 @@ return {
           reveal = { "close" },
         },
         show_close_icon = true,
-        buffer_close_icon = "",
+        buffer_close_icon = "",
         sort_by = "tabs",
         diagnostics = "nvim_lsp",
         diagnostics_indicator = function(count) return "(" .. count .. ")" end,
