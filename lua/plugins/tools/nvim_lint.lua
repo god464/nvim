@@ -2,8 +2,8 @@ return {
   "mfussenegger/nvim-lint",
   event = "LspAttach",
   opts = {
-    c = { "clangtidy" },
-    cpp = { "clangtidy" },
+    c = { "clangtidy", "cppcheck" },
+    cpp = { "clangtidy", "cppcheck" },
     rust = { "clippy" },
     lua = { "selene" },
     yaml = { "yamllint" },

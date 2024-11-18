@@ -32,7 +32,7 @@ return {
         name = "compile single c file",
         builder = function()
           return {
-            cmd = { "clang" },
+            cmd = { "cc" },
             args = { "-g", vim.fn.expand("%:p"), "-o", vim.fn.expand("%:p:t:r") },
           }
         end,
@@ -42,7 +42,7 @@ return {
         name = "compile single cpp file",
         builder = function()
           return {
-            cmd = { "clang++" },
+            cmd = { "c++" },
             args = { "-g", vim.fn.expand("%:p"), "-o", vim.fn.expand("%:p:t:r") },
           }
         end,
