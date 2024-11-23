@@ -1,5 +1,5 @@
 return {
   "supermaven-inc/supermaven-nvim",
-  event = { "InsertEnter", "CmdlineEnter" },
+  event = { "InsertEnter", "LspAttach" },
   opts = {},
 }
