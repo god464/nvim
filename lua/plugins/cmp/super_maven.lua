@@ -1,5 +1,10 @@
 return {
   "supermaven-inc/supermaven-nvim",
   event = { "InsertEnter", "LspAttach" },
-  opts = {},
+  opts = {
+    keymaps = {
+      accept_suggestion = "<C-a>",
+      clear_suggestion = "<C-j>",
+    },
+  },
 }

@@ -16,20 +16,24 @@ return {
     nerd_font_variant = "mono",
     trigger = { signature_help = { enabled = true } },
     accept = { auto_brackets = { enabled = true } },
-    windows = { scrollbar = false, border = "rounded" },
+    windows = {
+      scrollbar = false,
+      border = "rounded",
+      signature_help = { border = "rounded" },
+      documentation = {
+        auto_show = true,
+        border = "rounded",
+        scrollbar = false,
+        auto_show_delay_ms = 0,
+        update_delay_ms = 0,
+      },
+    },
     sources = {
       completion = { enabled_providers = { "lsp", "path", "snippets", "buffer", "lazydev" } },
       providers = {
         lsp = { name = "LSP", fallback_for = { "lazydev" } },
         lazydev = { name = "LazyDev", module = "lazydev.integrations.blink" },
       },
-    },
-    documentation = {
-      auto_show = true,
-      border = "rounded",
-      scrollbar = false,
-      auto_show_delay_ms = 0,
-      update_delay_ms = 0,
     },
   },
 }
