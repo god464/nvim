@@ -4,12 +4,14 @@ return {
   opts = {
     c = { "clangtidy", "cppcheck" },
     cpp = { "clangtidy", "cppcheck" },
+    cmake = { "cmakelint" },
     rust = { "clippy" },
-    lua = { "selene" },
-    yaml = { "yamllint" },
+    lua = { "selene", "luacheck" },
+    yaml = { "yamllint", "actionlint" },
     python = { "ruff", "mypy", "pylint" },
-    sh = { "shellCheck" },
+    sh = { "shellCheck", "dotenv_linter" },
     nix = { "statix", "deadnix" },
+    markdown = { "markdownlint" },
   },
   config = function(_, opts)
     local lint = require("lint")

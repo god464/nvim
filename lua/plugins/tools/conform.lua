@@ -15,6 +15,7 @@ return {
       toml = { "taplo" },
       python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
       sh = { "shfmt" },
+      makrdown = { "mdformat" },
     },
     format_on_save = { timeout_ms = 100 },
   },
