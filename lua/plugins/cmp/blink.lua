@@ -1,5 +1,5 @@
 local function build_plugin()
-  if vim.uv.fs_stat("/etc/NIXOS") then
+  if vim.uv.fs_stat("/etc/nixos") then
     return "nix run .#build-plugin"
   else
     return "cargo build --release"
