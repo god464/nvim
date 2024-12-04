@@ -4,7 +4,7 @@ return {
   cmd = "Oil",
   keys = { { "<Leader>o-", "<cmd>Oil<cr>", desc = "Oil" } },
   opts = {
-    columns = { "icon", "permissions", "size", "mtype" },
+    columns = { "permissions", "size", "icon", "mtype" },
     win_options = { signcolumn = "yes" },
     skip_confirm_for_simple_edits = true,
     cleanup_delay_ms = false,
