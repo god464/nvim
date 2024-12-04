@@ -19,6 +19,7 @@ return {
     {
       "<leader>otp",
       function()
+        local python
         if not python then
           python = require("toggleterm.terminal").Terminal:new({ cmd = "python", hidden = true, direction = "float" })
         end
@@ -30,6 +31,7 @@ return {
     {
       "<leader>otn",
       function()
+        local nix
         if not nix then
           nix = require("toggleterm.terminal").Terminal:new({ cmd = "nix repl", hidden = true, direction = "float" })
         end
@@ -37,6 +39,18 @@ return {
       end,
       mode = "n",
       desc = "Nix REPL",
+    },
+    {
+      "<leader>otl",
+      function()
+        local lua
+        if not lua then
+          lua = require("toggleterm.terminal").Terminal:new({ cmd = "lua", hidden = true, direction = "float" })
+        end
+        lua:toggle()
+      end,
+      mode = "n",
+      desc = "Lua REPL",
     },
   },
 }

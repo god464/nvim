@@ -4,7 +4,6 @@ M.textDocument = {
   completion = {
     completionItem = {
       dynamicRegistration = false,
-      documentationFormat = { "markdown", "plaintext" },
       snippetSupport = true,
       preselectSupport = true,
       insertReplaceSupport = true,
