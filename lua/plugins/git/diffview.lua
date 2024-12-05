@@ -1,10 +1,7 @@
 return {
   "sindrets/diffview.nvim",
   dependencies = "nvim-tree/nvim-web-devicons",
-  cmd = {
-    "DiffviewOpen",
-    "DiffviewFileHistory",
-  },
+  cmd = { "DiffviewOpen", "DiffviewFileHistory" },
   keys = {
     { "<leader>odo", "<Cmd>DiffviewOpen<CR>", desc = "Open" },
     { "<leader>odc", "<Cmd>DiffviewClose<CR>", desc = "Close" },
