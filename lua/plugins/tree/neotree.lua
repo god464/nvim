@@ -5,6 +5,7 @@ return {
     "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
   },
+  enabled = false,
   cmd = "Neotree",
   init = function()
     vim.api.nvim_create_autocmd("BufEnter", {

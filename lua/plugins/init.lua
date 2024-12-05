@@ -13,6 +13,7 @@ local M = {
   "task",
   "git",
   "utils",
+  "tree",
 }
 
 M = vim.tbl_map(function(name) return { import = "plugins." .. name } end, M)
