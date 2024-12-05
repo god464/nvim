@@ -6,10 +6,6 @@ return {
     "rcarriga/nvim-dap-ui",
     "mfussenegger/nvim-dap-python",
   },
-  config = function()
-    local dap = require("dap")
-    require("dap-python").setup("python")
-  end,
   keys = {
     { "<F5>", function() require("dap").continue() end, desc = "Debug: Continue" },
     { "<F17>", function() require("dap").terminate() end, desc = "Debug: Terminate" },
@@ -39,4 +35,16 @@ return {
     { "<leader>dR", function() require("dap").repl.toggle() end, desc = "Toggle REPL" },
     { "<leader>dl", function() require("dap").run_last() end, desc = "Run last" },
   },
+  config = function()
+    local dap = require("dap")
+    dap.configurations.rust = {
+      name = "Launch file",
+      type = "codelldb",
+      request = "launch",
+      program = function() return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file") end,
+      cwd = "${workspaceFolder}",
+      stopOnEntry = false,
+    }
+    require("dap-python").setup("python")
+  end,
 }
