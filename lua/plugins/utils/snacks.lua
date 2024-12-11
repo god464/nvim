@@ -2,10 +2,12 @@ return {
   "folke/snacks.nvim",
   event = "VeryLazy",
   opts = {
-    bigfile = { enabled = true },
-    quickfile = { enabled = true },
-    statuscolumn = { enabled = true },
-    words = { enabled = true },
-    notifier = { enabled = true },
+    bigfile = {},
+    quickfile = {},
+    statuscolumn = {},
+    words = {},
+    notifier = {},
+    input = {},
+    indent = { chunk = { enable = true } },
   },
 }
