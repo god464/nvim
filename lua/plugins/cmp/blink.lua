@@ -13,21 +13,17 @@ return {
   dependencies = "rafamadriz/friendly-snippets",
   opts = {
     keymap = { preset = "enter" },
-    nerd_font_variant = "mono",
-    trigger = { signature_help = { enabled = true } },
-    accept = { auto_brackets = { enabled = true } },
-    windows = {
-      scrollbar = false,
-      border = "rounded",
-      signature_help = { border = "rounded" },
+    appearance = { nerd_font_variant = "mono" },
+    completion = {
+      accept = { auto_brackets = { enabled = true } },
       documentation = {
         auto_show = true,
-        border = "rounded",
-        scrollbar = false,
+        window = { border = "rounded", scrollbar = false },
         auto_show_delay_ms = 0,
         update_delay_ms = 0,
       },
     },
+    signature = { enabled = true, window = { border = "rounded" } },
     sources = {
       default = { "lsp", "path", "snippets", "buffer", "lazydev" },
       providers = {

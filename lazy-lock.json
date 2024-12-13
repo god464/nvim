@@ -5,7 +5,7 @@
   "SchemaStore.nvim": { "branch": "main", "commit": "f8c2a0f5d51b800ea4625808e243d9e8f7c5e1df" },
   "aerial.nvim": { "branch": "master", "commit": "fd7fbe36772d7a955815c90ff9b58523bfdb410d" },
   "alpha-nvim": { "branch": "main", "commit": "de72250e054e5e691b9736ee30db72c65d560771" },
-  "blink.cmp": { "branch": "main", "commit": "e3b3fdedbc14afe7361228f7d2c8ce84cee272a6" },
+  "blink.cmp": { "branch": "main", "commit": "ad17735a6ddb4255cad6f0af574150761baf5ee4" },
   "bufferline.nvim": { "branch": "main", "commit": "261a72b90d6db4ed8014f7bda976bcdc9dd7ce76" },
   "clangd_extensions.nvim": { "branch": "main", "commit": "8f7b72100883e0e34400d9518d40a03f21e4d0a6" },
   "cmake-tools.nvim": { "branch": "master", "commit": "53bc5261e1e0b0d28be465d2b2b07a6f0646e1eb" },
