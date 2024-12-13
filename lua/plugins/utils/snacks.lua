@@ -1,10 +1,11 @@
 return {
   "folke/snacks.nvim",
-  event = "VeryLazy",
+  event = "UIEnter",
   opts = {
     bigfile = {},
     quickfile = {},
     statuscolumn = {},
+    dashboard = {},
     words = {},
     notifier = {},
     input = {},
