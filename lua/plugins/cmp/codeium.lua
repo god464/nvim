@@ -1,7 +1,21 @@
 return {
-  "Exafunction/codeium.nvim",
+  "Exafunction/codeium.vim",
   enabled = false,
-  event = { "InsertEnter", "LspAttach" },
-  dependencies = "nvim-lua/plenary.nvim",
-  opts = {},
+  event = "InsertEnter",
+  config = function()
+    vim.keymap.set("i", "<C-g>", function() return vim.fn["codeium#Accept"]() end, { expr = true, silent = true })
+    vim.keymap.set(
+      "i",
+      "<c-;>",
+      function() return vim.fn["codeium#CycleCompletions"](1) end,
+      { expr = true, silent = true }
+    )
+    vim.keymap.set(
+      "i",
+      "<c-,>",
+      function() return vim.fn["codeium#CycleCompletions"](-1) end,
+      { expr = true, silent = true }
+    )
+    vim.keymap.set("i", "<c-x>", function() return vim.fn["codeium#Clear"]() end, { expr = true, silent = true })
+  end,
 }
