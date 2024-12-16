@@ -7,5 +7,4 @@ return {
   },
   cmd = { "Octo" },
   opts = { picker_config = { use_emoji = true } },
-  keys = { { "<leader>oo", "<Cmd>Octo<CR>", desc = "Octo" } },
 }

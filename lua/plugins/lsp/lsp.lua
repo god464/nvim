@@ -55,6 +55,7 @@ return {
         },
         neocmake = {},
         bashls = {},
+        dockerls = {},
       },
     }
   end,
