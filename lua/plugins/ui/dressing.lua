@@ -1,4 +1,4 @@
 return {
   "stevearc/dressing.nvim",
-  opts = {},
+  opts = { input = { border = "rounded" }, select = { border = "rounded" } },
 }

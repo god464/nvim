@@ -1,6 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
-  dependencies = { "stevearc/dressing.nvim", { "b0o/SchemaStore.nvim", ft = { "json", "yaml" } } },
+  dependencies = { "b0o/SchemaStore.nvim", ft = { "json", "yaml" } },
   event = "FileType",
   opts = function()
     return {
@@ -22,6 +22,7 @@ return {
         yamlls = {
           settings = {
             yaml = {
+              schemaStore = { enabled = false, url = "" },
               schemas = require("schemastore").yaml.schemas(),
               validate = { enable = true },
               yamlVersion = 1.2,

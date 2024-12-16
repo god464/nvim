@@ -8,7 +8,6 @@ end
 
 return {
   "saghen/blink.cmp",
-  lazy = false,
   build = build_plugin(),
   dependencies = "rafamadriz/friendly-snippets",
   opts = {
