@@ -12,6 +12,7 @@ return {
     sh = { "shellCheck", "dotenv_linter" },
     nix = { "statix", "deadnix" },
     markdown = { "markdownlint" },
+    docerfile = { "hadolint" },
   },
   config = function(_, opts)
     local lint = require("lint")
