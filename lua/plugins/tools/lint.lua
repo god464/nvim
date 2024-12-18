@@ -1,6 +1,6 @@
 return {
   "mfussenegger/nvim-lint",
-  event = "LspAttach",
+  event = "BufWritePre",
   opts = {
     c = { "clangtidy", "cppcheck" },
     cpp = { "clangtidy", "cppcheck" },

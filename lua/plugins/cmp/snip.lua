@@ -2,7 +2,7 @@ return {
   "L3MON4D3/LuaSnip",
   enabled = false,
   event = { "InsertEnter", "CmdlineEnter" },
-  dependencies = { "rafamadriz/friendly-snippets" },
+  dependencies = "rafamadriz/friendly-snippets",
   keys = { { "<C-l>", function() require("luasnip").expand() end, mode = "i" }, { "<Tab>", mode = "x" } },
   build = "make install_jsregexp",
   opts = {

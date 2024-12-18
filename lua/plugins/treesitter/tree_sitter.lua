@@ -2,7 +2,7 @@ return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   main = "nvim-treesitter.configs",
-  event = "UIEnter",
+  event = "VeryLazy",
   cmd = { "TSUpdateSync", "TSUpdate", "TSInstallFromGrammar", "TSInstall" },
   opts = {
     highlight = { enable = true, additional_vim_regex_highlighting = false },
