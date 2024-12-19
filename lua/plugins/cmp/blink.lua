@@ -11,7 +11,7 @@ return {
   build = build_plugin(),
   dependencies = "rafamadriz/friendly-snippets",
   opts = {
-    keymap = { preset = "enter", cmdline = { preset = "default" } },
+    keymap = { preset = "enter", cmdline = { preset = "super-tab" } },
     appearance = { nerd_font_variant = "mono" },
     completion = {
       accept = { auto_brackets = { enabled = true } },

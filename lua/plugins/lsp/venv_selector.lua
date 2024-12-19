@@ -7,7 +7,6 @@ return {
     "nvim-telescope/telescope.nvim",
   },
   cmd = "VenvSelect",
-  ft = "python",
   branch = "regexp",
   opts = { settings = { options = { notify_user_on_venv_activation = true } } },
   keys = { { "<Leader>v", "<cmd>VenvSelect<cr>", desc = "Select Virtual Environment", ft = "python" } },
