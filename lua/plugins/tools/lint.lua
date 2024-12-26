@@ -13,6 +13,10 @@ return {
     nix = { "statix", "deadnix" },
     markdown = { "markdownlint" },
     docerfile = { "hadolint" },
+    javascript = { "oxlint" },
+    typescript = { "oxlint" },
+    html = { "htmlhint" },
+    css = { "stylelint" },
   },
   config = function(_, opts)
     local lint = require("lint")

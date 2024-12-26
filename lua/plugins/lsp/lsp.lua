@@ -57,6 +57,8 @@ return {
         neocmake = {},
         bashls = {},
         dockerls = {},
+        tailwindcss = {},
+        denols = {},
       },
     }
   end,
