@@ -59,6 +59,7 @@ return {
         dockerls = {},
         tailwindcss = {},
         denols = {},
+        superhtml = {},
       },
     }
   end,
