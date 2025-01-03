@@ -57,9 +57,11 @@ return {
         neocmake = {},
         bashls = {},
         dockerls = {},
+        cssls = {},
         tailwindcss = {},
         denols = {},
         superhtml = {},
+        html = {},
       },
     }
   end,
