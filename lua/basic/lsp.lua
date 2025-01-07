@@ -10,6 +10,7 @@ if vim.lsp.document_highlight then vim.lsp.document_highlight.enable() end
 vim.lsp.buf.signature_help()
 
 local tmp = vim.lsp.util.open_floating_preview
+
 function vim.lsp.util.open_floating_preview(contents, syntax, opts)
   opts = opts or {}
   opts.border = opts.border or "rounded"
