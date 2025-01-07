@@ -60,6 +60,7 @@ return {
         cssls = {},
         tailwindcss = {},
         denols = {},
+        ts_ls = {},
         superhtml = {},
         html = {},
       },

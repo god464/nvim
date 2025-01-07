@@ -15,7 +15,6 @@ return {
     appearance = { nerd_font_variant = "mono" },
     completion = {
       accept = { auto_brackets = { enabled = true } },
-      list = { selection = "auto_insert" },
       documentation = {
         auto_show = true,
         window = { border = "rounded", scrollbar = false },
