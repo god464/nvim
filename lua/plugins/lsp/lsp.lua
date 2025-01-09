@@ -63,6 +63,7 @@ return {
         ts_ls = {},
         superhtml = {},
         html = {},
+        vuels = {},
       },
     }
   end,
