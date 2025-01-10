@@ -9,7 +9,7 @@ end
 return {
   "saghen/blink.cmp",
   build = build_plugin(),
-  dependencies = { "rafamadriz/friendly-snippets", "Saghen/blink.compat", "Exafunction/codeium.nvim" },
+  dependencies = "rafamadriz/friendly-snippets",
   opts = {
     keymap = { preset = "enter", cmdline = { preset = "super-tab" } },
     appearance = { nerd_font_variant = "mono" },
@@ -50,11 +50,10 @@ return {
     },
     signature = { enabled = true, window = { border = "rounded" } },
     sources = {
-      default = { "lsp", "path", "snippets", "buffer", "lazydev", "codeium" },
+      default = { "lsp", "path", "snippets", "buffer", "lazydev" },
       providers = {
         lsp = { name = "LSP", fallbacks = { "lazydev" } },
         lazydev = { name = "LazyDev", module = "lazydev.integrations.blink" },
-        codeium = { name = "Codeium", module = "blink.compat.source", score_offset = 100, async = true },
       },
     },
   },
