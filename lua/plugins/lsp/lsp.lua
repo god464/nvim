@@ -60,7 +60,6 @@ return {
         cssls = {},
         tailwindcss = {},
         denols = {},
-        ts_ls = {},
         superhtml = {},
         html = {},
         volar = { init_options = { vue = { hybridMode = true } }, typescript = {} },
