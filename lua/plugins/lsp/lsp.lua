@@ -63,7 +63,8 @@ return {
         ts_ls = {},
         superhtml = {},
         html = {},
-        vuels = {},
+        volar = { init_options = { vue = { hybridMode = true } }, typescript = {} },
+        vtsls = {},
       },
     }
   end,
