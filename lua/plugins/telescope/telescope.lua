@@ -1,6 +1,6 @@
 return {
   "nvim-telescope/telescope.nvim",
-  dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons", "stevearc/dressing.nvim" },
+  dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons", "folke/snacks.nvim" },
   cmd = "Telescope",
   opts = {},
   keys = {

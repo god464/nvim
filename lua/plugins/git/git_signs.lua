@@ -1,6 +1,6 @@
 return {
   "lewis6991/gitsigns.nvim",
-  dependencies = { "petertriho/nvim-scrollbar", "stevearc/dressing.nvim" },
+  dependencies = { "petertriho/nvim-scrollbar", "folke/snacks.nvim" },
   event = "VeryLazy",
   opts = {
     signs = {
