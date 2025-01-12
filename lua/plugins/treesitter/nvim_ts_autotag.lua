@@ -1,5 +1,5 @@
 return {
-  "JoosepAlviste/nvim-ts-context-commentstring",
+  "windwp/nvim-ts-autotag",
   dependencies = "nvim-treesitter/nvim-treesitter",
   event = "VeryLazy",
   opts = {},
