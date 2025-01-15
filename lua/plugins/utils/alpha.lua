@@ -23,7 +23,6 @@ return {
       dashboard.button("g", "󰊄  Live grep", "<cmd>FzfLua live_grep_native<cr>"),
       dashboard.button("r", "  Recent files", "<cmd>FzfLua oldfiles<cr>"),
       dashboard.button("s", "  Restore Session", require("resession").load),
-      dashboard.button("c", "  Configuration", "<Cmd>edit ~/.config/nvim/init.lua<CR>"),
       dashboard.button("u", "  Update plugins", "<Cmd>Lazy sync<CR>"),
       dashboard.button("q", "󰅚  Quit", "<Cmd>qa<CR>"),
     }
