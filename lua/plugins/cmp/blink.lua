@@ -11,7 +11,7 @@ return {
   build = build_plugin(),
   dependencies = "rafamadriz/friendly-snippets",
   opts = {
-    keymap = { preset = "enter", cmdline = { preset = "super-tab" } },
+    keymap = { preset = "enter" },
     appearance = { nerd_font_variant = "mono" },
     completion = {
       accept = { auto_brackets = { enabled = true } },
@@ -21,6 +21,7 @@ return {
         auto_show_delay_ms = 0,
         update_delay_ms = 0,
       },
+      list = { selection = { auto_insert = true, preselect = function(ctx) return ctx.mode ~= "cmdline" end } },
       menu = {
         draw = {
           components = {
