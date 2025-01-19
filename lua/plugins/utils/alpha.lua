@@ -19,7 +19,7 @@ return {
 
     dashboard_config.buttons.val = {
       dashboard.button("n", "󰈔  New file", "<cmd>ene <BAR> startinsert <cr>"),
-      dashboard.button("f", "󰈞  Find file", "<cmdFzfLua files<cr>"),
+      dashboard.button("f", "󰈞  Find file", "<cmd>FzfLua files<cr>"),
       dashboard.button("g", "󰊄  Live grep", "<cmd>FzfLua live_grep_native<cr>"),
       dashboard.button("r", "  Recent files", "<cmd>FzfLua oldfiles<cr>"),
       dashboard.button("s", "  Restore Session", require("resession").load),
