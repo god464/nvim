@@ -63,7 +63,32 @@ return {
         superhtml = {},
         html = {},
         volar = { init_options = { vue = { hybridMode = true } }, typescript = {} },
-        vtsls = {},
+        vtsls = {
+          filetypes = {
+            "typescript",
+            "typescriptreact",
+            "typescript.tsx",
+            "javascript",
+            "javascriptreact",
+            "javascript.jsx",
+            "vue",
+          },
+          settings = {
+            vtsls = {
+              tsserver = {
+                globalPlugins = {
+                  {
+                    name = "@vue/typescript-plugin",
+                    location = vim.fn.system("which vue-language-server"),
+                    languages = { "vue" },
+                    configNamespace = "typescript",
+                    enableForWorkspaceTypeScriptVersions = true,
+                  },
+                },
+              },
+            },
+          },
+        },
       },
     }
   end,
