@@ -33,7 +33,18 @@ return {
             redhat = { telemetry = { enabled = false } },
           },
         },
-        nixd = {},
+        nixd = {
+          nixpkgs = { expr = "import <nixpkgs> { }" },
+          formatting = { command = { "nixfmt" } },
+          options = {
+            nixos = {
+              exp = 'let names = ["server","desktop","vm-deploy"]; flake = builtins.getFlake ("/home/cl/persist/flake"); in map (name: flake.nixosConfigurations.${name}.options) names',
+            },
+            flake_parts = {
+              expr = 'let flake = builtins.getFlake ("/home/cl/persist/flake"); in flake.debug.options // flake.currentSystem.options',
+            },
+          },
+        },
         taplo = {},
         basedpyright = {
           settings = {
@@ -79,7 +90,7 @@ return {
                 globalPlugins = {
                   {
                     name = "@vue/typescript-plugin",
-                    location = vim.fn.system("which vue-language-server"),
+                    location = vim.fn.exepath("vue-language-server"),
                     languages = { "vue" },
                     configNamespace = "typescript",
                     enableForWorkspaceTypeScriptVersions = true,
