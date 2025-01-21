@@ -17,6 +17,7 @@ return {
     typescript = { "oxlint", "deno", "eslint" },
     html = { "htmlhint" },
     css = { "stylelint" },
+    tex = { "chktex" },
   },
   config = function(_, opts)
     local lint = require("lint")

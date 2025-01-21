@@ -20,6 +20,7 @@ return {
       css = { "prettier" },
       javascript = { "prettier", "deno_fmt" },
       typescript = { "prettier", "deno_fmt" },
+      tex = { "latexindent" },
     },
     format_on_save = { timeout_ms = 100 },
   },
