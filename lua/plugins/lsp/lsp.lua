@@ -75,6 +75,8 @@ return {
         html = {},
         volar = { init_options = { vue = { hybridMode = true } } },
         texlab = {},
+        tinymist = {},
+        marksman = {},
       },
     }
   end,
