@@ -21,6 +21,7 @@ return {
       javascript = { "prettier", "deno_fmt" },
       typescript = { "prettier", "deno_fmt" },
       tex = { "latexindent" },
+      sql = { "sqlfluff" },
     },
     format_on_save = { timeout_ms = 100 },
   },

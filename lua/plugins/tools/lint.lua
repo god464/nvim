@@ -18,6 +18,7 @@ return {
     html = { "htmlhint" },
     css = { "stylelint" },
     tex = { "chktex" },
+    sql = { "sqlfluff" },
   },
   config = function(_, opts)
     local lint = require("lint")
