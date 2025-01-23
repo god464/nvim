@@ -1,6 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
-  dependencies = { "b0o/SchemaStore.nvim", ft = { "json", "yaml" } },
+  dependencies = { { "b0o/SchemaStore.nvim", ft = { "json", "yaml" } }, "onsails/lspkind.nvim" },
   event = "FileType",
   opts = function()
     return {
@@ -87,6 +87,7 @@ return {
     for server, config in pairs(opts.servers) do
       lspconfig[server].setup(vim.tbl_extend("force", { capabilities = capabilities }, config))
       config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
+      require("lspkind").init({ mode = "symbol_text", preset = "default" })
     end
   end,
 }
