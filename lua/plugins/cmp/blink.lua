@@ -51,10 +51,11 @@ return {
     },
     signature = { enabled = true, window = { border = "rounded" } },
     sources = {
-      default = { "lsp", "path", "snippets", "buffer", "lazydev" },
+      default = { "lsp", "path", "snippets", "buffer", "lazydev", "dadbod" },
       providers = {
         lsp = { name = "LSP", fallbacks = { "lazydev" } },
         lazydev = { name = "LazyDev", module = "lazydev.integrations.blink" },
+        dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
       },
     },
   },

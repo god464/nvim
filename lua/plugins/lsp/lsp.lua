@@ -77,7 +77,6 @@ return {
         texlab = {},
         tinymist = {},
         marksman = {},
-        sqls = {},
       },
     }
   end,

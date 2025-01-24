@@ -4,6 +4,7 @@ return {
   cmd = "ConformInfo",
   opts = {
     default_format_opts = { timeout_ms = 500, lsp_format = "fallback" },
+    formatters = { sqlfluff = { inherit = true, args = { "format", "--dialect=postgres", "-" } } },
     formatters_by_ft = {
       lua = { "stylua" },
       c = { "clang-format" },
