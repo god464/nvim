@@ -1,6 +1,10 @@
 return {
   "neovim/nvim-lspconfig",
-  dependencies = { { "b0o/SchemaStore.nvim", ft = { "json", "yaml" } }, "onsails/lspkind.nvim" },
+  dependencies = {
+    { "b0o/SchemaStore.nvim", ft = { "json", "yaml" } },
+    "onsails/lspkind.nvim",
+    { "nanotee/sqls.nvim", ft = "sql" },
+  },
   event = "FileType",
   opts = function()
     return {
@@ -77,6 +81,7 @@ return {
         texlab = {},
         tinymist = {},
         marksman = {},
+        sqls = { on_attach = function(client, bufnr) require("sqls").on_attach(client, bufnr) end },
       },
     }
   end,
