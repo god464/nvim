@@ -23,6 +23,7 @@ return {
       typescript = { "prettier", "deno_fmt" },
       tex = { "latexindent" },
       sql = { "sqlfluff" },
+      typst = { "typstyle" },
     },
     format_on_save = { timeout_ms = 100 },
   },
