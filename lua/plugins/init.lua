@@ -9,6 +9,7 @@ local M = {
   "quickfix",
   "term",
   "test",
+  "theme",
   "tools",
   "tree",
   "treesitter",

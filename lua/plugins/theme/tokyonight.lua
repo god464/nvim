@@ -1,5 +1,6 @@
 return {
   "folke/tokyonight.nvim",
+  enabled = false,
   event = "UIEnter",
   opts = { style = "storm" },
   config = function(opts)
