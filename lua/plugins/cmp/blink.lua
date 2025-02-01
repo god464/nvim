@@ -54,6 +54,7 @@ return {
       default = { "lsp", "path", "snippets", "buffer", "lazydev", "dadbod" },
       providers = {
         lsp = { name = "LSP", fallbacks = { "lazydev" } },
+        markdown = { name = "RenderMarkdown", module = "render-markdown.integ.blink", fallbacks = { "lsp" } },
         lazydev = { name = "LazyDev", module = "lazydev.integrations.blink" },
         dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
       },

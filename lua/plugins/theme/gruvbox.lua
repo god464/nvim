@@ -1,5 +1,6 @@
 return {
   "ellisonleao/gruvbox.nvim",
+  enabled = false,
   event = "UIEnter",
   opts = { contrast = "hard" },
   config = function(opts)

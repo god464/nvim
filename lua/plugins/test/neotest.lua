@@ -7,13 +7,15 @@ return {
     "nvim-treesitter/nvim-treesitter",
     "alfaix/neotest-gtest",
     "nvim-neotest/neotest-python",
+    "marilari88/neotest-vitest",
   },
   opts = function()
     return {
       adapters = {
         require("neotest-gtest")(),
         require("neotest-python")({ runner = "unittest" }),
-        require("rustaceanvim.neotest"),
+        require("rustaceanvim.neotest")(),
+        require("neotest-vitest")(),
       },
       consumers = { overseer = require("neotest.consumers.overseer") },
     }
