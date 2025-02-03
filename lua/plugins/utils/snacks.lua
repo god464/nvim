@@ -8,8 +8,6 @@ return {
     words = { enabled = true },
     notifier = { enabled = true },
     input = { enabled = true },
-    scope = { enabled = true },
     scroll = { enabled = true },
-    indent = { enabled = true, chunk = { enable = true } },
   },
 }
