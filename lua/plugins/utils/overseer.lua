@@ -1,5 +1,6 @@
 return {
   "stevearc/overseer.nvim",
+  dependencies = { "stevearc/dressing.nvim", "ibhagwan/fzf-lua", "rcarriga/nvim-notify" },
   cmd = {
     "OverseerToggle",
     "OverseerRun",
