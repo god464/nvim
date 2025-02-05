@@ -3,6 +3,7 @@ return {
   dependencies = {
     "LiadOz/nvim-dap-repl-highlights",
     "theHamsta/nvim-dap-virtual-text",
+    "igorlfs/nvim-dap-view",
     "rcarriga/nvim-dap-ui",
     "mfussenegger/nvim-dap-python",
   },
@@ -37,6 +38,21 @@ return {
   },
   config = function()
     local dap = require("dap")
+
+    require("dap-python").setup("python")
+
+    dap.adapters.firefox = {
+      type = "executable",
+      command = "node",
+      args = { vim.fn.exepath("vscode-firefox-debug") .. "/dist/adapter.bundle.js" },
+    }
+
+    dap.adapters.codelldb = {
+      type = "executable",
+      command = "codelldb", -- adjust as needed, must be absolute path
+      name = "codelldb",
+    }
+
     dap.configurations.rust = {
       name = "Launch file",
       type = "codelldb",
@@ -45,6 +61,17 @@ return {
       cwd = "${workspaceFolder}",
       stopOnEntry = false,
     }
-    require("dap-python").setup("python")
+
+    dap.configurations.typescript = {
+      {
+        name = "Debug with Firefox",
+        type = "firefox",
+        request = "launch",
+        reAttach = true,
+        url = "http://localhost:3000",
+        webRoot = "${workspaceFolder}",
+        firefoxExecutable = "firefox",
+      },
+    }
   end,
 }
