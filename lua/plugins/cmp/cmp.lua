@@ -67,7 +67,7 @@ return {
         end, { "i", "s", "c" }),
       },
       sources = cmp.config.sources({
-        { name = "lazydev",                group_index = 0 },
+        { name = "lazydev", group_index = 0 },
         { name = "crates" },
         { name = "luasnip" },
         { name = "nvim_lsp_signature_help" },

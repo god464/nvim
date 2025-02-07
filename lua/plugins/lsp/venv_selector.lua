@@ -4,6 +4,7 @@ return {
     "neovim/nvim-lspconfig",
     "mfussenegger/nvim-dap",
     "mfussenegger/nvim-dap-python",
+    "ibhagwan/fzf-lua",
   },
   cmd = "VenvSelect",
   branch = "regexp",
