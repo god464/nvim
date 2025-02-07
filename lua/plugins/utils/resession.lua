@@ -1,5 +1,6 @@
 return {
   "stevearc/resession.nvim",
+  enabled = false,
   event = "VeryLazy",
   opts = { autosave = { enabled = true } },
   config = function(_, opts)

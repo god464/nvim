@@ -22,9 +22,9 @@ return {
       dashboard.button("f", "󰈞  Find file", "<cmd>FzfLua files<cr>"),
       dashboard.button("g", "󰊄  Live grep", "<cmd>FzfLua live_grep_native<cr>"),
       dashboard.button("r", "  Recent files", "<cmd>FzfLua oldfiles<cr>"),
-      dashboard.button("s", "  Restore Session", require("resession").load),
-      dashboard.button("u", "  Update plugins", "<Cmd>Lazy sync<CR>"),
-      dashboard.button("q", "󰅚  Quit", "<Cmd>qa<CR>"),
+      dashboard.button("o", "  Browser files", "<cmd>Oil<cr>"),
+      dashboard.button("u", "  Update plugins", "<cmd>Lazy sync<cr>"),
+      dashboard.button("q", "󰅚  Quit", "<cmd>qa<cr>"),
     }
 
     for _, button in ipairs(dashboard.section.buttons.val) do
