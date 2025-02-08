@@ -19,6 +19,7 @@ return {
     { "<Leader><Leader>B", "<cmd>FzfLua buffers<CR>", desc = "Search Buffer" },
     { "<Leader><Leader>k", "<cmd>FzfLua keymaps<CR>", desc = "Search Keymaps" },
     { "<Leader><Leader>t", "<cmd>TodoFzfLua<CR>", desc = "Search TODO" },
+    { "<Leader><Leader>m", "<cmd>Noice pick<CR>", desc = "Search messages" },
     { "<Leader><Leader>r", "<cmd>FzfLua live_grep_native<CR>", desc = "Grep string" },
     { "<Leader><Leader>s", "<cmd>FzfLua lsp_document_symbols<CR>", desc = "Search Document Symbols" },
   },
