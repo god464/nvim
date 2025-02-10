@@ -38,12 +38,7 @@ return {
           },
         },
         nixd = {
-          nixpkgs = { expr = "import <nixpkgs> { }" },
-          formatting = { command = { "nixfmt" } },
           options = {
-            nixos = {
-              exp = 'let names = ["server","desktop","vm-deploy"]; flake = builtins.getFlake ("/home/cl/persist/flake"); in map (name: flake.nixosConfigurations.${name}.options) names',
-            },
             flake_parts = {
               expr = 'let flake = builtins.getFlake ("/home/cl/persist/flake"); in flake.debug.options // flake.currentSystem.options',
             },

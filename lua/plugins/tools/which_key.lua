@@ -3,7 +3,17 @@ return {
   dependencies = "nvim-tree/nvim-web-devicons",
   event = "VeryLazy",
   opts_extend = { "spec" },
-  opts = { preset = "modern" },
+  opts = {
+    preset = "modern",
+    win = { border = "rounded" },
+    spec = {
+      { "<leader><leader>", group = "search" },
+      { "<leader>r", group = "task" },
+      { "<leader>o", group = "toggle" },
+      { "<leader>d", group = "debug" },
+      { "<leader>T", group = "test" },
+    },
+  },
   keys = {
     {
       "<leader>?",
