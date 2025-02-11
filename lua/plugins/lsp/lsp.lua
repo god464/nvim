@@ -77,6 +77,7 @@ return {
         tinymist = {},
         marksman = {},
         sqls = { on_attach = function(client, bufnr) require("sqls").on_attach(client, bufnr) end },
+        lemminx = {},
       },
     }
   end,
