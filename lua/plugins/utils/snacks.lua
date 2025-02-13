@@ -6,5 +6,6 @@ return {
     quickfile = { enabled = true },
     statuscolumn = { enabled = true },
     scroll = { enabled = true },
+    input = { enabled = true },
   },
 }
