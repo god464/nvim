@@ -1,6 +1,6 @@
 return {
   "hedyhli/outline.nvim",
-  enabled = true,
+  enabled = false,
   dependencies = "onsails/lspkind.nvim",
   cmd = "Outline",
   keys = { { "<leader>ol", "<Cmd>Outline<CR>", desc = "Outline" } },
