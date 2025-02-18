@@ -49,6 +49,16 @@ return {
         end,
         condition = { filetype = { "cpp" } },
       },
+      {
+        name = "compile typst to pdf",
+        builder = function()
+          return {
+            cmd = { "typst" },
+            args = { "compile", vim.fn.expand("%:p") },
+          }
+        end,
+        condition = { filetype = { "typst" } },
+      },
     }
 
     for _, template in ipairs(templates) do
