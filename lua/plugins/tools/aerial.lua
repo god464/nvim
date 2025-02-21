@@ -7,6 +7,7 @@ return {
     layout = { default_direction = "prefer_left" },
     highlight_on_hover = true,
     close_on_select = true,
+    filter_kind = false,
     manage_folds = true,
     show_guides = true,
     autojump = true,
