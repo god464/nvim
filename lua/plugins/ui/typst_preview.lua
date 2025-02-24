@@ -1,5 +1,5 @@
 return {
   "chomosuke/typst-preview.nvim",
-  ft = "typst",
+  cmd = "TypstPreviewToggle",
   opts = { dependencies_bin = { ["tinymist"] = "tinymist", ["websocat"] = "websocat" } },
 }

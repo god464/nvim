@@ -1,7 +1,6 @@
 return {
   "stevearc/conform.nvim",
   event = "BufWritePre",
-  cmd = "ConformInfo",
   opts = {
     default_format_opts = { timeout_ms = 500, lsp_format = "fallback" },
     formatters = { sqlfluff = { inherit = true, args = { "format", "--dialect=postgres", "-" } } },
@@ -24,6 +23,7 @@ return {
       tex = { "latexindent" },
       sql = { "sqlfluff" },
       typst = { "typstyle" },
+      java = { "google-java-format" },
     },
     format_on_save = { timeout_ms = 100 },
   },

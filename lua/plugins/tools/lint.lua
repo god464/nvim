@@ -19,6 +19,7 @@ return {
     css = { "stylelint" },
     tex = { "chktex" },
     sql = { "sqlfluff" },
+    java = { "checkstyle" },
   },
   config = function(_, opts)
     local lint = require("lint")
