@@ -41,15 +41,9 @@ return {
 
     require("dap-python").setup("python")
 
-    dap.adapters.firefox = {
-      type = "executable",
-      command = "node",
-      args = { vim.fn.exepath("vscode-firefox-debug") .. "/dist/adapter.bundle.js" },
-    }
-
     dap.adapters.codelldb = {
       type = "executable",
-      command = "codelldb", -- adjust as needed, must be absolute path
+      command = "codelldb",
       name = "codelldb",
     }
 
@@ -71,6 +65,16 @@ return {
         url = "http://localhost:3000",
         webRoot = "${workspaceFolder}",
         firefoxExecutable = "firefox",
+      },
+    }
+
+    dap.configurations.java = {
+      {
+        type = "java",
+        request = "attach",
+        name = "Debug (Attach) - Remote",
+        hostName = "127.0.0.1",
+        port = 5005,
       },
     }
   end,
