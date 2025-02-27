@@ -13,6 +13,10 @@ return {
   opts = {
     keymap = { preset = "enter" },
     appearance = { nerd_font_variant = "mono" },
+    cmdline = {
+      keymap = { preset = "enter", ["<CR>"] = { "accept_and_enter", "fallback" }, ["<Tab>"] = { "accept" } },
+      completion = { menu = { auto_show = true }, ghost_text = { enabled = false } },
+    },
     completion = {
       accept = { auto_brackets = { enabled = true } },
       documentation = {
