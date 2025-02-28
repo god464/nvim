@@ -19,7 +19,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   defaults = { lazy = true, version = false },
   spec = { { import = "plugins" } },
-  install = { missing = true, colorscheme = { "nightfox" } },
+  install = { missing = true, colorscheme = { "gruvbox" } },
   rocks = { root = vim.fn.stdpath("data") .. "/lazy-rocks", server = "https://nvim-neorocks.github.io/rocks-binaries/" },
   checker = { enabled = true },
   performance = {
