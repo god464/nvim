@@ -23,7 +23,7 @@ return {
         auto_show = true,
         window = { border = "rounded", scrollbar = false },
         auto_show_delay_ms = 0,
-        update_delay_ms = 0,
+        update_delay_ms = 50,
       },
       list = { selection = { auto_insert = true, preselect = function(ctx) return ctx.mode ~= "cmdline" end } },
       menu = {
