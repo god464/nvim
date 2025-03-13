@@ -90,6 +90,8 @@ return {
         sqls = { on_attach = function(client, bufnr) require("sqls").on_attach(client, bufnr) end },
         lemminx = {},
         gradle_ls = {},
+        verible = {},
+        astro = {},
       },
     }
   end,
