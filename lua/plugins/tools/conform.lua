@@ -11,7 +11,7 @@ return {
       cmake = { "cmake_format" },
       rust = { "rustfmt" },
       nix = { "nixfmt" },
-      yaml = { "prettier" },
+      yaml = { "yamlfmt" },
       toml = { "taplo" },
       python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
       sh = { "shfmt" },
