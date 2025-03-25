@@ -20,6 +20,7 @@ return {
     tex = { "chktex" },
     sql = { "sqlfluff" },
     java = { "checkstyle" },
+    fish = { "fish" },
   },
   config = function(_, opts)
     local lint = require("lint")

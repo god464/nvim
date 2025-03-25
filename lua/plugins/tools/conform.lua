@@ -24,6 +24,7 @@ return {
       sql = { "sqlfluff" },
       typst = { "typstyle" },
       java = { "google-java-format" },
+      fish = { "fish_indent" },
     },
     format_on_save = { timeout_ms = 100 },
   },
