@@ -15,7 +15,7 @@ return {
       toml = { "taplo" },
       python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
       sh = { "shfmt" },
-      makrdown = { "mdformat" },
+      makrdown = { "prettier" },
       html = { "prettier" },
       css = { "biome" },
       javascript = { "biome" },
