@@ -13,7 +13,7 @@ return {
     progress = { border = "rounded" },
     keymaps = { ["l"] = "actions.select", ["h"] = "actions.parent" },
   },
-  config = function(opts)
+  config = function(_, opts)
     require("oil").setup(opts)
     vim.api.nvim_create_autocmd("User", {
       pattern = "OilActionsPost",

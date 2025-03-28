@@ -24,7 +24,7 @@ return {
     task_win = { border = "rounded" },
     strategy = "toggleterm",
   },
-  config = function(opts)
+  config = function(_, opts)
     local overseer = require("overseer")
     overseer.setup(opts)
 

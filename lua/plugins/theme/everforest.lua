@@ -10,7 +10,7 @@ return {
     diagnostic_text_highlight = true,
     diagnostic_line_highlight = true,
   },
-  config = function(opts)
+  config = function(_, opts)
     require("everforest").setup(opts)
     vim.cmd([[colorscheme everforest]])
   end,

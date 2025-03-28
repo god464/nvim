@@ -12,6 +12,7 @@ return {
       rust = { "rustfmt" },
       nix = { "nixfmt" },
       yaml = { "prettier" },
+      json = { "prettier" },
       toml = { "taplo" },
       python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
       sh = { "shfmt" },

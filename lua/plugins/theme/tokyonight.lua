@@ -3,7 +3,7 @@ return {
   enabled = false,
   event = "UIEnter",
   opts = { style = "storm" },
-  config = function(opts)
+  config = function(_, opts)
     require("tokyonight").setup(opts)
     vim.cmd([[colorscheme tokyonight]])
   end,

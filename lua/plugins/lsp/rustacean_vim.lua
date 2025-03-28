@@ -21,5 +21,5 @@ return {
       },
     },
   },
-  config = function(opts) vim.g.rustaceanvim = opts end,
+  config = function(_, opts) vim.g.rustaceanvim = opts end,
 }
