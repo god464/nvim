@@ -25,6 +25,8 @@ return {
       typst = { "typstyle" },
       java = { "google-java-format" },
       fish = { "fish_indent" },
+      vue = { "prettier" },
+      astro = { "prettier" },
     },
     format_on_save = { timeout_ms = 100 },
   },
