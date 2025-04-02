@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "lewis6991/gitsigns.nvim",
   dependencies = { "petertriho/nvim-scrollbar", "folke/snacks.nvim" },

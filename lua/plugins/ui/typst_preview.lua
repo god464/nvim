@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "chomosuke/typst-preview.nvim",
   cmd = "TypstPreviewToggle",

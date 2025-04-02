@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "mrcjkb/rustaceanvim",
   dependencies = "neovim/nvim-lspconfig",

@@ -6,10 +6,13 @@ local function build_plugin()
   end
 end
 
+---@type LazyPluginSpec
 return {
+  ---@module 'blink.cmp'
   "saghen/blink.cmp",
   build = build_plugin(),
   dependencies = "rafamadriz/friendly-snippets",
+  ---@type blink.cmp.Config
   opts = {
     keymap = { preset = "enter" },
     appearance = { nerd_font_variant = "mono" },

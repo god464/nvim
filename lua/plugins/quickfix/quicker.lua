@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "stevearc/quicker.nvim",
   ft = "qf",

@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "stevearc/overseer.nvim",
   dependencies = { "ibhagwan/fzf-lua", "rcarriga/nvim-notify" },
