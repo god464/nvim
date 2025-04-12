@@ -1,7 +1,6 @@
 ---@type LazyPluginSpec
 return {
   "mrcjkb/rustaceanvim",
-  dependencies = "neovim/nvim-lspconfig",
   ft = "rust",
   opts = {
     server = {
@@ -22,5 +21,5 @@ return {
       },
     },
   },
-  config = function(_, opts) vim.g.rustaceanvim = opts end,
+  config = function(_, opts) vim.g.rustaceanvim = vim.tbl_deep_extend("keep", vim.g.rustaceanvim or {}, opts or {}) end,
 }
