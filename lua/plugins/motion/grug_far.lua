@@ -1,6 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "MagicDuck/grug-far.nvim",
+  dependencies = "nvim-tree/nvim-web-devicons",
   opts = { headerMaxWidth = 80 },
   cmd = "GrugFar",
   keys = {
