@@ -1,10 +1,21 @@
 vim.diagnostic.config({
-  virtual_text = { spacing = 4, prefix = "●", severity = vim.diagnostic.severity.ERROR },
+  virtual_lines = true,
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = "󰅚",
+      [vim.diagnostic.severity.WARN] = "󰀪",
+      [vim.diagnostic.severity.INFO] = "󰋽",
+      [vim.diagnostic.severity.HINT] = "󰌶",
+    },
+  },
+  underline = true,
+  update_in_insert = false,
   float = { severity_sort = true, source = "if_many" },
   severity_sort = true,
 })
 
 vim.lsp.inlay_hint.enable()
+
 if vim.lsp.document_highlight then vim.lsp.document_highlight.enable() end
 
 vim.lsp.buf.signature_help()
