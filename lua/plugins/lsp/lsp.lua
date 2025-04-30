@@ -45,6 +45,7 @@ return {
             },
           },
         },
+        nil_ls = {},
         taplo = {},
         basedpyright = {
           settings = {
@@ -70,7 +71,6 @@ return {
         dockerls = {},
         cssls = {},
         tailwindcss = {},
-        denols = {},
         superhtml = {},
         html = {},
         volar = { init_options = { vue = { hybridMode = true } } },
