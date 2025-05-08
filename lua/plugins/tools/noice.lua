@@ -20,7 +20,7 @@ return {
         view = "notify",
       },
     },
-    presets = { bottom_search = true, command_palette = true, long_message_to_split = true },
+    presets = { inc_rename = true, bottom_search = true, command_palette = true, long_message_to_split = true },
     views = {
       cmdline_popup = { border = { style = "rounded" } },
       hover = {

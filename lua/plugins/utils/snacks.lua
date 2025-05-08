@@ -1,7 +1,9 @@
 ---@type LazyPluginSpec
 return {
+  ---@module "snacks"
   "folke/snacks.nvim",
   event = "VeryLazy",
+  ---@type snacks.Config
   opts = {
     bigfile = { enabled = true },
     quickfile = { enabled = true },
