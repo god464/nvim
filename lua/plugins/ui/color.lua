@@ -5,6 +5,6 @@ return {
   opts = {
     render = "virtual",
     enable_tailwind = true,
-    exclude_filetypes = { "Trouble", "alpha", "help", "lazy", "mason", "notify", "toggleterm", "trouble" },
+    exclude_filetypes = { "Trouble", "alpha", "help", "lazy", "mason", "notify", "toggleterm", "trouble", "neogit" },
   },
 }
