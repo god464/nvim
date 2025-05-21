@@ -22,6 +22,7 @@ return {
     sql = { "sqlfluff" },
     java = { "checkstyle" },
     fish = { "fish" },
+    terraform = { "tflint" },
   },
   config = function(_, opts)
     local lint = require("lint")

@@ -90,6 +90,7 @@ return {
         gradle_ls = {},
         verible = {},
         astro = {},
+        terraformls = {},
       },
     }
   end,

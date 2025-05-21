@@ -28,6 +28,7 @@ return {
       fish = { "fish_indent" },
       vue = { "prettier", timeout_ms = 1000 },
       astro = { "prettier", timeout_ms = 1000 },
+      terraform = { "terraform_fmt" },
     },
     format_on_save = {},
   },
