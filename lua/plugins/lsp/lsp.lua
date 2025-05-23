@@ -65,6 +65,7 @@ return {
             "javascriptreact",
             "javascript.jsx",
             "vue",
+            "astro",
           },
           settings = {
             vtsls = {
