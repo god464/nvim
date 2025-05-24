@@ -12,6 +12,7 @@ return {
     float = { border = "rounded" },
     preview = { border = "rounded" },
     progress = { border = "rounded" },
+    lsp_file_methods = { autosave_changes = "unmodified" },
     keymaps = { ["l"] = "actions.select", ["h"] = "actions.parent" },
   },
   config = function(_, opts)
