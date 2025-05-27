@@ -23,6 +23,7 @@ return {
     java = { "checkstyle" },
     fish = { "fish" },
     terraform = { "tflint" },
+    ansible = { "ansible_lint" },
   },
   config = function(_, opts)
     local lint = require("lint")

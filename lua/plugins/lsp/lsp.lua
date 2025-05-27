@@ -92,6 +92,7 @@ return {
         verible = {},
         astro = {},
         terraformls = {},
+        ansiblels = {},
       },
     }
   end,
