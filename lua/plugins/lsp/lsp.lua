@@ -47,7 +47,7 @@ return {
         },
         nil_ls = {},
         taplo = {},
-        basedpyright = {},
+        ty = {},
         neocmake = {},
         bashls = {},
         dockerls = {},
@@ -55,7 +55,7 @@ return {
         tailwindcss = {},
         superhtml = {},
         html = {},
-        volar = { init_options = { vue = { hybridMode = true } } },
+        vue_ls = { init_options = { vue = { hybridMode = true } } },
         vtsls = {
           filetypes = {
             "typescript",
@@ -97,11 +97,11 @@ return {
     }
   end,
   config = function(_, opts)
-    local lspconfig = require("lspconfig")
     local capabilities = require("preset.capabilities")
 
     for server, config in pairs(opts.servers) do
-      lspconfig[server].setup(vim.tbl_extend("force", { capabilities = capabilities }, config))
+      vim.lsp.config(server, vim.tbl_extend("force", { capabilities = capabilities }, config))
+      vim.lsp.enable(server)
       config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
       require("lspkind").init({ mode = "symbol_text", preset = "default" })
     end
