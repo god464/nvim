@@ -98,10 +98,8 @@ return {
     }
   end,
   config = function(_, opts)
-    local capabilities = require("preset.capabilities")
-
     for server, config in pairs(opts.servers) do
-      vim.lsp.config(server, vim.tbl_extend("force", { capabilities = capabilities }, config))
+      vim.lsp.config(server, config)
       vim.lsp.enable(server)
       config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
       require("lspkind").init({ mode = "symbol_text", preset = "default" })
