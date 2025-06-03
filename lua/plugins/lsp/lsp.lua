@@ -48,7 +48,7 @@ return {
         nil_ls = {},
         taplo = {},
         -- ty = {},
-        basedpyright = {},
+        basedpyright = { settings = { basedpyright = { analysis = { typeCheckingMode = "recommended" } } } },
         neocmake = {},
         bashls = {},
         dockerls = {},
