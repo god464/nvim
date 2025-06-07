@@ -7,6 +7,7 @@ return {
     "igorlfs/nvim-dap-view",
     "rcarriga/nvim-dap-ui",
     "mfussenegger/nvim-dap-python",
+    "jbyuki/one-small-step-for-vimkind",
   },
   keys = {
     { "<F5>", function() require("dap").continue() end, desc = "Debug: Continue" },
@@ -48,6 +49,26 @@ return {
       name = "codelldb",
     }
 
+    dap.configurations.lua = {
+      {
+        type = "nlua",
+        request = "attach",
+        name = "Attach to running Neovim instance",
+      },
+    }
+
+    dap.configurations.javascript = {
+      {
+        name = "Debug with Firefox",
+        type = "firefox",
+        request = "launch",
+        reAttach = true,
+        url = "http://localhost:3000",
+        webRoot = "${workspaceFolder}",
+        firefoxExecutable = "firefox",
+      },
+    }
+
     dap.configurations.typescript = {
       {
         name = "Debug with Firefox",
@@ -69,5 +90,9 @@ return {
         port = 5005,
       },
     }
+
+    dap.adapters.nlua = function(callback, config)
+      callback({ type = "server", host = config.host or "127.0.0.1", port = config.port or 8086 })
+    end
   end,
 }
