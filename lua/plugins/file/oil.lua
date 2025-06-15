@@ -1,6 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "stevearc/oil.nvim",
+  enabled = false,
   dependencies = "nvim-tree/nvim-web-devicons",
   cmd = "Oil",
   keys = { { "<Leader>o-", "<cmd>Oil<cr>", desc = "Oil" } },
