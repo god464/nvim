@@ -9,11 +9,11 @@ return {
     win = { border = "rounded" },
     spec = {
       { "<leader><leader>", group = "search" },
-      { "<leader>r", group = "task" },
+      { "<leader>R", group = "task" },
       { "<leader>o", group = "toggle" },
       { "<leader>d", group = "debug" },
       { "<leader>T", group = "test" },
-      { "<leader>R", group = "Refactor" },
+      { "<leader>r", group = "Refactor" },
     },
   },
   keys = {

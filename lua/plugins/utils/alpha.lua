@@ -1,7 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "goolord/alpha-nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons", "nvim-lua/plenary.nvim" },
+  dependencies = { "nvim-tree/nvim-web-devicons", "nvim-lua/plenary.nvim", "folke/drop.nvim" },
   event = "VimEnter",
   opts = function()
     local dashboard = require("alpha.themes.dashboard")
