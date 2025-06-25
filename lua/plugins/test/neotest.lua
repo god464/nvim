@@ -9,6 +9,8 @@ return {
     "alfaix/neotest-gtest",
     "nvim-neotest/neotest-python",
     "marilari88/neotest-vitest",
+    "fredrikaverpil/neotest-golang",
+    "mrcjkb/neotest-haskell",
   },
   opts = function()
     return {
@@ -17,6 +19,8 @@ return {
         require("neotest-python")({ runner = "unittest" }),
         require("rustaceanvim.neotest")(),
         require("neotest-vitest")(),
+        require("neotest-golang")(),
+        require("neotest-haskell")(),
       },
       consumers = { overseer = require("neotest.consumers.overseer") },
     }
