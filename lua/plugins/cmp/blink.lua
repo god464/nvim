@@ -58,11 +58,12 @@ return {
     },
     signature = { enabled = true, window = { border = "rounded" } },
     sources = {
-      default = { "lsp", "path", "snippets", "buffer", "lazydev", "dadbod", "markdown" },
+      default = { "lsp", "path", "snippets", "buffer", "lazydev", "dadbod", "markdown", "codeium" },
       providers = {
         markdown = { name = "RenderMarkdown", module = "render-markdown.integ.blink", fallbacks = { "lsp" } },
         lazydev = { name = "LazyDev", module = "lazydev.integrations.blink" },
         dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
+        codeium = { name = "codeium", module = "codeium.blink", async = true },
       },
     },
   },

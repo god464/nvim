@@ -1,4 +1,5 @@
 local M = {
+  "ai",
   "cmp",
   "file",
   "finder",

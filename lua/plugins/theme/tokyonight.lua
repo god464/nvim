@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "folke/tokyonight.nvim",
   enabled = false,

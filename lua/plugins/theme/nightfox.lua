@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "EdenEast/nightfox.nvim",
   enabled = false,

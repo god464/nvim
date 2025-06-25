@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "stevearc/resession.nvim",
   enabled = false,
