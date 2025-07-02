@@ -29,6 +29,7 @@ return {
       astro = { "prettier", timeout_ms = 1000 },
       terraform = { "terraform_fmt" },
       go = { "golines" },
+      haskel = { "stylish-haskell" },
     },
     format_on_save = {},
   },

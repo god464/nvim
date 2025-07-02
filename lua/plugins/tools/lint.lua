@@ -24,6 +24,7 @@ return {
     fish = { "fish" },
     terraform = { "tflint" },
     ansible = { "ansible_lint" },
+    haskell = { "hlint" },
   },
   config = function(_, opts)
     local lint = require("lint")
