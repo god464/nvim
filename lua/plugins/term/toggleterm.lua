@@ -53,5 +53,17 @@ return {
       mode = "n",
       desc = "Lua REPL",
     },
+    {
+      "<leader>otg",
+      function()
+        local ghci
+        if not ghci then
+          ghci = require("toggleterm.terminal").Terminal:new({ cmd = "ghci", hidden = true, direction = "float" })
+        end
+        ghci:toggle()
+      end,
+      mode = "n",
+      desc = "Haskell REPL (GHCI)",
+    },
   },
 }
