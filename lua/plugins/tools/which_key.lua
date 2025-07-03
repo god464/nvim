@@ -13,7 +13,8 @@ return {
       { "<leader>o", group = "toggle" },
       { "<leader>d", group = "debug" },
       { "<leader>T", group = "test" },
-      { "<leader>r", group = "Refactor" },
+      { "<leader>r", group = "refactor" },
+      { "<leader>u", group = "edgy" },
     },
   },
   keys = {

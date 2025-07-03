@@ -11,7 +11,7 @@ return {
       {
         ft = "toggleterm",
         size = { height = 0.4 },
-        filter = function(buf, win) return vim.api.nvim_win_get_config(win).relative == "" end,
+        filter = function(_, win) return vim.api.nvim_win_get_config(win).relative == "" end,
       },
       "Trouble",
       { ft = "qf", title = "QuickFix" },
@@ -21,11 +21,19 @@ return {
         filter = function(buf) return vim.bo[buf].buftype == "help" end,
       },
     },
+    left = {
+      {
+        title = "Outline",
+        ft = "Outline",
+        pinned = true,
+        open = "Outline",
+      },
+    },
     right = {
       {
         ft = "noice",
         size = { height = 0.4 },
-        filter = function(buf, win) return vim.api.nvim_win_get_config(win).relative == "" end,
+        filter = function(_, win) return vim.api.nvim_win_get_config(win).relative == "" end,
       },
     },
   },

@@ -1,6 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "RRethy/vim-illuminate",
+  enabled = false,
   event = "VeryLazy",
   opts = { filetypes_denylist = { "xxd", "floggraph" } },
   keys = {
