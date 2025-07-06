@@ -22,6 +22,7 @@ require("lazy").setup({
   install = { missing = true, colorscheme = { "everforest" } },
   rocks = { root = vim.fn.stdpath("data") .. "/lazy-rocks", server = "https://nvim-neorocks.github.io/rocks-binaries/" },
   checker = { enabled = true },
+  ui = { border = "rounded" },
   performance = {
     rtp = {
       reset = true,
