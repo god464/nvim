@@ -4,6 +4,16 @@ return {
   event = "VeryLazy",
   dependencies = "nvim-tree/nvim-web-devicons",
   opts = {
-    extensions = { "lazy", "aerial", "trouble", "mason", "quickfix", "oil", "overseer", "fzf", "toggleterm" },
+    extensions = {
+      "lazy",
+      "trouble",
+      "mason",
+      "quickfix",
+      "overseer",
+      "fzf",
+      "toggleterm",
+      "nvim-dap-ui",
+      "symbols-outline",
+    },
   },
 }
