@@ -1,5 +1,6 @@
 ---@type LazyPluginSpec
 return {
+  ---@module 'ibl'
   "lukas-reineke/indent-blankline.nvim",
   dependencies = "HiPhish/rainbow-delimiters.nvim",
   event = "VeryLazy",
@@ -9,7 +10,9 @@ return {
 
     hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
 
+    if vim.fn.expand("%:p") ~= "" then vim.cmd.edit({ bang = true }) end
     return {
+      ---@type ibl.config
       indent = { char = "│", tab_char = "│" },
       scope = { show_start = false, show_end = false },
       exclude = {
