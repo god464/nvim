@@ -39,10 +39,14 @@ return {
           },
         },
         nixd = {
-          options = {
-            formatting = { command = { "nixfmt" } },
-            flake_parts = {
-              expr = 'let flake = builtins.getFlake ("/home/cl/persist/flake"); in flake.debug.options // flake.currentSystem.options',
+          settings = {
+            nixd = {
+              formatting = { command = { "nixfmt" } },
+              options = {
+                flake_parts = {
+                  expr = 'let flake = builtins.getFlake ("/home/cl/persist/flake"); in flake.debug.options // flake.currentSystem.options',
+                },
+              },
             },
           },
         },
@@ -141,6 +145,7 @@ return {
             },
           },
         },
+        ccls = {},
       },
     }
   end,
