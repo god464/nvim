@@ -146,6 +146,7 @@ return {
           },
         },
         ccls = {},
+        mdx_analyzer = {},
       },
     }
   end,
