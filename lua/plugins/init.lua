@@ -1,6 +1,7 @@
 local M = {
   "ai",
   "cmp",
+  "dap",
   "file",
   "finder",
   "git",

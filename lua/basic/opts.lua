@@ -16,7 +16,6 @@ g.loaded_netrwPlugin = 1
 opt.autowrite = true
 opt.backup = false
 opt.clipboard = "unnamedplus"
-opt.cursorline = true
 opt.encoding = "utf-8"
 opt.expandtab = true
 opt.fileencodings = "utf-8"

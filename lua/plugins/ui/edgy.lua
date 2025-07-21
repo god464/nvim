@@ -1,6 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "folke/edgy.nvim",
+  enabled = false,
   event = "VeryLazy",
   keys = {
     { "<leader>ue", function() require("edgy").toggle() end, desc = "Edgy Toggle" },
