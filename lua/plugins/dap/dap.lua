@@ -65,6 +65,12 @@ return {
 
     dap.configurations.c = dap.configurations.cpp
 
+    dap.adapters.coreclr = {
+      type = "executable",
+      command = "netcoredbg",
+      args = { "--interpreter=vscode" },
+    }
+
     dap.configurations.lua = {
       {
         type = "nlua",
@@ -101,6 +107,15 @@ return {
         ghciPrompt = "λ: ",
         ghciInitialPrompt = "λ: ",
         ghciCmd = "stack ghci --test --no-load --no-build --main-is TARGET --ghci-options -fprint-evld-with-show",
+      },
+    }
+
+    dap.configurations.cs = {
+      {
+        type = "coreclr",
+        name = "launch - netcoredbg",
+        request = "launch",
+        program = function() return vim.fn.input("Path to dll", vim.fn.getcwd() .. "/bin/Debug/", "file") end,
       },
     }
   end,

@@ -30,6 +30,7 @@ return {
       terraform = { "terraform_fmt" },
       go = { "golines" },
       haskell = { "ormolu" },
+      cs = { "csharpier" },
     },
     format_on_save = {},
   },

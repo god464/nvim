@@ -147,6 +147,7 @@ return {
         },
         ccls = {},
         mdx_analyzer = {},
+        csharp_ls = {},
       },
     }
   end,
