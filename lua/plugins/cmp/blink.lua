@@ -1,16 +1,14 @@
-local function build_plugin()
-  if vim.uv.fs_stat("/etc/nixos") then
-    return "nix run .#build-plugin"
-  else
-    return "cargo build --release"
-  end
-end
-
 ---@type LazyPluginSpec
+---@module 'blink.cmp'
 return {
-  ---@module 'blink.cmp'
   "saghen/blink.cmp",
-  build = build_plugin(),
+  build = function()
+    if vim.uv.fs_stat("/etc/nixos") then
+      return "nix run .#build-plugin"
+    else
+      return "cargo build --release"
+    end
+  end,
   dependencies = "rafamadriz/friendly-snippets",
   ---@type blink.cmp.Config
   opts = {

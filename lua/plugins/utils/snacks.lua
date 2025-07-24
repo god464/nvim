@@ -1,6 +1,6 @@
 ---@type LazyPluginSpec
+---@module "snacks"
 return {
-  ---@module "snacks"
   "folke/snacks.nvim",
   event = "VeryLazy",
   ---@type snacks.Config

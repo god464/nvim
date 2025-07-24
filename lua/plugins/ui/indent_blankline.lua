@@ -1,8 +1,9 @@
 ---@type LazyPluginSpec
+---@module 'ibl'
 return {
-  ---@module 'ibl'
   "lukas-reineke/indent-blankline.nvim",
   dependencies = "HiPhish/rainbow-delimiters.nvim",
+  enabled = false,
   event = "VeryLazy",
   main = "ibl",
   opts = function()

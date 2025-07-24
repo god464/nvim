@@ -1,6 +1,6 @@
 ---@type LazyPluginSpec
+---@module 'neotest'
 return {
-  ---@module 'neotest'
   "nvim-neotest/neotest",
   dependencies = {
     "nvim-neotest/nvim-nio",
