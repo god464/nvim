@@ -2,7 +2,7 @@
 ---@module 'blink.pairs'
 return {
   "saghen/blink.pairs",
-  event = "InsertEnter",
+  event = "UIEnter",
   build = function()
     if vim.uv.fs_stat("/etc/nixos") then
       return "nix run .#build-plugin "
