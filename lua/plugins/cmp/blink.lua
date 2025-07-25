@@ -2,13 +2,7 @@
 ---@module 'blink.cmp'
 return {
   "saghen/blink.cmp",
-  build = function()
-    if vim.uv.fs_stat("/etc/nixos") then
-      return "nix run .#build-plugin"
-    else
-      return "cargo build --release"
-    end
-  end,
+  build = require("lib").build_plugin(),
   dependencies = "rafamadriz/friendly-snippets",
   ---@type blink.cmp.Config
   opts = {
