@@ -2,6 +2,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
+  dependencies = "LiadOz/nvim-dap-repl-highlights",
   main = "nvim-treesitter.configs",
   event = "VeryLazy",
   cmd = { "TSUpdateSync", "TSUpdate", "TSInstallFromGrammar", "TSInstall" },

@@ -2,45 +2,41 @@
 return {
   "mfussenegger/nvim-dap",
   dependencies = {
-    "LiadOz/nvim-dap-repl-highlights",
-    "theHamsta/nvim-dap-virtual-text",
-    "igorlfs/nvim-dap-view",
-    "rcarriga/nvim-dap-ui",
     "mfussenegger/nvim-dap-python",
     "jbyuki/one-small-step-for-vimkind",
     "leoluz/nvim-dap-go",
+    "nvim-lua/plenary.nvim",
   },
   keys = {
-    { "<F5>", function() require("dap").continue() end, desc = "Debug: Continue" },
-    { "<F17>", function() require("dap").terminate() end, desc = "Debug: Terminate" },
-    { "<F10>", function() require("dap").step_over() end, desc = "Debug: Step over" },
-    { "<F11>", function() require("dap").step_into() end, desc = "Debug: Step into" },
-    -- - Shift + <F11>
-    { "<F23>", function() require("dap").step_out() end, desc = "Debug: Step out" },
-    { "<F9>", function() require("dap").toggle_breakpoint() end, desc = "Debug: Toggle breakpoint" },
     {
-      "<leader>dp",
-      function()
-        local condition = vim.fn.input("Breakpoint condition: ")
-        if condition == "" then return end
-        require("dap").set_breakpoint(condition)
-      end,
-      desc = "Set condition breakpoint",
+      "<leader>dB",
+      function() require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: ")) end,
+      desc = "Breakpoint Condition",
     },
-    {
-      "<leader>dP",
-      function()
-        local message = vim.fn.input("Log point message: ")
-        if message == "" then return end
-        require("dap").set_breakpoint(nil, nil, message)
-      end,
-      desc = "Set log point",
-    },
-    { "<leader>dR", function() require("dap").repl.toggle() end, desc = "Toggle REPL" },
-    { "<leader>dl", function() require("dap").run_last() end, desc = "Run last" },
+    { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
+    { "<leader>dc", function() require("dap").continue() end, desc = "Run/Continue" },
+    { "<leader>dC", function() require("dap").run_to_cursor() end, desc = "Run to Cursor" },
+    { "<leader>dg", function() require("dap").goto_() end, desc = "Go to Line (No Execute)" },
+    { "<leader>di", function() require("dap").step_into() end, desc = "Step Into" },
+    { "<leader>dj", function() require("dap").down() end, desc = "Down" },
+    { "<leader>dk", function() require("dap").up() end, desc = "Up" },
+    { "<leader>dl", function() require("dap").run_last() end, desc = "Run Last" },
+    { "<leader>do", function() require("dap").step_out() end, desc = "Step Out" },
+    { "<leader>dO", function() require("dap").step_over() end, desc = "Step Over" },
+    { "<leader>dP", function() require("dap").pause() end, desc = "Pause" },
+    { "<leader>dr", function() require("dap").repl.toggle() end, desc = "Toggle REPL" },
+    { "<leader>ds", function() require("dap").session() end, desc = "Session" },
+    { "<leader>dt", function() require("dap").terminate() end, desc = "Terminate" },
+    { "<leader>dw", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
   },
   config = function()
     local dap = require("dap")
+
+    vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
+
+    local vscode = require("dap.ext.vscode")
+    local json = require("plenary.json")
+    vscode.json_decode = function(str) return vim.json.decode(json.json_strip_comments(str)) end
 
     require("dap-python").setup("python")
 
