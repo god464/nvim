@@ -25,6 +25,8 @@ return {
     terraform = { "tflint" },
     ansible = { "ansible_lint" },
     haskell = { "hlint" },
+    verligo = { "verilator" },
+    systemverilog = { "verilator" },
   },
   config = function(_, opts)
     local lint = require("lint")

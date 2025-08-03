@@ -1,7 +1,7 @@
 local g = vim.g
 
 if g.neovide then
-  g.neovide_transparency = 0.8
+  g.neovide_opacity = 0.8
   g.neovide_floating_shadow = true
   g.neovide_floating_z_height = 10
   g.neovide_light_angle_degrees = 45
