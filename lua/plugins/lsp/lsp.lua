@@ -147,7 +147,6 @@ return {
         },
         ccls = {},
         mdx_analyzer = {},
-        csharp_ls = {},
         nushell = {},
       },
     }
