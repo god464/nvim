@@ -8,6 +8,7 @@ return {
   },
   event = "FileType",
   opts = function()
+    ---@type vim.lsp.Config
     return {
       servers = {
         lua_ls = {
@@ -61,7 +62,7 @@ return {
         tailwindcss = {},
         superhtml = {},
         html = {},
-        vue_ls = { init_options = { vue = { hybridMode = true } } },
+        vue_ls = {},
         vtsls = {
           filetypes = {
             "typescript",
@@ -82,7 +83,6 @@ return {
                     location = vim.fn.exepath("vue-language-server"),
                     languages = { "vue" },
                     configNamespace = "typescript",
-                    enableForWorkspaceTypeScriptVersions = true,
                   },
                 },
               },
