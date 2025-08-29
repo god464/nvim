@@ -80,7 +80,7 @@ return {
                 globalPlugins = {
                   {
                     name = "@vue/typescript-plugin",
-                    location = vim.fn.exepath("vue-language-server"),
+                    location = require("lib").get_ts_plugin,
                     languages = { "vue" },
                     configNamespace = "typescript",
                   },
