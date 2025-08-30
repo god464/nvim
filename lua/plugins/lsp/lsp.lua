@@ -80,9 +80,10 @@ return {
                 globalPlugins = {
                   {
                     name = "@vue/typescript-plugin",
-                    location = require("lib").get_ts_plugin,
+                    location = require("lib").get_vue_ts_plugin(),
                     languages = { "vue" },
                     configNamespace = "typescript",
+                    enableForWorkspaceTypeScriptVersions = true,
                   },
                 },
               },
