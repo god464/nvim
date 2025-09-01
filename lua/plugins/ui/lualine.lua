@@ -4,6 +4,7 @@ return {
   event = "VeryLazy",
   dependencies = "nvim-tree/nvim-web-devicons",
   opts = {
+    theme = "catppuccin",
     extensions = {
       "lazy",
       "trouble",

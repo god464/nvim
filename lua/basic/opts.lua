@@ -45,3 +45,5 @@ opt.termguicolors = true
 opt.title = true
 opt.linebreak = true
 opt.breakindent = true
+
+vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })

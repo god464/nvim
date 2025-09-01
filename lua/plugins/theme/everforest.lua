@@ -1,6 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "neanias/everforest-nvim",
+  enabled = false,
   event = "UIEnter",
   opts = {
     background = "hard",
