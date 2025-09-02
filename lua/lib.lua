@@ -1,7 +1,9 @@
 local M = {}
 
 ---@return string
-function M.build_plugin() return vim.uv.fs_stat("/etc/nixos") and "nix run .#build-plugin" or "cargo build --release" end
+function M.build_blink_plugin()
+  return vim.uv.fs_stat("/etc/nixos") and "nix run .#build-plugin" or "cargo build --release"
+end
 
 ---@return string
 function M.get_vue_ts_plugin()

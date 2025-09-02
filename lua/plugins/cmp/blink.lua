@@ -2,7 +2,7 @@
 ---@module 'blink.cmp'
 return {
   "saghen/blink.cmp",
-  build = require("lib").build_plugin(),
+  build = require("lib").build_blink_plugin(),
   dependencies = "rafamadriz/friendly-snippets",
   ---@type blink.cmp.Config
   opts = {
