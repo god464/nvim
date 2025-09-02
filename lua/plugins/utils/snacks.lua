@@ -13,5 +13,6 @@ return {
     input = { enabled = true },
     rename = { enabled = true },
     scope = { enabled = true },
+    image = { enabled = true },
   },
 }
