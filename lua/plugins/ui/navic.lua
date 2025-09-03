@@ -1,7 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "SmiteshP/nvim-navic",
-  event = "VeryLazy",
+  event = "LspAttach",
   opts = {
     lsp = { auto_attach = true },
     lazy_update_context = true,
