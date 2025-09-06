@@ -7,6 +7,7 @@ return {
     transparent_background = true,
     float = { transparent = true },
     auto_integrations = true,
+    term_color = true,
   },
   config = function(_, opts)
     require("catppuccin").setup(opts)

@@ -1,0 +1,20 @@
+local set_hl = vim.api.nvim_set_hl
+
+set_hl(0, "NormalFloat", { bg = "NONE" })
+set_hl(0, "FloatBorder", { bg = "NONE" })
+set_hl(0, "StatusLine", { bg = "NONE" })
+set_hl(0, "StatusLineNC", { link = "StatusLine" })
+set_hl(0, "StatusLineTerm", { link = "StatusLine" })
+set_hl(0, "StatusLineTermNC", { link = "StatusLine" })
+set_hl(0, "SignColumn", { bg = "NONE" })
+set_hl(0, "FoldColumn", { bg = "NONE" })
+set_hl(0, "CursorLine", { bg = "NONE" })
+set_hl(0, "CursorLineNr", { bg = "NONE" })
+set_hl(0, "WinBar", { bg = "NONE" })
+set_hl(0, "WinBarNC", { bg = "NONE" })
+set_hl(0, "VirtualTextHint", { link = "DiagnosticHint" })
+set_hl(0, "VirtualTextInfo", { link = "DiagnosticInfo" })
+set_hl(0, "VirtualTextWarning", { link = "DiagnosticWarn" })
+set_hl(0, "VirtualTextError", { link = "DiagnosticError" })
+
+vim.cmd.highlight("ErrorMsg cterm=bold gui=bold")

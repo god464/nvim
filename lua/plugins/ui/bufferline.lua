@@ -35,4 +35,14 @@ return {
     { "<M-S-Right>", "<Cmd>+tabmove<CR>", desc = "Move tab to next" },
     { "<leader>bk", "<cmd>BufferLinePickClose<CR>", desc = "Close" },
   },
+  specs = {
+    {
+      "akinsho/bufferline.nvim",
+      opts = function(_, opts)
+        if (vim.g.colors_name or ""):find("catppuccin") then
+          opts.highlights = require("catppuccin.groups.integrations.bufferline").get_theme()
+        end
+      end,
+    },
+  },
 }
