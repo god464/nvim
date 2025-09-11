@@ -1,9 +1,9 @@
 ---@type LazyPluginSpec
----@module 'blink.cmp'
 return {
   "saghen/blink.cmp",
   build = require("lib").build_blink_plugin(),
   dependencies = "rafamadriz/friendly-snippets",
+  ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
     keymap = { preset = "enter" },

@@ -1,8 +1,8 @@
 ---@type LazyPluginSpec
----@module "conform"
 return {
   "stevearc/conform.nvim",
   event = "BufWritePre",
+  ---@module "conform"
   ---@type conform.setupOpts
   opts = {
     default_format_opts = { timeout_ms = 500, lsp_format = "fallback" },

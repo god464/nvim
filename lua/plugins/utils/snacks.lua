@@ -1,8 +1,8 @@
 ---@type LazyPluginSpec
----@module "snacks"
 return {
   "folke/snacks.nvim",
   event = "VeryLazy",
+  ---@module "snacks"
   ---@type snacks.Config
   opts = {
     bigfile = { enabled = true },
@@ -13,6 +13,5 @@ return {
     input = { enabled = true },
     rename = { enabled = true },
     scope = { enabled = true },
-    image = { enabled = true },
   },
 }

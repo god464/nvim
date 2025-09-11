@@ -18,6 +18,8 @@ return {
     { "<leader>Ri", "<cmd>OverseerInfo<CR>", desc = "Info" },
     { "<leader>Rc", "<cmd>OverseerClearCache<CR>", desc = "Clear cache" },
   },
+  ---@module 'overseer'
+  ---@type overseer.Config
   opts = {
     dap = false,
     form = { border = "rounded" },

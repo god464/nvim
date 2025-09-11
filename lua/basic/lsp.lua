@@ -1,3 +1,4 @@
+---@type vim.diff.Opts
 vim.diagnostic.config({
   virtual_lines = true,
   signs = {

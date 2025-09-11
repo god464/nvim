@@ -1,8 +1,8 @@
 ---@type LazyPluginSpec
----@module 'blink.indent'
 return {
   "saghen/blink.indent",
   event = "UIEnter",
+  ---@module 'blink.indent'
   ---@type blink.indent.Config
   opts = {
     static = { char = "│" },
