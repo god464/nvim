@@ -21,6 +21,7 @@ return {
             },
           },
         },
+        emmylua_ls = {},
         clangd = {},
         jsonls = {
           settings = { json = { schemas = require("schemastore").json.schemas(), validate = { enable = true } } },
