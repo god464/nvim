@@ -14,4 +14,12 @@ function M.get_vue_ts_plugin()
     or "/usr/lib/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin"
 end
 
+---@return string
+function M.get_astro_ts_plugin()
+  local local_path = vim.fs.dirname(vim.fn.exepath("vue-language-server"))
+    .. "/../lib/astro-language-server/packages/ts-plugin"
+
+  return vim.uv.fs_stat(local_path) and local_path or "/usr/lib/node_modules/@astrojs/ts-plugin"
+end
+
 return M

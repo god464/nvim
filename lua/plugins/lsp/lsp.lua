@@ -86,6 +86,13 @@ return {
                     configNamespace = "typescript",
                     enableForWorkspaceTypeScriptVersions = true,
                   },
+                  {
+                    name = "@astrojs/ts-plugin",
+                    location = require("lib").get_astro_ts_plugin(),
+                    languages = { "astro" },
+                    configNamespace = "typescript",
+                    enableForWorkspaceTypeScriptVersions = true,
+                  },
                 },
               },
             },
