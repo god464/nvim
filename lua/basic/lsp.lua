@@ -1,12 +1,12 @@
----@type vim.diff.Opts
+---@type vim.diagnostic.Opts
 vim.diagnostic.config({
   virtual_lines = true,
   signs = {
     text = {
-      [vim.diagnostic.severity.ERROR] = "󰅚",
-      [vim.diagnostic.severity.WARN] = "󰀪",
-      [vim.diagnostic.severity.INFO] = "󰋽",
-      [vim.diagnostic.severity.HINT] = "󰌶",
+      [vim.diagnostic.severity.ERROR] = "󰅚 ",
+      [vim.diagnostic.severity.WARN] = "󰀪 ",
+      [vim.diagnostic.severity.INFO] = "󰋽 ",
+      [vim.diagnostic.severity.HINT] = "󰌶 ",
     },
   },
   underline = true,
@@ -21,12 +21,18 @@ if vim.lsp.document_highlight then vim.lsp.document_highlight.enable() end
 
 vim.lsp.buf.signature_help()
 
-local tmp = vim.lsp.util.open_floating_preview
+---@type vim.lsp.util.open_floating_preview.Opts
+local preview_opts = {
+  border = "rounded",
+  title_pos = "center",
+}
 
-function vim.lsp.util.open_floating_preview(contents, syntax, opts)
-  opts = opts or {}
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+---@diagnostic disable-next-line: duplicate-set-field
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+  opts = vim.tbl_deep_extend("keep", opts, preview_opts)
   opts.border = opts.border or "rounded"
-  return tmp(contents, syntax, opts)
+  return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
 vim.api.nvim_create_autocmd("LspAttach", {

@@ -4,7 +4,23 @@ return {
   event = "VeryLazy",
   dependencies = "nvim-tree/nvim-web-devicons",
   opts = {
-    theme = "catppuccin",
+    sections = {
+      lualine_a = { { "mode", icon = "" } },
+      lualine_b = {
+        { "branch", icon = " " },
+        { "diff", symbols = { added = " ", modified = " ", removed = " " } },
+      },
+      lualine_x = {
+        { "encoding", show_bomb = true },
+        { "lsp_status", icon = " ", symbols = { done = "" } },
+        { "diagnostics", symbols = { error = " ", warn = " ", info = "󰛩 ", hint = "󰋼 " } },
+        "fileformat",
+        "filetype",
+      },
+      lualine_y = { { "progress", icon = "" } },
+      lualine_z = { { "location", icon = " " } },
+    },
+    options = { section_separators = { left = "", right = "" }, component_separators = { left = "", right = "" } },
     extensions = {
       "lazy",
       "trouble",

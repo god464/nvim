@@ -1,8 +1,8 @@
 ---@type LazyPluginSpec
----@module 'Flash'
 return {
   "folke/flash.nvim",
   event = "VeryLazy",
+  ---@module 'Flash'
   ---@type Flash.Config
   opt = {
     modes = { search = { enabled = true, highlight = { backdrop = true } } },

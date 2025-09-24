@@ -3,24 +3,28 @@ return {
   "akinsho/bufferline.nvim",
   dependencies = "nvim-tree/nvim-web-devicons",
   event = "VeryLazy",
-  opts = function()
-    return {
-      options = {
-        mode = "tabs",
-        hover = {
-          enabled = true,
-          delay = 0,
-          reveal = { "close" },
-        },
-        buffer_close_icon = "",
-        sort_by = "tabs",
-        diagnostics = "nvim_lsp",
-        diagnostics_indicator = function(count) return "(" .. count .. ")" end,
-        show_duplicate_prefix = false,
-        always_show_bufferline = false,
-      },
-    }
-  end,
+  opts = {
+    options = {
+      mode = "tabs",
+      buffer_close_icon = "",
+      modified_icon = "",
+      sort_by = "tabs",
+      max_name_length = 18,
+      max_prefix_length = 15,
+      tab_size = 10,
+      diagnostics = "nvim_lsp",
+      diagnostics_indicator = function(_, _, diagnostics_dict, _)
+        local s = " "
+        for e, n in pairs(diagnostics_dict) do
+          local sym = e == "error" and " " or (e == "warning" and " " or " ")
+          s = s .. sym .. n
+        end
+        return s
+      end,
+      show_duplicate_prefix = false,
+      always_show_bufferline = false,
+    },
+  },
   keys = {
     { "<leader>1", "<Cmd>BufferLineGoToBuffer 1<CR>", desc = "Go to tab 1" },
     { "<leader>2", "<Cmd>BufferLineGoToBuffer 2<CR>", desc = "Go to tab 2" },
@@ -34,15 +38,5 @@ return {
     { "<M-S-Left>", "<Cmd>-tabmove<CR>", desc = "Move tab to previous" },
     { "<M-S-Right>", "<Cmd>+tabmove<CR>", desc = "Move tab to next" },
     { "<leader>bk", "<cmd>BufferLinePickClose<CR>", desc = "Close" },
-  },
-  specs = {
-    {
-      "akinsho/bufferline.nvim",
-      opts = function(_, opts)
-        if (vim.g.colors_name or ""):find("catppuccin") then
-          opts.highlights = require("catppuccin.groups.integrations.bufferline").get_theme()
-        end
-      end,
-    },
   },
 }
