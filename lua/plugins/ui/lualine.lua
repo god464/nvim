@@ -12,7 +12,6 @@ return {
       },
       lualine_x = {
         { "encoding", show_bomb = true },
-        { "lsp_status", icon = " ", symbols = { done = "" } },
         { "diagnostics", symbols = { error = " ", warn = " ", info = "󰛩 ", hint = "󰋼 " } },
         "fileformat",
         "filetype",
