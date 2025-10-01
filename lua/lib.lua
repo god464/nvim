@@ -19,3 +19,5 @@ function M.get_astro_ts_plugin()
 
   return vim.uv.fs_stat(local_path) and local_path or "/usr/lib/node_modules/@astrojs/ts-plugin"
 end
+
+return M
