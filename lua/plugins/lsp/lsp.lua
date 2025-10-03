@@ -101,7 +101,12 @@ return {
         texlab = {},
         tinymist = {},
         marksman = {},
-        sqls = { on_attach = function(client, bufnr) require("sqls").on_attach(client, bufnr) end },
+        sqls = {
+          on_attach = function(client, _)
+            client.server_capabilities.documentFormattingProvider = false
+            client.server_capabilities.documentRangeFormattingProvider = false
+          end,
+        },
         lemminx = {},
         gradle_ls = {},
         verible = {},

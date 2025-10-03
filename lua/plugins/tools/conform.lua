@@ -30,7 +30,7 @@ return {
       javascript = { "prettier", "dprint", "biome", "biome-organize-imports", stop_after_first = true },
       typescript = { "prettier", "dprint", "biome", "biome-organize-imports", stop_after_first = true },
       tex = { "latexindent" },
-      sql = { "sqlfluff" },
+      sql = { "sqruff" },
       typst = { "typstyle" },
       java = { "google-java-format" },
       fish = { "fish_indent" },

@@ -19,7 +19,7 @@ return {
     html = { "htmlhint" },
     css = { "stylelint" },
     tex = { "chktex" },
-    sql = { "sqlfluff" },
+    sql = { "sqruff" },
     java = { "checkstyle" },
     fish = { "fish" },
     terraform = { "tflint" },
@@ -27,6 +27,7 @@ return {
     haskell = { "hlint" },
     verligo = { "verilator" },
     systemverilog = { "verilator" },
+    go = { "golangcilint" },
   },
   config = function(_, opts)
     local lint = require("lint")
