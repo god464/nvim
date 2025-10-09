@@ -1,6 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "folke/sidekick.nvim",
+  dependencies = { { "nvim-treesitter/nvim-treesitter-textobjects", branch = "main" }, "folke/snacks.nvim" },
   ---@module 'sidekick'
   ---@type sidekick.Config
   opts = { mux = { backend = "tmux", enabled = true } },
