@@ -1,11 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "neovim/nvim-lspconfig",
-  dependencies = {
-    { "b0o/SchemaStore.nvim", ft = { "json", "yaml" } },
-    "onsails/lspkind.nvim",
-    { "nanotee/sqls.nvim", ft = "sql" },
-  },
+  dependencies = { { "b0o/SchemaStore.nvim", ft = { "json", "yaml" } }, "onsails/lspkind.nvim" },
   event = "FileType",
   opts = function()
     ---@type vim.lsp.Config
@@ -101,12 +97,7 @@ return {
         texlab = {},
         tinymist = {},
         marksman = {},
-        sqls = {
-          on_attach = function(client, _)
-            client.server_capabilities.documentFormattingProvider = false
-            client.server_capabilities.documentRangeFormattingProvider = false
-          end,
-        },
+        sqruff = {},
         lemminx = {},
         gradle_ls = {},
         verible = {},
