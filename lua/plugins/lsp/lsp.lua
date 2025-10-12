@@ -137,6 +137,7 @@ return {
         ccls = {},
         mdx_analyzer = {},
         nushell = {},
+        fish_lsp = {},
       },
     }
   end,
