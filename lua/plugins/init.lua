@@ -7,7 +7,6 @@ local M = {
   "git",
   "lsp",
   "motion",
-  "quickfix",
   "term",
   "test",
   "theme",
