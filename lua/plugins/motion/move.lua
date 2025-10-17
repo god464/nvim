@@ -1,6 +1,6 @@
 ---@type LazyPluginSpec
 return {
-  "nvim-mini/mini.align",
+  "nvim-mini/mini.move",
   event = "VeryLazy",
   opts = {},
 }

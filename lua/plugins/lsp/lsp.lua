@@ -1,7 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "neovim/nvim-lspconfig",
-  dependencies = { { "b0o/SchemaStore.nvim", ft = { "json", "yaml" } }, "onsails/lspkind.nvim" },
+  dependencies = { "b0o/SchemaStore.nvim", "onsails/lspkind.nvim" },
   event = "FileType",
   opts = function()
     ---@type vim.lsp.Config
