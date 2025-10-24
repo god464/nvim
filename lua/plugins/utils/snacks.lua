@@ -11,7 +11,6 @@ return {
     statuscolumn = { enabled = true },
     scroll = { enabled = true },
     input = { enabled = true },
-    rename = { enabled = true },
     scope = { enabled = true },
   },
 }
