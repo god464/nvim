@@ -1,7 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "NMAC427/guess-indent.nvim",
-  event = "FileType",
+  event = "LazyFile",
   config = function()
     require("guess-indent").setup({})
 

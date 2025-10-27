@@ -2,6 +2,7 @@
 return {
   "saghen/blink.cmp",
   build = require("lib").build_blink_plugin(),
+  event = { "InsertEnter", "CmdlineEnter" },
   dependencies = "rafamadriz/friendly-snippets",
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
@@ -51,12 +52,11 @@ return {
     },
     signature = { enabled = true, window = { border = "rounded" } },
     sources = {
-      default = { "lsp", "path", "snippets", "buffer", "lazydev", "dadbod", "markdown", "codeium" },
+      default = { "lsp", "path", "snippets", "buffer", "lazydev", "dadbod", "markdown" },
       providers = {
         markdown = { name = "RenderMarkdown", module = "render-markdown.integ.blink", fallbacks = { "lsp" } },
         lazydev = { name = "LazyDev", module = "lazydev.integrations.blink" },
         dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
-        codeium = { name = "codeium", module = "codeium.blink", async = true },
       },
     },
   },

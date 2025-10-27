@@ -1,7 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "saghen/blink.indent",
-  event = "UIEnter",
+  event = "LazyFile",
   ---@module 'blink.indent'
   ---@type blink.indent.Config
   opts = {

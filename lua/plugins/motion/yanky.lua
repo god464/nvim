@@ -1,7 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "gbprod/yanky.nvim",
-  event = "VeryLazy",
+  event = "LazyFile",
   opts = {},
   keys = {
     { "y", "<Plug>(YankyYank)", mode = { "n", "x" }, desc = "Yank text" },

@@ -16,13 +16,16 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+local ent = require("lazy.core.handler.event")
+ent.mappings.LazyFile = { id = "LazyFile", event = { "BufReadPost", "BufNewFile", "BufWritePre" } }
+
 require("lazy").setup({
   defaults = { lazy = true, version = false },
   spec = { { import = "plugins" } },
   install = { missing = true, colorscheme = { "catppuccin" } },
-  rocks = { enabled = false },
   checker = { enabled = true },
   ui = { border = "rounded" },
+  diff = { cmd = "diffview.nvim" },
   performance = {
     rtp = {
       reset = true,

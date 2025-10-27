@@ -2,6 +2,7 @@
 return {
   "Exafunction/windsurf.nvim",
   main = "codeium",
+  enabled = false,
   cmd = "Codeium",
   event = "InsertEnter",
   build = ":Codeium Auth",

@@ -1,7 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "mfussenegger/nvim-lint",
-  event = "BufWritePre",
+  event = "LazyFile",
   opts = {
     c = { "clangtidy", "cppcheck" },
     cpp = { "clangtidy", "cppcheck" },
