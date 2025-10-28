@@ -2,6 +2,7 @@
 return {
   "sindrets/diffview.nvim",
   dependencies = "nvim-tree/nvim-web-devicons",
+  event = "VeryLazy",
   opts = {
     enhanced_diff_hl = true,
     file_panel = {

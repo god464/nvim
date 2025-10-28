@@ -4,7 +4,7 @@ return {
   build = ":TSUpdate",
   dependencies = "LiadOz/nvim-dap-repl-highlights",
   main = "nvim-treesitter.configs",
-  event = "VeryLazy",
+  event = "UIEnter",
   cmd = { "TSUpdateSync", "TSUpdate", "TSInstallFromGrammar", "TSInstall" },
   opts = {
     highlight = { enable = true, additional_vim_regex_highlighting = false },
