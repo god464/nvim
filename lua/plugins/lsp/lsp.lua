@@ -64,7 +64,7 @@ return {
           bashls = {},
           dockerls = {},
           cssls = {},
-          tailwindcss = { filetypes_exclude = { "markdown" } },
+          tailwindcss = {},
           superhtml = {},
           html = {},
           vue_ls = {},
@@ -80,7 +80,27 @@ return {
               "astro",
             },
             settings = {
+              complete_function_calls = true,
               vtsls = {
+                enableMoveToFileCodeAction = true,
+                autoUseWorkspaceTsdk = true,
+                experimental = {
+                  maxInlayHintLength = 30,
+                  completion = { enableServerSideFuzzyMatch = true },
+                },
+                typescript = {
+                  updateImportsOnFileMove = { enabled = "always" },
+                  suggest = {
+                    completeFunctionCalls = true,
+                  },
+                  inlayHints = {
+                    enumMemberValues = { enabled = true },
+                    functionLikeReturnTypes = { enabled = true },
+                    parameterNames = { enabled = "literals" },
+                    parameterTypes = { enabled = true },
+                    propertyDeclarationTypes = { enabled = true },
+                  },
+                },
                 tsserver = {
                   globalPlugins = {
                     {
@@ -88,14 +108,12 @@ return {
                       location = require("lib").get_vue_ts_plugin(),
                       languages = { "vue" },
                       configNamespace = "typescript",
-                      enableForWorkspaceTypeScriptVersions = true,
                     },
                     {
                       name = "@astrojs/ts-plugin",
                       location = require("lib").get_astro_ts_plugin(),
                       languages = { "astro" },
                       configNamespace = "typescript",
-                      enableForWorkspaceTypeScriptVersions = true,
                     },
                   },
                 },
@@ -105,7 +123,7 @@ return {
           texlab = {},
           tinymist = {},
           marksman = {},
-          sqruff = { filetypes_include = { "mysql", "plsql" } },
+          sqruff = {},
           lemminx = {},
           gradle_ls = {},
           verible = {},
