@@ -4,7 +4,7 @@ return {
   dependencies = { { "nvim-treesitter/nvim-treesitter-textobjects", branch = "main" }, "folke/snacks.nvim" },
   ---@module 'sidekick'
   ---@type sidekick.Config
-  opts = { mux = { backend = "tmux", enabled = true } },
+  opts = { nes = { enabled = true }, cli = { picker = "fzf-lua", mux = { backend = "tmux", enabled = true } } },
   keys = {
     {
       "<tab>",
@@ -40,7 +40,7 @@ return {
     },
     {
       "<leader>ap",
-      function() require("sidekick.cli").select_prompt() end,
+      function() require("sidekick.cli").prompt() end,
       desc = "Sidekick Ask Prompt",
       mode = { "n", "v" },
     },
