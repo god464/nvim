@@ -12,5 +12,6 @@ return {
     scroll = { enabled = true },
     input = { enabled = true },
     scope = { enabled = true },
+    indent = { enabled = true },
   },
 }
