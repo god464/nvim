@@ -7,15 +7,7 @@ return {
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
-    keymap = {
-      preset = "enter",
-      ["<Tab>"] = {
-        "snippet_forward",
-        function() return require("sidekick").nes_jump_or_apply() end,
-        function() return vim.lsp.inline_completion.get() end,
-        "fallback",
-      },
-    },
+    keymap = { preset = "enter" },
     appearance = { nerd_font_variant = "mono" },
     cmdline = {
       keymap = { preset = "enter", ["<CR>"] = { "accept_and_enter", "fallback" }, ["<Tab>"] = { "accept" } },

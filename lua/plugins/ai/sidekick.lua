@@ -2,6 +2,7 @@
 return {
   "folke/sidekick.nvim",
   dependencies = { { "nvim-treesitter/nvim-treesitter-textobjects", branch = "main" }, "folke/snacks.nvim" },
+  event = "VeryLazy",
   ---@module 'sidekick'
   ---@type sidekick.Config
   opts = { nes = { enabled = true }, cli = { picker = "fzf-lua", mux = { backend = "tmux", enabled = true } } },
