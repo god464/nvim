@@ -2,6 +2,7 @@
 return {
   "kristijanhusak/vim-dadbod-ui",
   dependencies = { "tpope/vim-dadbod", "kristijanhusak/vim-dadbod-completion" },
+  enabled = false,
   cmd = {
     "DBUI",
     "DBUIToggle",
