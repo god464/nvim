@@ -11,9 +11,8 @@ return {
             settings = {
               Lua = {
                 diagnostics = { workspaceEvent = "OnChange" },
-                hint = { enable = true, setType = true },
+                hint = { setType = true },
                 completion = { callSnippet = "Both", keywordSnippet = "Both", displayContext = 5 },
-                codeLens = { enable = true },
               },
             },
           },
