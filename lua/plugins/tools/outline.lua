@@ -3,7 +3,6 @@ return {
   "hedyhli/outline.nvim",
   dependencies = "onsails/lspkind.nvim",
   cmd = "Outline",
-  enabled = false,
   keys = { { "<leader>ol", "<Cmd>Outline<CR>", desc = "Outline" } },
   opts = {
     outline_window = { position = "left" },
