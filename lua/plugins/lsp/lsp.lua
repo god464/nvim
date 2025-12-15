@@ -114,6 +114,11 @@ return {
                       languages = { "astro" },
                       configNamespace = "typescript",
                     },
+                    {
+                      name = "@angular/language-server",
+                      location = vim.fs.root(vim.fn.exepath("ngserver"), "bin")
+                        .. "/lib/language-tools/packages/language-server/",
+                    },
                   },
                 },
               },
@@ -164,6 +169,7 @@ return {
           nushell = {},
           fish_lsp = {},
           copilot = {},
+          angularls = {},
         },
       }
     end,
