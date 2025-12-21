@@ -52,10 +52,9 @@ return {
     },
     signature = { enabled = true, window = { border = "rounded" } },
     sources = {
-      default = { "lsp", "path", "snippets", "buffer", "lazydev", "markdown" },
+      default = { "lsp", "path", "snippets", "buffer", "markdown" },
       providers = {
         markdown = { name = "RenderMarkdown", module = "render-markdown.integ.blink", fallbacks = { "lsp" } },
-        lazydev = { name = "LazyDev", module = "lazydev.integrations.blink" },
       },
     },
   },

@@ -1,6 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "folke/lazydev.nvim",
+  enabled = false,
   ft = "lua",
   ---@module 'lazydev'
   ---@type lazydev.Config
