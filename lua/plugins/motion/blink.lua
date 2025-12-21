@@ -5,5 +5,17 @@ return {
   build = require("lib").build_blink_plugin(),
   ---@module 'blink.pairs'
   ---@type blink.pairs.Config
-  opts = {},
+  opts = {
+    highlights = {
+      groups = {
+        "BlinkPairsRed",
+        "BlinkPairsYellow",
+        "BlinkPairsBlue",
+        "BlinkPairsOrange",
+        "BlinkPairsGreen",
+        "BlinkPairsPurple",
+        "BlinkPairsCyan",
+      },
+    },
+  },
 }
