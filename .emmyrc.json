@@ -16,5 +16,12 @@
       "$HOME/.local/share/nvim/lazy"
     ],
     "ignoreGlobs": ["**/*_spec.lua"]
+  },
+  "codeAction": {
+    "insertSpace": true
+  },
+  "strict": {
+    "typeCall": true,
+    "arrayIndex": true
   }
 }
