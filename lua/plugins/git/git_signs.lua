@@ -2,7 +2,7 @@
 return {
   "lewis6991/gitsigns.nvim",
   dependencies = { "petertriho/nvim-scrollbar", "folke/snacks.nvim" },
-  event = "UIEnter",
+  event = "VeryLazy",
   opts = {
     signs = {
       add = { text = "▎" },

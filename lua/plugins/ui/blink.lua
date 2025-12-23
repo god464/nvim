@@ -2,7 +2,7 @@
 return {
   "saghen/blink.indent",
   enabled = false,
-  event = "UIEnter",
+  event = "VeryLazy",
   ---@module 'blink.indent'
   ---@type blink.indent.Config
   opts = {

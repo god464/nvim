@@ -1,4 +1,4 @@
----@type LazyPluginSpec[]
+---@type LazyPluginSpec[]|LazyPluginSpec
 return {
   {
     "neovim/nvim-lspconfig",
@@ -182,6 +182,6 @@ return {
       end
     end,
   },
-  { "onsails/lspkind.nvim" },
-  { "b0o/SchemaStore.nvim" },
+  "onsails/lspkind.nvim",
+  "b0o/SchemaStore.nvim",
 }
