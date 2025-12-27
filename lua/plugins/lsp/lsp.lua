@@ -1,3 +1,4 @@
+local tsgo = require("nvim-lspconfig.lsp.tsgo")
 ---@type LazyPluginSpec[]|LazyPluginSpec
 return {
   {
@@ -124,6 +125,7 @@ return {
               },
             },
           },
+          tsgo = {},
           texlab = {},
           tinymist = {},
           marksman = {},
