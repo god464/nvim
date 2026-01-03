@@ -1,3 +1,4 @@
+---@class lib
 local M = {}
 
 ---@return string

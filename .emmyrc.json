@@ -12,7 +12,7 @@
   "workspace": {
     "library": [
       "$VIMRUNTIME",
-      "$LLS_Addons/luvit",
+      "${3rd}/luv/library",
       "$HOME/.local/share/nvim/lazy"
     ],
     "ignoreGlobs": ["**/*_spec.lua"]
