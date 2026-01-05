@@ -10,7 +10,7 @@ return {
     lua = { "selene", "luacheck" },
     yaml = { "yamllint", "actionlint" },
     python = { "ruff", "bandit" },
-    sh = { "shellCheck", "dotenv_linter" },
+    sh = { "shellcheck", "dotenv_linter" },
     nix = { "statix", "deadnix" },
     markdown = { "markdownlint" },
     docerfile = { "hadolint" },

@@ -1,7 +1,6 @@
 ---@type LazyPluginSpec
 return {
   "saghen/blink.indent",
-  enabled = false,
   event = "VeryLazy",
   ---@module 'blink.indent'
   ---@type blink.indent.Config

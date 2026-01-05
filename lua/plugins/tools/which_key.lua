@@ -15,6 +15,8 @@ return {
       { "<leader>T", group = "test" },
       { "<leader>r", group = "refactor" },
       { "<leader>u", group = "edgy" },
+      { "<leader>a", group = "sidekick" },
+      { "<leader>l", group = "lsp" },
     },
   },
   keys = {
