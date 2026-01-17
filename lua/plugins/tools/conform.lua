@@ -38,6 +38,7 @@ return {
       terraform = { "terraform_fmt" },
       go = { "golines", "gofrumpt", "goimports-reviser" },
       haskell = { "ormolu" },
+      nix = { "nixfmt" },
       ["_"] = { "trim_whitespace" },
     },
     format_on_save = {},

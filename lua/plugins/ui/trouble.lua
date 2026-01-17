@@ -3,6 +3,8 @@ return {
   "folke/trouble.nvim",
   cmd = "Trouble",
   event = "VeryLazy",
+  ---@module 'trouble'
+  ---@type trouble.Config
   opts = { auto_close = true, auto_jump = true, force = true },
   keys = {
     { "<leader>oTq", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List (Trouble)" },
