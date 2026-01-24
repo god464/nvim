@@ -17,6 +17,7 @@ return {
       { "<leader>u", group = "edgy" },
       { "<leader>a", group = "sidekick" },
       { "<leader>l", group = "lsp" },
+      { "<leader>H", group = "kulala" },
     },
   },
   keys = {

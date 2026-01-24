@@ -8,7 +8,7 @@ return {
     { "<leader>Hb", desc = "Open scratchpad" },
   },
   opts = {
-    global_keymaps = false,
+    global_keymaps = true,
     global_keymaps_prefix = "<leader>H",
     kulala_keymaps_prefix = "",
   },
