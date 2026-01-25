@@ -22,6 +22,7 @@ return {
         "dprint",
         "biome",
         "biome-organize-imports",
+        "oxfmt",
         "injected",
       },
       html = { "prettier", "dprint", "biome", "biome-organize-imports", "oxfmt" },
