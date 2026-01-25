@@ -2,16 +2,16 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
-  dependencies = "LiadOz/nvim-dap-repl-highlights",
   event = "LazyFile",
   config = function()
     local enable_ts = function(buf, lang)
       if not vim.tbl_contains(require("nvim-treesitter.config").get_available(), lang) then return end
       vim.wo.foldmethod = "expr"
       vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-      vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-      if not vim.g.vscode then vim.treesitter.start(buf, lang) end
+      vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+      vim.treesitter.start(buf, lang)
     end
+
     vim.api.nvim_create_autocmd("FileType", {
       pattern = "*",
       group = vim.api.nvim_create_augroup("ts_setup", {}),
