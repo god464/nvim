@@ -1,6 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "mikavilpas/yazi.nvim",
+  enabled = false,
   event = "VeryLazy",
   dependencies = "folke/snacks.nvim",
   init = function() vim.g.loaded_netrwPlugin = 1 end,

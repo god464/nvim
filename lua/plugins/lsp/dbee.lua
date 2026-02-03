@@ -1,6 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "kndndrj/nvim-dbee",
+  enabled = false,
   dependencies = { "MunifTanjim/nui.nvim" },
   cmd = "Dbee",
   build = function() require("dbee").install() end,

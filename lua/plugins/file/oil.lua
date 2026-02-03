@@ -1,7 +1,6 @@
 ---@type LazyPluginSpec
 return {
   "stevearc/oil.nvim",
-  enabled = false,
   dependencies = "nvim-tree/nvim-web-devicons",
   cmd = "Oil",
   keys = { { "<Leader>o-", "<cmd>Oil<cr>", desc = "Oil" } },
@@ -14,7 +13,6 @@ return {
     preview = { border = "rounded" },
     progress = { border = "rounded" },
     lsp_file_methods = { autosave_changes = "unmodified" },
-    keymaps = { ["l"] = "actions.select", ["h"] = "actions.parent" },
   },
   config = function(_, opts)
     require("oil").setup(opts)
