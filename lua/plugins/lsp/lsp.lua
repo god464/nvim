@@ -51,6 +51,7 @@ return {
                   flake_parts = {
                     expr = 'let flake = builtins.getFlake ("/home/cl/persist/flake"); in flake.debug.options // flake.currentSystem.options',
                   },
+                  nixos = { expr = '(builtins.getFlake ("/home/cl/persist/flake").nixosConfigurations.*.options' },
                 },
               },
             },
