@@ -4,7 +4,7 @@ return {
   enabled = false,
   dependencies = { "MunifTanjim/nui.nvim" },
   cmd = "Dbee",
-  build = function() require("dbee").install() end,
+  build = function() require("plugins.tools.dbee").install() end,
   opts = {},
   keys = { { "<leader>od", "<cmd>Dbee<cr>", desc = "Open Dbee" } },
 }
