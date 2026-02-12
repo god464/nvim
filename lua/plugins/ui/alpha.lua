@@ -23,7 +23,7 @@ return {
       dashboard.button("f", "󰈞  Find file", "<cmd>FzfLua files<cr>"),
       dashboard.button("g", "󰊄  Live grep", "<cmd>FzfLua live_grep_native<cr>"),
       dashboard.button("r", "  Recent files", "<cmd>FzfLua oldfiles<cr>"),
-      dashboard.button("o", "  Browser files", "<cmd>Yazi<cr>"),
+      dashboard.button("o", "  Browser files", "<cmd>Oil<cr>"),
       dashboard.button("u", "  Update plugins", "<cmd>Lazy sync<cr>"),
       dashboard.button("q", "󰅚  Quit", "<cmd>qa<cr>"),
     }
