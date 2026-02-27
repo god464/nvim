@@ -33,5 +33,4 @@ return {
     if vim.o.filetype == "lazy" then vim.cmd([[messages clear]]) end
     require("noice").setup(opts)
   end,
-  1,
 }
