@@ -1,4 +1,10 @@
 local terminals = {}
+local repls = {
+  { "<leader>otp", "python", "Python REPL" },
+  { "<leader>otn", "nix repl", "Nix REPL" },
+  { "<leader>otl", "lua", "Lua REPL" },
+  { "<leader>otg", "ghci", "Haskell REPL (GHCI)" },
+}
 
 ---@param cmd string
 local function repl(cmd)
@@ -13,11 +19,8 @@ return {
   "akinsho/toggleterm.nvim",
   opts = {
     size = function(term)
-      if term.direction == "horizontal" then
-        return 15
-      elseif term.direction == "vertical" then
-        return vim.o.columns * 0.4
-      end
+      local sizes = { horizontal = 15, vertical = vim.o.columns * 0.4 }
+      return sizes[term.direction]
     end,
     autochdir = true,
     open_mapping = [[<C-\>]],
@@ -25,11 +28,18 @@ return {
     float_opts = { border = "rounded" },
     winbar = { enabled = true },
   },
-  keys = {
-    { "<C-\\>" },
-    { "<leader>otp", function() repl("python") end, mode = "n", desc = "Python REPL" },
-    { "<leader>otn", function() repl("nix repl") end, mode = "n", desc = "Nix REPL" },
-    { "<leader>otl", function() repl("lua") end, mode = "n", desc = "Lua REPL" },
-    { "<leader>otg", function() repl("ghci") end, mode = "n", desc = "Haskell REPL (GHCI)" },
-  },
+  keys = function()
+    local keys = { { "<C-\\>" } }
+
+    for _, spec in ipairs(repls) do
+      keys[#keys + 1] = {
+        spec[1],
+        function() repl(spec[2]) end,
+        mode = "n",
+        desc = spec[3],
+      }
+    end
+
+    return keys
+  end,
 }

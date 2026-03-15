@@ -8,9 +8,9 @@ return {
   keys = {
     { "<Leader><Leader>t", "<cmd>TodoFzfLua<CR>", desc = "Search TODO" },
     { "<leader><leader>T", "<cmd>TodoFzfLua keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
-    { "<leader>oTt", "<cmd>Trouble todo toggle<cr>", desc = "Todo (sTrouble)" },
+    { "<leader>xt", "<cmd>Trouble todo toggle<cr>", desc = "Todo (Trouble)" },
     {
-      "<leader>oTT",
+      "<leader>xT",
       "<cmd>Trouble todo toggle filter = {tag = {TODO,FIX,FIXME}}<cr>",
       desc = "Todo/Fix/Fixme (Trouble)",
     },

@@ -1,3 +1,16 @@
+local function register_template(name, filetype, cmd, args)
+  return {
+    name = name,
+    builder = function()
+      return {
+        cmd = { cmd },
+        args = args(),
+      }
+    end,
+    condition = { filetype = { filetype } },
+  }
+end
+
 ---@type LazyPluginSpec
 return {
   "stevearc/overseer.nvim",
@@ -32,36 +45,24 @@ return {
     overseer.setup(opts)
 
     local templates = {
-      {
-        name = "compile single c file",
-        builder = function()
-          return {
-            cmd = { "cc" },
-            args = { "-g", vim.fn.expand("%:p"), "-o", vim.fn.expand("%:p:t:r") },
-          }
-        end,
-        condition = { filetype = { "c" } },
-      },
-      {
-        name = "compile single cpp file",
-        builder = function()
-          return {
-            cmd = { "c++" },
-            args = { "-g", vim.fn.expand("%:p"), "-o", vim.fn.expand("%:p:t:r") },
-          }
-        end,
-        condition = { filetype = { "cpp" } },
-      },
-      {
-        name = "compile typst to pdf",
-        builder = function()
-          return {
-            cmd = { "typst" },
-            args = { "compile", vim.fn.expand("%:p") },
-          }
-        end,
-        condition = { filetype = { "typst" } },
-      },
+      register_template(
+        "compile single c file",
+        "c",
+        "cc",
+        function() return { "-g", vim.fn.expand("%:p"), "-o", vim.fn.expand("%:p:t:r") } end
+      ),
+      register_template(
+        "compile single cpp file",
+        "cpp",
+        "c++",
+        function() return { "-g", vim.fn.expand("%:p"), "-o", vim.fn.expand("%:p:t:r") } end
+      ),
+      register_template(
+        "compile typst to pdf",
+        "typst",
+        "typst",
+        function() return { "compile", vim.fn.expand("%:p") } end
+      ),
     }
 
     for _, template in ipairs(templates) do

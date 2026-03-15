@@ -19,8 +19,6 @@ vim.lsp.inlay_hint.enable()
 
 if vim.lsp.document_highlight then vim.lsp.document_highlight.enable() end
 
-vim.lsp.buf.signature_help()
-
 ---@type vim.lsp.util.open_floating_preview.Opts
 local preview_opts = {
   border = "rounded",
@@ -28,6 +26,26 @@ local preview_opts = {
 }
 
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+local map = vim.keymap.set
+
+local function set_lsp_keymaps(bufnr)
+  local mappings = {
+    { "gd", vim.lsp.buf.definition, "Definition" },
+    { "gD", vim.lsp.buf.declaration, "Declaration" },
+    { "gI", vim.lsp.buf.implementation, "Implementation" },
+    { "gr", vim.lsp.buf.references, "List references" },
+    { "gy", vim.lsp.buf.type_definition, "Goto T[y]pe Definition" },
+    { "<leader>cr", vim.lsp.buf.rename, "Rename symbol" },
+    { "<leader>li", vim.lsp.buf.incoming_calls, "Incoming calls" },
+    { "<leader>lo", vim.lsp.buf.outgoing_calls, "Outgoing calls" },
+    { "<leader>ca", vim.lsp.buf.code_action, "Code Action" },
+  }
+
+  for _, mapping in ipairs(mappings) do
+    map("n", mapping[1], mapping[2], { buffer = bufnr, desc = mapping[3] })
+  end
+end
+
 ---@diagnostic disable-next-line: duplicate-set-field
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   opts = vim.tbl_deep_extend("keep", opts, preview_opts)
@@ -43,14 +61,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
       { buffer = bufnr, callback = function() vim.lsp.codelens.refresh() end }
     )
 
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr, desc = "Definition" })
-    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = bufnr, desc = "Declaration" })
-    vim.keymap.set("n", "gI", vim.lsp.buf.implementation, { buffer = bufnr, desc = "Implementation" })
-    vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = bufnr, desc = "List references" })
-    vim.keymap.set("n", "gy", vim.lsp.buf.type_definition, { buffer = bufnr, desc = "Goto T[y]pe Definition" })
-    vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { buffer = bufnr, desc = "Rename symbol" })
-    vim.keymap.set("n", "<leader>li", vim.lsp.buf.incoming_calls, { buffer = bufnr, desc = "Incoming calls" })
-    vim.keymap.set("n", "<leader>lo", vim.lsp.buf.outgoing_calls, { buffer = bufnr, desc = "Outgoing calls" })
-    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = bufnr, desc = "Code code_action" })
+    set_lsp_keymaps(bufnr)
   end,
 })

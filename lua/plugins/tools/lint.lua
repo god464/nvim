@@ -1,10 +1,14 @@
+local cc_linters = { "clangtidy", "cppcheck" }
+local js_linters = { "eslint", "oxlint" }
+local asm_linters = { "verilator" }
+
 ---@type LazyPluginSpec
 return {
   "mfussenegger/nvim-lint",
   event = "LazyFile",
   opts = {
-    c = { "clangtidy", "cppcheck" },
-    cpp = { "clangtidy", "cppcheck" },
+    c = cc_linters,
+    cpp = cc_linters,
     cmake = { "cmakelint" },
     rust = { "clippy" },
     lua = { "selene", "luacheck" },
@@ -14,8 +18,8 @@ return {
     nix = { "statix", "deadnix" },
     markdown = { "markdownlint" },
     dockerfile = { "hadolint" },
-    javascript = { "eslint" },
-    typescript = { "eslint" },
+    javascript = js_linters,
+    typescript = js_linters,
     html = { "htmlhint" },
     css = { "stylelint" },
     tex = { "chktex" },
@@ -25,8 +29,8 @@ return {
     terraform = { "tflint" },
     ansible = { "ansible_lint" },
     haskell = { "hlint" },
-    verilog = { "verilator" },
-    systemverilog = { "verilator" },
+    verilog = asm_linters,
+    systemverilog = asm_linters,
     go = { "golangcilint" },
   },
   config = function(_, opts)

@@ -4,6 +4,13 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons", "nvim-lua/plenary.nvim", "folke/drop.nvim" },
   event = "VimEnter",
   opts = function()
+    local function styled_button(dashboard, shortcut, label, command)
+      local button = dashboard.button(shortcut, label, command)
+      button.opts.hl = "AlphaButtons"
+      button.opts.hl_shortcut = "AlphaShortcut"
+      return button
+    end
+
     local dashboard = require("alpha.themes.dashboard")
     local dashboard_config = dashboard.section
 
@@ -19,19 +26,14 @@ return {
     }
 
     dashboard_config.buttons.val = {
-      dashboard.button("n", "󰈔  New file", "<cmd>ene <BAR> startinsert <cr>"),
-      dashboard.button("f", "󰈞  Find file", "<cmd>FzfLua files<cr>"),
-      dashboard.button("g", "󰊄  Live grep", "<cmd>FzfLua live_grep_native<cr>"),
-      dashboard.button("r", "  Recent files", "<cmd>FzfLua oldfiles<cr>"),
-      dashboard.button("o", "  Browser files", "<cmd>Oil<cr>"),
-      dashboard.button("u", "  Update plugins", "<cmd>Lazy sync<cr>"),
-      dashboard.button("q", "󰅚  Quit", "<cmd>qa<cr>"),
+      styled_button(dashboard, "n", "󰈔  New file", "<cmd>ene <BAR> startinsert <cr>"),
+      styled_button(dashboard, "f", "󰈞  Find file", "<cmd>FzfLua files<cr>"),
+      styled_button(dashboard, "g", "󰊄  Live grep", "<cmd>FzfLua live_grep_native<cr>"),
+      styled_button(dashboard, "r", "  Recent files", "<cmd>FzfLua oldfiles<cr>"),
+      styled_button(dashboard, "o", "  Browser files", "<cmd>Oil<cr>"),
+      styled_button(dashboard, "u", "  Update plugins", "<cmd>Lazy sync<cr>"),
+      styled_button(dashboard, "q", "󰅚  Quit", "<cmd>qa<cr>"),
     }
-
-    for _, button in ipairs(dashboard.section.buttons.val) do
-      button.opts.hl = "AlphaButtons"
-      button.opts.hl_shortcut = "AlphaShortcut"
-    end
 
     dashboard_config.header.opts.hl = "AlphaHeader"
     dashboard_config.buttons.opts.hl = "AlphaButtons"

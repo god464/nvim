@@ -1,3 +1,7 @@
+local web_formatters = { "prettier", "dprint", "biome", "biome-organize-imports", "oxfmt" }
+local web_formatters_no_ox = { "prettier", "dprint", "biome", "biome-organize-imports" }
+local markdown_formatters = vim.list_extend({ unpack(web_formatters) }, { "injected" })
+
 ---@type LazyPluginSpec
 return {
   "stevearc/conform.nvim",
@@ -12,30 +16,23 @@ return {
       cpp = { "clang-format" },
       cmake = { "cmake_format" },
       rust = { "rustfmt" },
-      yaml = { "prettier", "dprint", "biome", "biome-organize-imports", "oxfmt" },
-      json = { "prettier", "dprint", "biome", "biome-organize-imports", "oxfmt" },
+      yaml = web_formatters,
+      json = web_formatters,
       toml = { "taplo", "dprint", stop_after_first = true },
       python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
       sh = { "shfmt" },
-      markdown = {
-        "prettier",
-        "dprint",
-        "biome",
-        "biome-organize-imports",
-        "oxfmt",
-        "injected",
-      },
-      html = { "prettier", "dprint", "biome", "biome-organize-imports", "oxfmt" },
-      css = { "prettier", "dprint", "biome", "biome-organize-imports" },
-      javascript = { "prettier", "dprint", "biome", "biome-organize-imports", "oxfmt" },
-      typescript = { "prettier", "dprint", "biome", "biome-organize-imports", "oxfmt" },
+      markdown = markdown_formatters,
+      html = web_formatters,
+      css = web_formatters_no_ox,
+      javascript = web_formatters,
+      typescript = web_formatters,
       tex = { "latexindent" },
       sql = { "sqruff" },
       typst = { "typstyle" },
       java = { "google-java-format" },
       fish = { "fish_indent" },
-      vue = { "prettier", "dprint", "biome", "biome-organize-imports", "oxfmt" },
-      astro = { "prettier", "dprint", "biome", "biome-organize-imports", "oxfmt" },
+      vue = web_formatters,
+      astro = web_formatters,
       terraform = { "terraform_fmt" },
       go = { "golines", "gofrumpt", "goimports-reviser" },
       haskell = { "ormolu" },
