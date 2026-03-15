@@ -1,5 +1,4 @@
 local web_formatters = { "prettier", "dprint", "biome", "biome-organize-imports", "oxfmt" }
-local web_formatters_no_ox = { "prettier", "dprint", "biome", "biome-organize-imports" }
 local markdown_formatters = vim.list_extend({ unpack(web_formatters) }, { "injected" })
 
 ---@type LazyPluginSpec
@@ -23,7 +22,7 @@ return {
       sh = { "shfmt" },
       markdown = markdown_formatters,
       html = web_formatters,
-      css = web_formatters_no_ox,
+      css = web_formatters,
       javascript = web_formatters,
       typescript = web_formatters,
       tex = { "latexindent" },
