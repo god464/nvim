@@ -31,7 +31,6 @@ local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 ---@diagnostic disable-next-line: duplicate-set-field
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   opts = vim.tbl_deep_extend("keep", opts, preview_opts)
-  opts.border = opts.border or "rounded"
   return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
@@ -45,7 +44,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     )
 
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr, desc = "Definition" })
-    vim.keymap.set("n", "gD", vim.lsp.buf.type_definition, { buffer = bufnr, desc = "Type definition" })
+    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = bufnr, desc = "Declaration" })
     vim.keymap.set("n", "gI", vim.lsp.buf.implementation, { buffer = bufnr, desc = "Implementation" })
     vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = bufnr, desc = "List references" })
     vim.keymap.set("n", "gy", vim.lsp.buf.type_definition, { buffer = bufnr, desc = "Goto T[y]pe Definition" })

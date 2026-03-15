@@ -176,11 +176,10 @@ return {
       }
     end,
     config = function(_, opts)
+      require("lspkind").init({ mode = "symbol_text", preset = "default" })
       for server, config in pairs(opts.servers) do
         vim.lsp.config(server, config)
         vim.lsp.enable(server)
-
-        require("lspkind").init({ mode = "symbol_text", preset = "default" })
       end
     end,
   },

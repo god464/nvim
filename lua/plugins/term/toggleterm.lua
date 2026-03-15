@@ -1,3 +1,13 @@
+local terminals = {}
+
+---@param cmd string
+local function repl(cmd)
+  if not terminals[cmd] then
+    terminals[cmd] = require("toggleterm.terminal").Terminal:new({ cmd = cmd, hidden = true, direction = "float" })
+  end
+  terminals[cmd]:toggle()
+end
+
 ---@type LazyPluginSpec
 return {
   "akinsho/toggleterm.nvim",
@@ -17,53 +27,9 @@ return {
   },
   keys = {
     { "<C-\\>" },
-    {
-      "<leader>otp",
-      function()
-        local python
-        if not python then
-          python = require("toggleterm.terminal").Terminal:new({ cmd = "python", hidden = true, direction = "float" })
-        end
-        python:toggle()
-      end,
-      mode = "n",
-      desc = "Python REPL",
-    },
-    {
-      "<leader>otn",
-      function()
-        local nix
-        if not nix then
-          nix = require("toggleterm.terminal").Terminal:new({ cmd = "nix repl", hidden = true, direction = "float" })
-        end
-        nix:toggle()
-      end,
-      mode = "n",
-      desc = "Nix REPL",
-    },
-    {
-      "<leader>otl",
-      function()
-        local lua
-        if not lua then
-          lua = require("toggleterm.terminal").Terminal:new({ cmd = "lua", hidden = true, direction = "float" })
-        end
-        lua:toggle()
-      end,
-      mode = "n",
-      desc = "Lua REPL",
-    },
-    {
-      "<leader>otg",
-      function()
-        local ghci
-        if not ghci then
-          ghci = require("toggleterm.terminal").Terminal:new({ cmd = "ghci", hidden = true, direction = "float" })
-        end
-        ghci:toggle()
-      end,
-      mode = "n",
-      desc = "Haskell REPL (GHCI)",
-    },
+    { "<leader>otp", function() repl("python") end, mode = "n", desc = "Python REPL" },
+    { "<leader>otn", function() repl("nix repl") end, mode = "n", desc = "Nix REPL" },
+    { "<leader>otl", function() repl("lua") end, mode = "n", desc = "Lua REPL" },
+    { "<leader>otg", function() repl("ghci") end, mode = "n", desc = "Haskell REPL (GHCI)" },
   },
 }

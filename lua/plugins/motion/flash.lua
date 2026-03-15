@@ -4,7 +4,7 @@ return {
   event = "VeryLazy",
   ---@module 'Flash'
   ---@type Flash.Config
-  opt = {
+  opts = {
     modes = { search = { enabled = true, highlight = { backdrop = true } } },
     treesitter = { highlight = { backdrop = true } },
   },

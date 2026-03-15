@@ -41,7 +41,6 @@ opt.tabstop = 4
 opt.termguicolors = true
 opt.undofile = true
 opt.virtualedit = "block"
-opt.termguicolors = true
 opt.title = true
 opt.linebreak = true
 opt.breakindent = true

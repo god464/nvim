@@ -5,7 +5,7 @@ return {
   cmd = {
     "OverseerToggle",
     "OverseerRun",
-    "Overseerbuild",
+    "OverseerBuild",
     "OverseerInfo",
     "OverseerTaskAction",
     "OverseerClearCache",

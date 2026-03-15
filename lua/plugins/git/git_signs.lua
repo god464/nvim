@@ -24,7 +24,7 @@ return {
     current_line_blame = true,
     preview_config = { border = "rounded" },
   },
-  on_attach = function(_, opts)
+  config = function(_, opts)
     require("gitsigns").setup(opts)
     require("scrollbar.handlers.gitsigns").setup()
   end,
