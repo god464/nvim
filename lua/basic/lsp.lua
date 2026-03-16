@@ -30,11 +30,7 @@ local map = vim.keymap.set
 
 local function set_lsp_keymaps(bufnr)
   local mappings = {
-    { "gd", vim.lsp.buf.definition, "Definition" },
     { "gD", vim.lsp.buf.declaration, "Declaration" },
-    { "gI", vim.lsp.buf.implementation, "Implementation" },
-    { "gr", vim.lsp.buf.references, "List references" },
-    { "gy", vim.lsp.buf.type_definition, "Goto T[y]pe Definition" },
     { "<leader>cr", vim.lsp.buf.rename, "Rename symbol" },
     { "<leader>li", vim.lsp.buf.incoming_calls, "Incoming calls" },
     { "<leader>lo", vim.lsp.buf.outgoing_calls, "Outgoing calls" },
