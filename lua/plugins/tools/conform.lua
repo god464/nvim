@@ -17,7 +17,7 @@ return {
       rust = { "rustfmt" },
       yaml = web_formatters,
       json = web_formatters,
-      toml = { "taplo", "dprint", stop_after_first = true },
+      toml = { "tombi", "taplo" },
       python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
       sh = { "shfmt" },
       markdown = markdown_formatters,

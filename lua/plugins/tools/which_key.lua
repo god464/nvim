@@ -20,6 +20,7 @@ return {
       { "<leader>c", group = "code" },
       { "<leader>h", group = "http" },
       { "<leader>x", group = "diagnostics" },
+      { "<leader>ot", group = "REPL" },
     },
   },
   keys = {

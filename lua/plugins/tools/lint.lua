@@ -1,5 +1,5 @@
 local cc_linters = { "clangtidy", "cppcheck" }
-local js_linters = { "eslint", "oxlint" }
+local web_linters = { "eslint", "oxlint" }
 local asm_linters = { "verilator" }
 
 ---@type LazyPluginSpec
@@ -18,8 +18,8 @@ return {
     nix = { "statix", "deadnix" },
     markdown = { "markdownlint" },
     dockerfile = { "hadolint" },
-    javascript = js_linters,
-    typescript = js_linters,
+    javascript = web_linters,
+    typescript = web_linters,
     html = { "htmlhint" },
     css = { "stylelint" },
     tex = { "chktex" },
@@ -32,6 +32,7 @@ return {
     verilog = asm_linters,
     systemverilog = asm_linters,
     go = { "golangcilint" },
+    toml = { "tombi" },
   },
   config = function(_, opts)
     local lint = require("lint")
