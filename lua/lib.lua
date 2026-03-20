@@ -16,9 +16,10 @@ end
 
 ---@return string
 function M.get_astro_ts_plugin()
-  local local_path = vim.fs.root(vim.fn.exepath("astro-ls"), "bin") .. "/lib/astro-language-server/packages/ts-plugin"
+  local local_path = vim.fs.root(vim.fn.exepath("astro-ls"), "bin")
+    .. "/lib/astro-language-server/packages/ts-plugin/src"
 
-  return vim.uv.fs_stat(local_path) and local_path or "/usr/lib/node_modules/@astrojs/ts-plugin"
+  return vim.uv.fs_stat(local_path) and local_path or "/usr/lib/node_modules/@astrojs/ts-plugin/dist"
 end
 
 return M
