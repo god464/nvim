@@ -181,6 +181,8 @@ return {
           fish_lsp = {},
           copilot = {},
           angularls = {},
+          just = {},
+          muon = {},
         },
       }
     end,

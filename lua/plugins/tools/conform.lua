@@ -1,5 +1,5 @@
 local web_formatters = { "prettier", "dprint", "biome", "biome-organize-imports", "oxfmt" }
-local markdown_formatters = vim.list_extend({ unpack(web_formatters) }, { "injected" })
+local markdown_formatters = vim.list_extend({ unpack(web_formatters) }, { "injected", "rumdl" })
 
 ---@type LazyPluginSpec
 return {
@@ -36,6 +36,7 @@ return {
       go = { "golines", "gofrumpt", "goimports-reviser" },
       haskell = { "ormolu" },
       nix = { "nixfmt" },
+      meson = { "meson" },
       ["_"] = { "trim_whitespace" },
     },
     format_on_save = {},

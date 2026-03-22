@@ -16,7 +16,7 @@ return {
     python = { "ruff", "bandit" },
     sh = { "shellcheck", "dotenv_linter" },
     nix = { "statix", "deadnix" },
-    markdown = { "markdownlint" },
+    markdown = { "markdownlint", "rumdl" },
     dockerfile = { "hadolint" },
     javascript = web_linters,
     typescript = web_linters,
