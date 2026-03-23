@@ -31,7 +31,7 @@ return {
     haskell = { "hlint" },
     verilog = asm_linters,
     systemverilog = asm_linters,
-    go = { "golangcilint" },
+    go = { "golangcilint", "revive" },
     toml = { "tombi" },
   },
   config = function(_, opts)
