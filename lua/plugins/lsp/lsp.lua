@@ -187,6 +187,7 @@ return {
       }
     end,
     config = function(_, opts)
+      require("basic.lsp").setup()
       require("lspkind").init({ mode = "symbol_text", preset = "default" })
 
       for server, config in pairs(opts.servers) do
