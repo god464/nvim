@@ -2,7 +2,7 @@
 return {
   "saghen/blink.pairs",
   event = "VeryLazy",
-  build = function() return require("lib").build_blink_plugin() end,
+  build = require("lib").build_blink_plugin(),
   ---@module 'blink.pairs'
   ---@type blink.pairs.Config
   opts = {

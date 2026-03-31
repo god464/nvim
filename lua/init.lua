@@ -19,6 +19,7 @@ vim.opt.rtp:prepend(lazypath)
 local ent = require("lazy.core.handler.event")
 ent.mappings.LazyFile = { id = "LazyFile", event = { "BufReadPost", "BufNewFile", "BufWritePre" } }
 
+---@type LazyConfig
 require("lazy").setup({
   defaults = { lazy = true, version = false },
   spec = { { import = "plugins" } },

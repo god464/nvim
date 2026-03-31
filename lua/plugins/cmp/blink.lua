@@ -1,7 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "saghen/blink.cmp",
-  build = function() return require("lib").build_blink_plugin() end,
+  build = require("lib").build_blink_plugin(),
   event = { "InsertEnter", "CmdlineEnter" },
   dependencies = "rafamadriz/friendly-snippets",
   opts = function()

@@ -7,6 +7,9 @@ return {
     local nvim_treesitter = require("nvim-treesitter")
     local ts_config = require("nvim-treesitter.config")
 
+    --- Starting Tree Sitter
+    ---@param buf integer
+    ---@param lang string
     local function start_treesitter(buf, lang)
       if not vim.treesitter.language.add(lang) then return end
       vim.wo.foldmethod = "expr"
@@ -15,6 +18,9 @@ return {
       vim.treesitter.start(buf, lang)
     end
 
+    --- Check Parser
+    ---@param buf integer
+    ---@param lang string
     local function ensure_parser(buf, lang)
       if vim.tbl_contains(ts_config.get_installed("parsers"), lang) then
         start_treesitter(buf, lang)
