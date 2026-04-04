@@ -4,9 +4,7 @@ local group = vim.api.nvim_create_augroup("cat-lsp", { clear = true })
 local did_setup = false
 
 function M.setup()
-  if did_setup then
-    return
-  end
+  if did_setup then return end
 
   did_setup = true
 
@@ -29,9 +27,7 @@ function M.setup()
 
   vim.lsp.inlay_hint.enable()
 
-  if vim.lsp.document_highlight then
-    vim.lsp.document_highlight.enable()
-  end
+  if vim.lsp.document_highlight then vim.lsp.document_highlight.enable() end
 
   ---@type vim.lsp.util.open_floating_preview.Opts
   local preview_opts = {
@@ -58,7 +54,7 @@ function M.setup()
         vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
           group = group,
           buffer = bufnr,
-          callback = function() vim.lsp.codelens.refresh() end,
+          callback = function() vim.lsp.codelens.enable(true, { bufnr = bufnr }) end,
         })
       end
 
