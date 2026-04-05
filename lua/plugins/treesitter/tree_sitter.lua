@@ -2,10 +2,9 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
-  event = "LazyFile",
+  event = "VeryLazy",
   config = function()
-    local nvim_treesitter = require("nvim-treesitter")
-    local ts_config = require("nvim-treesitter.config")
+    local TS = require("nvim-treesitter")
 
     --- Starting Tree Sitter
     ---@param buf integer
@@ -22,12 +21,12 @@ return {
     ---@param buf integer
     ---@param lang string
     local function ensure_parser(buf, lang)
-      if vim.tbl_contains(ts_config.get_installed("parsers"), lang) then
+      if vim.tbl_contains(TS.get_installed("parsers"), lang) then
         start_treesitter(buf, lang)
         return
       end
 
-      nvim_treesitter.install(lang):await(function() start_treesitter(buf, lang) end)
+      TS.install(lang):await(function() start_treesitter(buf, lang) end)
     end
 
     vim.api.nvim_create_autocmd("FileType", {
@@ -39,7 +38,7 @@ return {
         local lang = vim.treesitter.language.get_lang(ft)
         if not lang then return end
 
-        if not vim.tbl_contains(ts_config.get_available(), lang) then return end
+        if not vim.tbl_contains(TS.get_available(), lang) then return end
         ensure_parser(buf, lang)
       end,
     })

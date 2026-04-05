@@ -1,7 +1,13 @@
 ---@type LazyPluginSpec
 return {
   "mfussenegger/nvim-dap",
-  dependencies = { "jbyuki/one-small-step-for-vimkind", "nvim-lua/plenary.nvim", "rcarriga/nvim-dap-ui" },
+  dependencies = {
+    "jbyuki/one-small-step-for-vimkind",
+    "nvim-lua/plenary.nvim",
+    "rcarriga/nvim-dap-ui",
+    "mfussenegger/nvim-dap-python",
+    "leoluz/nvim-dap-go",
+  },
   keys = {
     {
       "<leader>dB",
@@ -33,13 +39,10 @@ return {
     local json = require("plenary.json")
     vscode.json_decode = function(str) return vim.json.decode(json.json_strip_comments(str)) end
 
-    require("dap-python").setup("python")
-    require("dap-go").setup()
-
-    dap.adapters.codelldb = {
-      type = "server",
-      port = "${port}",
-      executable = { command = "codelldb", args = { "--port", "${port}" } },
+    dap.adapters.lldb = {
+      type = "executable",
+      command = "lldb-dap",
+      name = "lldb",
     }
 
     dap.adapters.haskell = { type = "executable", command = "haskell-debug-adapter" }
@@ -47,7 +50,7 @@ return {
     dap.configurations.cpp = {
       {
         name = "Launch file",
-        type = "codelldb",
+        type = "lldb",
         request = "launch",
         program = function() return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file") end,
         cwd = "${workspaceFolder}",
@@ -56,6 +59,7 @@ return {
     }
 
     dap.configurations.c = dap.configurations.cpp
+    dap.configurations.rust = dap.configurations.cpp
 
     dap.adapters.coreclr = {
       type = "executable",

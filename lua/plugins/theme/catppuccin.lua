@@ -8,7 +8,6 @@ return {
     float = { transparent = true },
     auto_integrations = true,
     term_color = true,
-    integrations = { blink_pairs = true },
   },
   config = function(_, opts)
     require("catppuccin").setup(opts)
