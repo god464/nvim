@@ -60,6 +60,7 @@ return {
 
     dap.configurations.c = dap.configurations.cpp
     dap.configurations.rust = dap.configurations.cpp
+    dap.configurations.zig = dap.configurations.cpp
 
     dap.adapters.coreclr = {
       type = "executable",

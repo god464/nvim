@@ -183,6 +183,8 @@ return {
           angularls = {},
           just = {},
           muon = {},
+          unocss = {},
+          zls = {},
         },
       }
     end,
