@@ -85,6 +85,7 @@ return {
               "javascriptreact",
               "javascript.jsx",
               "vue",
+              "astro",
             },
             ---@type lspconfig.settings.vtsls
             settings = {
@@ -122,6 +123,7 @@ return {
                       location = require("lib").get_astro_ts_plugin(),
                       languages = { "astro" },
                       enableForWorkspaceTypeScriptVersions = true,
+                      configNamespace = "typescript",
                     },
                     {
                       name = "@angular/language-server",
@@ -141,11 +143,7 @@ return {
           lemminx = {},
           gradle_ls = {},
           verible = {},
-          astro = {
-            init_options = {
-              typescript = { tsdk = vim.fs.root(vim.fn.exepath("tsc"), "bin") .. "/lib/node_modules/typescript/lib" },
-            },
-          },
+          astro = { init_options = { typescript = { tsdk = require("lib").get_astro_tsdk() } } },
           terraformls = {},
           ansiblels = {},
           gopls = {

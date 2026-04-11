@@ -22,4 +22,11 @@ function M.get_astro_ts_plugin()
   return vim.uv.fs_stat(local_path) and local_path or "/usr/lib/node_modules/@astrojs/ts-plugin/dist/"
 end
 
+---@return string
+function M.get_astro_tsdk()
+  local local_path = vim.fs.root(vim.fn.exepath("tsc"), "bin") .. "/lib/node_modules/typescript/lib"
+
+  return vim.uv.fs_stat(local_path) and local_path or "/usr/lib/node_modules/typescript/lib/"
+end
+
 return M
