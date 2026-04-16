@@ -7,6 +7,7 @@ o.tabline = " "
 o.foldlevel = 99
 o.foldlevelstart = 99
 o.foldenable = true
+o.winborder = "rounded"
 
 g.mapleader = " "
 g.maplocalleader = "\\"

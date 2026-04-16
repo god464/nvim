@@ -1,9 +1,10 @@
 ---@type LazyPluginSpec
 return {
   "saghen/blink.cmp",
-  build = require("lib").build_blink_plugin(),
+  build = function() require("blink.cmp").build():wait(60000) end,
+
   event = { "InsertEnter", "CmdlineEnter" },
-  dependencies = "rafamadriz/friendly-snippets",
+  dependencies = { "saghen/blink.lib", "rafamadriz/friendly-snippets" },
   opts = function()
     local function get_color_item(ctx)
       if ctx.item.source_name ~= "LSP" then return nil end
@@ -23,7 +24,6 @@ return {
         accept = { auto_brackets = { enabled = true } },
         documentation = {
           auto_show = true,
-          window = { border = "rounded", scrollbar = false },
           auto_show_delay_ms = 0,
           update_delay_ms = 50,
         },
@@ -46,7 +46,7 @@ return {
           },
         },
       },
-      signature = { enabled = true, window = { border = "rounded" } },
+      signature = { enabled = true },
       sources = {
         default = { "lsp", "path", "snippets", "buffer", "markdown" },
         providers = {

@@ -7,7 +7,7 @@ return {
   opts = {
     outline_window = { position = "left", width = 20 },
 
-    preview_window = { live = true, border = "rounded" },
+    preview_window = { live = true },
     symbols = { icon_source = "lspkind" },
   },
 }

@@ -35,9 +35,6 @@ return {
   ---@type overseer.Config
   opts = {
     dap = false,
-    form = { border = "rounded" },
-    confirm = { border = "rounded" },
-    task_win = { border = "rounded" },
     strategy = "toggleterm",
   },
   config = function(_, opts)

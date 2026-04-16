@@ -9,9 +9,6 @@ return {
     win_options = { signcolumn = "yes" },
     skip_confirm_for_simple_edits = true,
     cleanup_delay_ms = false,
-    float = { border = "rounded" },
-    preview = { border = "rounded" },
-    progress = { border = "rounded" },
     lsp_file_methods = { autosave_changes = "unmodified" },
   },
   config = function(_, opts)

@@ -1,6 +1,15 @@
 ---@class lib
 local M = {}
 
+---@param exe string
+---@param rel_path string
+---@param fallback string
+---@return string
+local function resolve_path(exe, rel_path, fallback)
+  local path = vim.fs.root(vim.fn.exepath(exe), "bin") .. rel_path
+  return vim.uv.fs_stat(path) and path or fallback
+end
+
 ---@return string
 function M.build_blink_plugin()
   return vim.uv.fs_stat("/etc/nixos") and "nix run .#build-plugin" or "cargo build --release"
@@ -8,25 +17,25 @@ end
 
 ---@return string
 function M.get_vue_ts_plugin()
-  local local_path = vim.fs.root(vim.fn.exepath("vue-language-server"), "bin")
-    .. "/lib/language-tools/packages/language-server/"
-
-  return vim.uv.fs_stat(local_path) and local_path or "/usr/lib/language-tools/packages/language-server"
+  return resolve_path(
+    "vue-language-server",
+    "/lib/language-tools/packages/language-server/",
+    "/usr/lib/language-tools/packages/language-server"
+  )
 end
 
 ---@return string
 function M.get_astro_ts_plugin()
-  local local_path = vim.fs.root(vim.fn.exepath("astro-ls"), "bin")
-    .. "/lib/node_modules/astro-language-server/packages/language-tools/ts-plugin/dist/"
-
-  return vim.uv.fs_stat(local_path) and local_path or "/usr/lib/node_modules/@astrojs/ts-plugin/dist/"
+  return resolve_path(
+    "astro-ls",
+    "/lib/node_modules/astro-language-server/packages/language-tools/ts-plugin/dist/",
+    "/usr/lib/node_modules/@astrojs/ts-plugin/dist/"
+  )
 end
 
 ---@return string
 function M.get_astro_tsdk()
-  local local_path = vim.fs.root(vim.fn.exepath("tsc"), "bin") .. "/lib/node_modules/typescript/lib"
-
-  return vim.uv.fs_stat(local_path) and local_path or "/usr/lib/node_modules/typescript/lib/"
+  return resolve_path("tsc", "/lib/node_modules/typescript/lib", "/usr/lib/node_modules/typescript/lib/")
 end
 
 return M

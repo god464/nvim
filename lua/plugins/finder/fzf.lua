@@ -4,7 +4,6 @@ return {
   dependencies = "nvim-tree/nvim-web-devicons",
   cmd = "FzfLua",
   opts = {
-    winOpts = "rounded",
     files = { formatter = "path.filename_first" },
     hls = {
       normal = "NormalFloat",

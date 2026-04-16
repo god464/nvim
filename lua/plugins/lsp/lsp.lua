@@ -143,7 +143,9 @@ return {
           lemminx = {},
           gradle_ls = {},
           verible = {},
-          astro = { init_options = { typescript = { tsdk = require("lib").get_astro_tsdk() } } },
+          astro = {
+            init_options = { typescript = { tsdk = require("lib").get_astro_tsdk() }, contentIntellisense = true },
+          },
           terraformls = {},
           ansiblels = {},
           gopls = {
