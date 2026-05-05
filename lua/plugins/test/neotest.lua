@@ -6,7 +6,6 @@ return {
     "nvim-neotest/nvim-nio",
     "nvim-lua/plenary.nvim",
     "antoinemadec/FixCursorHold.nvim",
-    "nvim-treesitter/nvim-treesitter",
     "alfaix/neotest-gtest",
     "nvim-neotest/neotest-python",
     "marilari88/neotest-vitest",
@@ -14,8 +13,8 @@ return {
     "mrcjkb/neotest-haskell",
   },
   opts = function()
+    ---@type neotest.Config
     return {
-      ---@type neotest.Config
       adapters = {
         require("neotest-gtest")(),
         require("neotest-python")({ runner = "unittest" }),

@@ -11,11 +11,6 @@ local function resolve_path(exe, rel_path, fallback)
 end
 
 ---@return string
-function M.build_blink_plugin()
-  return vim.uv.fs_stat("/etc/nixos") and "nix run .#build-plugin" or "cargo build --release"
-end
-
----@return string
 function M.get_vue_ts_plugin()
   return resolve_path(
     "vue-language-server",

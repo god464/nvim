@@ -1,7 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "goolord/alpha-nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons", "nvim-lua/plenary.nvim", "folke/drop.nvim" },
+  dependencies = { "nvim-tree/nvim-web-devicons" },
   event = "VimEnter",
   opts = function()
     local function styled_button(dashboard, shortcut, label, command)

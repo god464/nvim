@@ -3,7 +3,6 @@ return {
   "mfussenegger/nvim-dap",
   dependencies = {
     "jbyuki/one-small-step-for-vimkind",
-    "nvim-lua/plenary.nvim",
     "rcarriga/nvim-dap-ui",
     "mfussenegger/nvim-dap-python",
     "leoluz/nvim-dap-go",
@@ -34,10 +33,6 @@ return {
     local dap = require("dap")
 
     vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
-
-    local vscode = require("dap.ext.vscode")
-    local json = require("plenary.json")
-    vscode.json_decode = function(str) return vim.json.decode(json.json_strip_comments(str)) end
 
     dap.adapters.lldb = {
       type = "executable",
