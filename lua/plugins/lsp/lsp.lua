@@ -116,19 +116,13 @@ return {
                       name = "@vue/typescript-plugin",
                       location = require("lib").get_vue_ts_plugin(),
                       languages = { "vue" },
-                      configNamespace = "typescript",
+                      enableForWorkspaceTypeScriptVersions = true,
                     },
                     {
                       name = "@astrojs/ts-plugin",
                       location = require("lib").get_astro_ts_plugin(),
                       languages = { "astro" },
                       enableForWorkspaceTypeScriptVersions = true,
-                      configNamespace = "typescript",
-                    },
-                    {
-                      name = "@angular/language-server",
-                      location = vim.fs.root(vim.fn.exepath("ngserver"), "bin")
-                        .. "/lib/language-tools/packages/language-server/",
                     },
                   },
                 },
