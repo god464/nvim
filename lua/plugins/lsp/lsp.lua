@@ -182,6 +182,7 @@ return {
           muon = {},
           unocss = {},
           zls = {},
+          sqls = {},
         },
       }
     end,
