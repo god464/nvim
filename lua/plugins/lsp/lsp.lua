@@ -129,7 +129,7 @@ return {
               },
             },
           },
-          tsgo = {},
+          tsc = {},
           texlab = {},
           tinymist = {},
           marksman = {},
