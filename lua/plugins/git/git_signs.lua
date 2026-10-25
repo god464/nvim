@@ -1,7 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "lewis6991/gitsigns.nvim",
-  dependencies = { "petertriho/nvim-scrollbar", "folke/snacks.nvim" },
+  dependencies = "folke/snacks.nvim",
   event = "VeryLazy",
   opts = {
     signs = {
@@ -23,8 +23,4 @@ return {
     linehl = false,
     current_line_blame = true,
   },
-  config = function(_, opts)
-    require("gitsigns").setup(opts)
-    require("scrollbar.handlers.gitsigns").setup()
-  end,
 }
